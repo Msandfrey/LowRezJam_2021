@@ -6,16 +6,21 @@ namespace IndieWizards.Player
 {
     public class PlayerAttackByClick : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
-        {
-            
-        }
+        [SerializeField] private Transform player;
+        [SerializeField] public float distanceToGetKilled;
 
-        // Update is called once per frame
-        void Update()
+        private void Update() 
         {
-            
+            // if you're 5px away from enemy, and you are facing it.
+            float distance =  Vector3.Distance(player.position, transform.position);
+            if (distance <= distanceToGetKilled)
+            {
+                if(Input.GetMouseButtonDown(0))
+                {
+                    Debug.Log("CUBE JUST CLICKED & KILLED ME");
+                    Destroy(this.gameObject);
+                }
+            }
         }
     }
 }
