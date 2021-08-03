@@ -413,6 +413,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 695460f57adc8764f9b8aee671699f55, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 7dab9374924059746b1a36825a30c1fa, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileSpriteArray:
   - m_RefCount: 1
     m_Data: {fileID: -4976689441227415140, guid: e84d66f90cd8ed94bb01ce9b7b6aa858, type: 3}
@@ -432,6 +434,8 @@ Tilemap:
     m_Data: {fileID: 3137338926493461775, guid: e84d66f90cd8ed94bb01ce9b7b6aa858, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 8242056399039560725, guid: e84d66f90cd8ed94bb01ce9b7b6aa858, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileMatrixArray:
   - m_RefCount: 18
     m_Data:
@@ -4739,10 +4743,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 369969438, guid: 5416135af37e8a8488fa5bc60d18e986, type: 3}
-      propertyPath: m_BodyType
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 184831504355126535, guid: 5416135af37e8a8488fa5bc60d18e986, type: 3}
       propertyPath: m_Name
       value: Player
