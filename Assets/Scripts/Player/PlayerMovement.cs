@@ -18,10 +18,7 @@ namespace IndieWizards.Player
         {
             animator = GetComponent<Animator>();
             spriteRenderer = GetComponent<SpriteRenderer>();
-        }
-
-        private void Awake()
-        {
+        
             movementDirection = Direction.None;
         }
 
