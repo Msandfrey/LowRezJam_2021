@@ -9,6 +9,8 @@ namespace IndieWizards.Enemy
         [SerializeField] public int enemyHealth;
         [SerializeField] public int poisonPotionDamage;
         [SerializeField] public int firePotionDamage;
+
+
         public void DestroyEnemy()
         {
             Destroy(this.gameObject);
@@ -16,14 +18,17 @@ namespace IndieWizards.Enemy
 
         public void PoisonEnemy()
         {
+            // get poison value from Collectibles script.
+            // manage enemyHealth from another script.
+            // manage playerScore from another script.
             enemyHealth -= poisonPotionDamage;
-            Debug.Log("Enemy health is now " + enemyHealth);
+            Debug.Log($"<color=green>Enemy poisoned. Enemy Health is now </color>" + enemyHealth);
         }
 
         public void BurnEnemy() 
         {
             enemyHealth -= firePotionDamage;
-            Debug.Log("Enemy health is now " + enemyHealth);
+            Debug.Log($"<color=red>Enemy burned. Enemy Health is now </color>" + enemyHealth);
         }
     }
 }

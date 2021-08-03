@@ -17,20 +17,19 @@ namespace IndieWizards.Player
                 Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
                 
                 RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
-                if(hit.collider != null)
+                
+                if(hit.collider != null && hit.collider.gameObject.name == "Enemy")
                 {
-                    if (hit.collider.gameObject.name == "Enemy")
-                    {
-                        IndieWizards.Enemy.TakeDamage takeDamage = hit.collider.gameObject.GetComponent<TakeDamage>();
+                    TakeDamage takeDamage = hit.collider.gameObject.GetComponent<TakeDamage>();
 
-                        // if cube is X pixels away from enemy, and is facing it.
-                        float distance =  Vector3.Distance(transform.position, hit.collider.gameObject.transform.position);
-                        if (distance <= distanceToKill)
-                        {
-                            Debug.Log("enemy gon get it");                        
-                            takeDamage.PoisonEnemy();
-                            // takeDamage.DestroyEnemy();
-                        }
+                    // if cube is X pixels away from enemy, and is facing it.
+                    float distance =  Vector3.Distance(transform.position, hit.collider.gameObject.transform.position);
+                    if (distance <= distanceToKill)
+                    {
+                        Debug.Log("enemy gon get it");                        
+                        takeDamage.DestroyEnemy(); // destroy for now
+                        // takeDamage.PoisonEnemy(); 
+                        // takeDamage.BurnEnemy();
                     }
                 }
             }
