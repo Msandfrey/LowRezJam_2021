@@ -6,7 +6,7 @@ public class CollectiblesAssets : MonoBehaviour
 {
     public Transform ItemWorld;
     public Sprite poisonSprite;
-    public Sprite fireSprite;
+    public Sprite acidSprite;
     public Sprite antidoteSprite;
 
     public static CollectiblesAssets Instance { get; private set; }
