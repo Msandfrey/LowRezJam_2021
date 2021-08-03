@@ -7,6 +7,15 @@ namespace IndieWizards.Player
         [Tooltip("The the movement speed of the player")]
         [SerializeField]
         private float speed = 5.0f;
+    
+        private Animator animator;
+        private SpriteRenderer spriteRenderer;
+
+        private void Awake() 
+        {
+            animator = GetComponent<Animator>();
+            spriteRenderer = GetComponent<SpriteRenderer>();
+        }
 
         void Update()
         {
@@ -26,11 +35,27 @@ namespace IndieWizards.Player
             {
                 Move(Vector3.right);
             }
+            if (!Input.anyKey)
+            {
+                animator.SetBool("isMoving", false);
+            }
         }
+
 
         private void Move(Vector3 direction)
         {
             transform.position = Vector3.MoveTowards(transform.position, transform.position + direction, Time.deltaTime * speed);
+            // animation
+            if(direction.x == -1) 
+            {
+                spriteRenderer.flipX = true;
+            } 
+            else if (direction.x == 1)
+            {
+                spriteRenderer.flipX = false;
+            }
+            animator.SetBool("isMoving", true);
+
         }
     }
 }
