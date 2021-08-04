@@ -1,18 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+namespace IndieWizards.Audio
 {
-    // Start is called before the first frame update
-    void Start()
+    public class AudioManager : MonoBehaviour
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public void PlayMainMenuMusic()
+        {
+            Debug.LogWarning("Not implemented.");
+        }
     }
 }
