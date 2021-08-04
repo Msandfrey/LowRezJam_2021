@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace IndieWizards.AI
 {
-    public class MeleeAttackAIAction : AIActionBase
+    public class MeleeAttackAIAction : MonoBehaviour
     {
         // Start is called before the first frame update
         void Start()
@@ -14,6 +14,11 @@ namespace IndieWizards.AI
         void Update()
         {
 
+        }
+
+        public bool Run()
+        {
+            return true;
         }
     }
 }

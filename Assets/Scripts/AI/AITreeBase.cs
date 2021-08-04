@@ -7,7 +7,7 @@ namespace IndieWizards.AI
     {
         protected bool isWaiting = false;
         [SerializeField]
-        protected float waitTime = 1f;
+        protected float waitTime = 2f;
 
         // Use this for initialization
         void Start()

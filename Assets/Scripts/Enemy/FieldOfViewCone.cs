@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace IndieWizards.AI
+namespace IndieWizards.Enemy
 {
     public class FieldOfViewCone : MonoBehaviour
     {
@@ -11,28 +11,30 @@ namespace IndieWizards.AI
         //for enemycontroller in parent.... or i just drag and drop in. why brain think in circles...
         [SerializeField] private LayerMask layerMask;
         [SerializeField] private bool isLookingForPlayer = false;
-        Mesh mesh;
-        Vector3 origin;
-        float startingAngle;
-        float fov;
-        int rayCount;
-        float angleIncrease;
-        float viewDistance;
+        private Mesh mesh;
+        private Vector3 origin;
+        private float startingAngle;
+        private float fov;
+        [SerializeField] private int rayCount;
+        private float angleIncrease;
+        private float viewDistance;
         [SerializeField] EnemyController enemyController;
+
         // Use this for initialization
         void Start()
         {
             mesh = new Mesh();
             GetComponent<MeshFilter>().mesh = mesh;
             fov = 90f;
-            origin = Vector2.zero;
+            origin = transform.position;
             //get this from somewhere else
 
         }
+
         private void LateUpdate()
         {
          
-            rayCount = 50;
+            //rayCount = 2;
             angleIncrease = fov / rayCount;
             viewDistance = 5f;
             float angle = startingAngle;
@@ -41,6 +43,9 @@ namespace IndieWizards.AI
             Vector2[] uv = new Vector2[vertices.Length];
             int[] triangles = new int[rayCount*3];
 
+            //origin = Vector2.zero;
+            //Debug.Log(origin);
+            
             vertices[0] = origin;
 
             int vertexIndex = 1;
@@ -48,12 +53,14 @@ namespace IndieWizards.AI
             for(int i = 0; i <= rayCount; i++)
             {
                 float angleRad = angle * (Mathf.PI / 180f);
+                Vector3 direction = new Vector3(Mathf.Cos(angleRad), Mathf.Sin(angleRad));
                 Vector3 vertex;
-                RaycastHit2D raycastHit2D = Physics2D.Raycast(origin, new Vector3(Mathf.Cos(angleRad), Mathf.Sin(angleRad)), viewDistance, layerMask);
+                RaycastHit2D raycastHit2D = Physics2D.Raycast(origin, direction, viewDistance, layerMask);
+                //Debug.DrawRay(origin, direction * viewDistance, Color.blue, .2f);
                 if(!raycastHit2D)
                 {
                     //nohit
-                    vertex = origin + new Vector3(Mathf.Cos(angleRad), Mathf.Sin(angleRad)) * viewDistance;
+                    vertex = origin + direction * viewDistance;
                 }
                 else
                 {
@@ -87,10 +94,12 @@ namespace IndieWizards.AI
             mesh.uv = uv;
             mesh.triangles = triangles;
         }
+
         public void SetOrigin(Vector3 newOrigin)
         {
             origin = newOrigin;
         }
+
         public void SetAimDirection(Vector3 aimDirection)
         {
             aimDirection = aimDirection.normalized;
