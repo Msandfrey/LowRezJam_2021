@@ -5,18 +5,29 @@ namespace IndieWizards.AI
 {
     public class FieldOfViewCone : MonoBehaviour
     {
+        [SerializeField] private LayerMask layerMask;
+        Mesh mesh;
+        Vector3 origin;
+        float startingAngle;
+        float fov;
+        int rayCount;
+        float angleIncrease;
+        float viewDistance;
         // Use this for initialization
         void Start()
         {
-            Mesh mesh = new Mesh();
+            mesh = new Mesh();
             GetComponent<MeshFilter>().mesh = mesh;
-
-            float fov = 90f;
-            Vector3 origin = transform.parent.position;
-            int rayCount = 40;
-            float angle = 0f;
-            float angleIncrease = fov / rayCount;
-            float viewDistance = 5f;
+            fov = 90f;
+            origin = Vector2.zero;
+        }
+        private void LateUpdate()
+        {
+         
+            rayCount = 50;
+            angleIncrease = fov / rayCount;
+            viewDistance = 5f;
+            float angle = startingAngle;
 
             Vector3[] vertices = new Vector3[rayCount + 2];
             Vector2[] uv = new Vector2[vertices.Length];
@@ -30,7 +41,7 @@ namespace IndieWizards.AI
             {
                 float angleRad = angle * (Mathf.PI / 180f);
                 Vector3 vertex;
-                RaycastHit2D raycastHit2D = Physics2D.Raycast(origin, new Vector3(Mathf.Cos(angleRad), Mathf.Sin(angleRad)), viewDistance);
+                RaycastHit2D raycastHit2D = Physics2D.Raycast(origin, new Vector3(Mathf.Cos(angleRad), Mathf.Sin(angleRad)), viewDistance, layerMask);
                 if(!raycastHit2D)
                 {
                     //nohit
@@ -63,11 +74,17 @@ namespace IndieWizards.AI
             mesh.uv = uv;
             mesh.triangles = triangles;
         }
-
-        // Update is called once per frame
-        void Update()
+        public void SetOrigin(Vector3 newOrigin)
         {
-
+            origin = newOrigin;
+        }
+        public void SetAimDirection(Vector3 aimDirection)
+        {
+            aimDirection = aimDirection.normalized;
+            float n = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
+            if(n<0) { n += 360; }
+            startingAngle = Mathf.RoundToInt(n);
+            startingAngle -= fov / 2f;
         }
     }
 }

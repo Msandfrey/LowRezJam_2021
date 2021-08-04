@@ -3,36 +3,36 @@ using UnityEngine;
 
 namespace IndieWizards.AI
 {
-    public class CombatAITree : AITreeBase
+    public class IdleAITree : AITreeBase
     {
-        bool isInCombat = false;
-        [SerializeField]
-        float moveSpeed = 1f;
+        bool isIdle = false;
+        EnemyController enemyController;
         // Use this for initialization
         void Start()
         {
-
+            enemyController = GetComponent<EnemyController>();
+            isWaiting = true;
         }
 
         // Update is called once per frame
         void Update()
         {
-            if (isInCombat && !isWaiting)
+            if (!isWaiting && isIdle)
             {
-                //1---------find target player
-                //2---------if in range attack
-                    //2.5---wait
-                //3---------move to player
+                enemyController.ChangeStates(EnemyController.EnemyState.Patrol);
             }
         }
+
         protected override bool RunTree()
         {
-            isInCombat = true;
+            isWaiting = true;
+            isIdle = true;
+            StartCoroutine(Wait());
             return true;
         }
         protected override bool HaltTree()
         {
-            isInCombat = false;
+            isIdle = false;
             return true;
         }
     }

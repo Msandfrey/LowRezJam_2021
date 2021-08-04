@@ -1,15 +1,15 @@
+﻿using System.Collections;
 using UnityEngine;
-using System.Collections;
 
 namespace IndieWizards.AI
 {
-    public class AIActionBase : MonoBehaviour
+    public class AITreeBase : MonoBehaviour
     {
         protected bool isWaiting = false;
         [SerializeField]
         protected float waitTime = 1f;
 
-        // Start is called before the first frame update
+        // Use this for initialization
         void Start()
         {
 
@@ -25,11 +25,19 @@ namespace IndieWizards.AI
             yield return new WaitForSeconds(waitTime);
             isWaiting = false;
         }
-        protected bool Run()
+        public bool Run()
+        {
+            return RunTree();
+        }
+        public bool Halt()
+        {
+            return HaltTree();
+        }
+        protected virtual bool RunTree()
         {
             return true;
         }
-        protected bool Halt()
+        protected virtual bool HaltTree()
         {
             return true;
         }

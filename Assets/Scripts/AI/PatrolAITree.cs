@@ -1,18 +1,22 @@
 using UnityEngine;
+using System.Collections;
 
 namespace IndieWizards.AI
 {
-    public class PatrolAITree : AIActionBase
+    public class PatrolAITree : AITreeBase
     {
         bool isPatrolling = false;
+        //bool isWaiting = false;
         [SerializeField]
         float moveSpeed = 1f;
         FindTarget findTarget;
         MoveToLocationAIAction moveToLocationAIAction;
         Wait wait;
+
         // Start is called before the first frame update
         void Start()
         {
+            moveSpeed /= 100f;//make the speed small so its not too fast but the number we put in isnt super tiny
             findTarget = GetComponent<FindTarget>();
             moveToLocationAIAction = GetComponent<MoveToLocationAIAction>();
             wait = GetComponent<Wait>();
@@ -21,7 +25,7 @@ namespace IndieWizards.AI
         // Update is called once per frame
         void Update()
         {
-            if (isPatrolling)
+            if (isPatrolling && !isWaiting)
             {
                 //1-----find a target
                 Vector2 targetLocation = findTarget.Run();
@@ -34,21 +38,22 @@ namespace IndieWizards.AI
                 if (isTargetLocationReached)
                 {
                     findTarget.IterateTargetCheckpoint();
-                    //if we don't want to wait then we can remove this
-                    wait.Run();
+                    isWaiting = true;
+                    StartCoroutine(Wait());
                 }
             }
         }
-        public bool RunTree()
+        protected override bool RunTree()
         {
             isPatrolling = true;
             return true;
         }
 
-        public bool StopTree()
+        protected override bool HaltTree()
         {
             isPatrolling = false;
             return true;
         }
+
     }
 }

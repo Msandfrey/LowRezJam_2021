@@ -15,9 +15,5 @@ namespace IndieWizards.AI
         {
 
         }
-        public void Run()
-        {
-
-        }
     }
 }

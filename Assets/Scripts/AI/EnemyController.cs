@@ -7,16 +7,19 @@ namespace IndieWizards.AI
     public class EnemyController : MonoBehaviour
     {
         //i made this but didn't use it at all
-        //enum EnemyState { Idle, Patrol, Combat };
+        public enum EnemyState { Idle, Patrol, Combat };
         //collision
         Rigidbody2D rigidbody;
         //animation
         EnemyAnimationController enemyAnimationController;
         //action script references
         CombatAITree combatAITree;
+        IdleAITree idleAITree;
         EnemyTakeDamage enemyTakeDamage;
         PatrolAITree patrolAITree;
         Wait wait;
+        [SerializeField] FieldOfViewCone fieldOfViewCone;
+        [SerializeField] FieldOfViewCone playerDetectionCone;
         //detection cone
 
 
@@ -27,6 +30,7 @@ namespace IndieWizards.AI
             combatAITree = GetComponent<CombatAITree>();
             enemyAnimationController = GetComponent<EnemyAnimationController>();
             enemyTakeDamage = GetComponent<EnemyTakeDamage>();
+            idleAITree = GetComponent<IdleAITree>();
             patrolAITree = GetComponent<PatrolAITree>();
             wait = GetComponent<Wait>();
             SwitchToIdle();
@@ -35,40 +39,60 @@ namespace IndieWizards.AI
         // Update is called once per frame
         void Update()
         {
-        
+            fieldOfViewCone.SetOrigin(transform.position);
+            fieldOfViewCone.SetAimDirection(Vector2.left);//set direction based on movement
+            playerDetectionCone.SetOrigin(transform.position);
+            playerDetectionCone.SetAimDirection(Vector2.left);
         }
 
         void SwitchToIdle()
         {
-            //could make this a tree but so simple...
-            wait.Run();
-            SwitchToPatrol();//but this is a nono yeah? if idle changes i change this
+            idleAITree.Run();
         }
         void SwitchToPatrol()
         {
-            patrolAITree.RunTree();
+            patrolAITree.Run();
         }
         void SwitchToCombat()
         {
-            combatAITree.RunTree();
+            combatAITree.Run();
         }
         //deals with cone detection
         void OnConeDetection()
         {
-            patrolAITree.StopTree();
+            patrolAITree.Halt();
             SwitchToCombat();
         }
         void OnConeLoseDetection()
         {
-            patrolAITree.StopTree();
-            combatAITree.StopTree();
+            patrolAITree.Halt();
+            combatAITree.Halt();
             SwitchToIdle();
         }
         //deals with proximity detection
         void OnProximityDetection()
         {
-            patrolAITree.StopTree();
+            patrolAITree.Halt();
             SwitchToCombat();
+        }
+
+        public void ChangeStates(EnemyState enemyState)
+        {
+            switch (enemyState)
+            {
+                case EnemyState.Combat:
+                    SwitchToCombat();
+                    break;
+                case EnemyState.Idle:
+                    SwitchToIdle();
+                    break;
+                case EnemyState.Patrol:
+                    SwitchToPatrol();
+                    break;
+                default:
+                    SwitchToIdle();
+                    break;
+            }
         }
     }
 }

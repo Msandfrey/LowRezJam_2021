@@ -12,5 +12,6 @@ namespace IndieWizards.AI
             //maybe change
             yield return new WaitForSeconds(waitTime);
         }
+
     }
 }

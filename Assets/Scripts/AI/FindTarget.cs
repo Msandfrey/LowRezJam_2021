@@ -5,6 +5,7 @@ namespace IndieWizards.AI
 {
     public class FindTarget : MonoBehaviour
     {
+        [SerializeField]
         Transform[] targetCheckpoints;
         int currentTarget = 0;
         // Use this for initialization
@@ -21,7 +22,7 @@ namespace IndieWizards.AI
         public Vector2 Run()
         {
             //get the next targetCheckpoint
-            if(targetCheckpoints.Length > 0) { return targetCheckpoints[currentTarget].position; }
+            if(currentTarget < targetCheckpoints.Length) { return targetCheckpoints[currentTarget].position; }
             return Vector2.zero;
         }
         public void IterateTargetCheckpoint()
