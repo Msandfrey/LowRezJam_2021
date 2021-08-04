@@ -7,7 +7,7 @@ namespace IndieWizards.Player
         private enum Direction { Up, Down, Left, Right, None }
         private Direction movementDirection;
 
-        [Tooltip("The the movement speed of the player")]
+        [Tooltip("The movement speed of the player")]
         [SerializeField]
         private float speed = 5.0f;
     
@@ -43,6 +43,8 @@ namespace IndieWizards.Player
             else
             {
                 movementDirection = Direction.None;
+                animator.SetBool("isMoving", false);
+
             }
         }
 
@@ -72,10 +74,6 @@ namespace IndieWizards.Player
                 default:
                     Debug.LogError($"Unsupported movement direction => #{movementDirection}");
                     break;
-            }
-            if (!Input.anyKey)
-            {
-                animator.SetBool("isMoving", false);
             }
         }
 
