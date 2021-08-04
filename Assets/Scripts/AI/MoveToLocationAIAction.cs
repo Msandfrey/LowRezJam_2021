@@ -1,4 +1,5 @@
 using UnityEngine;
+using IndieWizards.Enemy;
 
 namespace IndieWizards.AI
 {
@@ -7,9 +8,9 @@ namespace IndieWizards.AI
         //[SerializeField]
         //float speed = 1f;
 
-        float resetSpeed;
-        bool currentlyMoving = false;
-        Vector2 targetLocation;
+        //float resetSpeed;
+        //bool currentlyMoving = false;
+        //Vector2 targetLocation;
         EnemyController enemyController;
 
         private void Start()
@@ -18,6 +19,7 @@ namespace IndieWizards.AI
             //resetSpeed = speed;
             enemyController = GetComponent<EnemyController>();
         }
+
         private void Update()
         {
             //no mas
@@ -39,6 +41,7 @@ namespace IndieWizards.AI
             //check if reached target(need function for within certain range)
             return transform.position == new Vector3(newLocation.x, newLocation.y);
         }
+
         /*bool Stop()
         {
             currentlyMoving = false;

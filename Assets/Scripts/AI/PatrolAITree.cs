@@ -43,16 +43,15 @@ namespace IndieWizards.AI
                 }
             }
         }
+
         protected override bool RunTree()
         {
-            Debug.Log("this bitch better not be be being? be be be... be called");
             isPatrolling = true;
             return true;
         }
 
         protected override bool HaltTree()
         {
-            Debug.Log("why i no stop");
             isPatrolling = false;
             return true;
         }

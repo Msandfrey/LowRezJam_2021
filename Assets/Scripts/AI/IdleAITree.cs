@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using IndieWizards.Enemy;
 
 namespace IndieWizards.AI
 {
@@ -7,6 +8,7 @@ namespace IndieWizards.AI
     {
         bool isIdle = false;
         EnemyController enemyController;
+
         // Use this for initialization
         void Start()
         {
@@ -31,6 +33,7 @@ namespace IndieWizards.AI
             StartCoroutine(Wait());
             return true;
         }
+
         protected override bool HaltTree()
         {
             isIdle = false;

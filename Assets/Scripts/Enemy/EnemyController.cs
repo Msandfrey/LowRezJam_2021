@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using IndieWizards.AI;
 
-namespace IndieWizards.AI
+namespace IndieWizards.Enemy
 {
     public class EnemyController : MonoBehaviour
     {
@@ -12,7 +13,7 @@ namespace IndieWizards.AI
         EnemyState currentState = EnemyState.Idle;
         EnemyDirection currentDirection = EnemyDirection.Left;
         //collision---not used now but maybe later? maybe just in the actual attack place
-        Rigidbody2D rigidbody;
+        //Rigidbody2D rigidbody;
         //animation
         EnemyAnimationController enemyAnimationController;
         //action script references
@@ -33,7 +34,7 @@ namespace IndieWizards.AI
         void Start()
         {
             //get all components
-            rigidbody = GetComponent<Rigidbody2D>();
+            //rigidbody = GetComponent<Rigidbody2D>();
             combatAITree = GetComponent<CombatAITree>();
             enemyAnimationController = GetComponent<EnemyAnimationController>();
             enemyTakeDamage = GetComponent<EnemyTakeDamage>();
@@ -68,14 +69,17 @@ namespace IndieWizards.AI
         {
             idleAITree.Run();
         }
+
         void SwitchToPatrol()
         {
             patrolAITree.Run();
         }
+
         void SwitchToCombat()
         {
             combatAITree.Run();
         }
+
         //deals with cone detection
         public void OnConeDetection()
         {
@@ -83,18 +87,21 @@ namespace IndieWizards.AI
             patrolAITree.Halt();
             ChangeStates(EnemyState.Combat);
         }
+
         void OnConeLoseDetection()
         {
             patrolAITree.Halt();
             combatAITree.Halt();
             SwitchToIdle();
         }
+
         //deals with proximity detection
         void OnProximityDetection()
         {
             patrolAITree.Halt();
             SwitchToCombat();
         }
+
         void ChangeDirection(EnemyDirection enemyDirection)
         {
             switch (enemyDirection)//rotate 90 degrees counter-clockwise for some reason
@@ -115,6 +122,7 @@ namespace IndieWizards.AI
                     break;
             }
         }
+
         public void ChangeDirection(Vector2 direction)
         {
             //-------------QUESTION--------- is this func doing too much?
@@ -162,8 +170,8 @@ namespace IndieWizards.AI
                     aimDirection = Vector2.down;
                 }
             }
-            Debug.Log(direction);
         }
+
         public void ChangeStates(EnemyState enemyState)
         {
             switch (enemyState)

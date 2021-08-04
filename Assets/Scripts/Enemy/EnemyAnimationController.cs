@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace IndieWizards.AI
+namespace IndieWizards.Enemy
 {
     public class EnemyAnimationController : MonoBehaviour
     {

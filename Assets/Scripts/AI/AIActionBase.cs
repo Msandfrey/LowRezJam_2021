@@ -20,15 +20,18 @@ namespace IndieWizards.AI
         {
 
         }
+
         protected IEnumerator Wait()
         {
             yield return new WaitForSeconds(waitTime);
             isWaiting = false;
         }
+
         protected bool Run()
         {
             return true;
         }
+
         protected bool Halt()
         {
             return true;
