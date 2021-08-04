@@ -82,16 +82,31 @@ namespace IndieWizards.Player
         {
             transform.position = Vector3.MoveTowards(transform.position, transform.position + direction, Time.deltaTime * speed);
             // animation
-            if(direction.x == -1) 
+            Debug.Log(direction.x + direction.y);
+            if (direction.x != 0)
             {
-                spriteRenderer.flipX = true;
-            } 
-            else if (direction.x == 1)
-            {
-                spriteRenderer.flipX = false;
+                if(direction.x == -1) 
+                {
+                    spriteRenderer.flipX = true;
+                } 
+                else if (direction.x == 1)
+                {
+                    spriteRenderer.flipX = false;
+                }
+                animator.SetBool("isMoving", true);
             }
-            animator.SetBool("isMoving", true);
 
+            if (direction.y != 0)
+            {
+                if(direction.y == -1)
+                {
+                    spriteRenderer.flipY = true;
+                }
+                else if (direction.y == 1)
+                {
+                    spriteRenderer.flipY = false;
+                }
+            }
         }
     }
 }

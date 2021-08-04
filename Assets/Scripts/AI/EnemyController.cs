@@ -26,6 +26,8 @@ namespace IndieWizards.AI
         [SerializeField] FieldOfViewCone playerDetectionCone;
         Vector2 aimDirection;
 
+        private Animator animator;
+
 
         // Start is called before the first frame update
         void Start()
@@ -41,6 +43,16 @@ namespace IndieWizards.AI
             //set direction and state
             ChangeStates(currentState);
             ChangeDirection(currentDirection);
+
+
+            animator = GetComponent<Animator>();
+
+
+            // if you moving left/right
+            animator.SetBool("isMoving", true);
+
+            // if you want to attack
+            animator.SetTrigger("attack");
         }
 
         // Update is called once per frame

@@ -30,6 +30,7 @@ namespace IndieWizards.Consumables
         public void PurpleMushroom()
         {
             // generate cone for 5 seconds so cube can attack enemies in sight.
+            // enable game object with collider from cube to detect collider of mushroom
             
         }
     }
