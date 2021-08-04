@@ -19,6 +19,7 @@ namespace IndieWizards.AI
         {
             if (!isWaiting && isIdle)
             {
+                HaltTree();
                 enemyController.ChangeStates(EnemyController.EnemyState.Patrol);
             }
         }

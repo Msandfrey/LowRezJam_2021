@@ -27,6 +27,7 @@ namespace IndieWizards.AI
         }
         protected override bool RunTree()
         {
+            Debug.Log("got here bitch");
             isInCombat = true;
             return true;
         }

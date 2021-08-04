@@ -5,7 +5,12 @@ namespace IndieWizards.AI
 {
     public class FieldOfViewCone : MonoBehaviour
     {
+        //-------notes-----------------
+        //i think i found out just now that i need to change the position of this fuckin thing 
+        //in order to have this as child that follows it. this makes it so each cone can just look
+        //for enemycontroller in parent.... or i just drag and drop in. why brain think in circles...
         [SerializeField] private LayerMask layerMask;
+        [SerializeField] private bool isLookingForPlayer = false;
         Mesh mesh;
         Vector3 origin;
         float startingAngle;
@@ -13,6 +18,7 @@ namespace IndieWizards.AI
         int rayCount;
         float angleIncrease;
         float viewDistance;
+        [SerializeField] EnemyController enemyController;
         // Use this for initialization
         void Start()
         {
@@ -20,6 +26,8 @@ namespace IndieWizards.AI
             GetComponent<MeshFilter>().mesh = mesh;
             fov = 90f;
             origin = Vector2.zero;
+            //get this from somewhere else
+
         }
         private void LateUpdate()
         {
@@ -50,8 +58,13 @@ namespace IndieWizards.AI
                 else
                 {
                     //vertex = origin + new Vector3(Mathf.Cos(angleRad), Mathf.Sin(angleRad)) * viewDistance;
-                    Debug.Log("hit something at: " + raycastHit2D.point);
+                    
                     vertex = raycastHit2D.point;
+                    //if this is checked must only search the player layer
+                    if (isLookingForPlayer)
+                    {
+                        enemyController.OnConeDetection();
+                    }
                 }
                 vertices[vertexIndex] = vertex;
 

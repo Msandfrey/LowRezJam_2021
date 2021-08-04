@@ -10,11 +10,13 @@ namespace IndieWizards.AI
         float resetSpeed;
         bool currentlyMoving = false;
         Vector2 targetLocation;
+        EnemyController enemyController;
 
         private void Start()
         {
             //no mas
             //resetSpeed = speed;
+            enemyController = GetComponent<EnemyController>();
         }
         private void Update()
         {
@@ -28,6 +30,8 @@ namespace IndieWizards.AI
         public bool Run(Vector2 newLocation, float speed)
         {
             transform.position = Vector2.MoveTowards(transform.position, newLocation, speed);
+            Vector2 vec2Position = new Vector2(transform.position.x, transform.position.y);
+            enemyController.ChangeDirection(newLocation - vec2Position);
             //currentlyMoving = true;
             //if we want them to move faster when attacking the player
             //if (isChasingPlayer) { speed *= 2; }
