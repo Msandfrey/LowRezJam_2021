@@ -1,7 +1,22 @@
 fileFormatVersion: 2
-guid: 9971e091d03d9324592d032284dd4a83
+guid: b3ee91a175a565f48aaf71e3941faefb
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 6016864522059705365
+    second: cube2_walkdown_anim_5columns_0.1_0
+  - first:
+      213: 8366660222046037861
+    second: cube2_walkdown_anim_5columns_0.1_1
+  - first:
+      213: 1334025979311045938
+    second: cube2_walkdown_anim_5columns_0.1_2
+  - first:
+      213: -3499915204444336183
+    second: cube2_walkdown_anim_5columns_0.1_3
+  - first:
+      213: 2067435628148219956
+    second: cube2_walkdown_anim_5columns_0.1_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -68,7 +83,31 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -79,85 +118,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: published_cube_animation_walk_right_4columns_0.1.0_0
+      name: cube2_walkdown_anim_5columns_0.1_0
       rect:
         serializedVersion: 2
         x: 1
-        y: 0
+        y: 3
         width: 12
         height: 12
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 253ed98e8fbf89d20800000000000000
-      internalID: 3285652974639899474
+      spriteID: 51ce4037762308350800000000000000
+      internalID: 6016864522059705365
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: published_cube_animation_walk_right_4columns_0.1.0_1
+      name: cube2_walkdown_anim_5columns_0.1_1
       rect:
         serializedVersion: 2
         x: 17
-        y: 0
-        width: 13
+        y: 3
+        width: 12
         height: 12
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d0d47bc0e89621270800000000000000
-      internalID: 8219748328724188429
+      spriteID: 567e17bb4295c1470800000000000000
+      internalID: 8366660222046037861
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: published_cube_animation_walk_right_4columns_0.1.0_2
+      name: cube2_walkdown_anim_5columns_0.1_2
       rect:
         serializedVersion: 2
         x: 33
-        y: 0
-        width: 14
-        height: 12
+        y: 2
+        width: 12
+        height: 11
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6617481b32276e0c0800000000000000
-      internalID: -4546821276156268186
+      spriteID: 23d3af96f89638210800000000000000
+      internalID: 1334025979311045938
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: published_cube_animation_walk_right_4columns_0.1.0_3
+      name: cube2_walkdown_anim_5columns_0.1_3
       rect:
         serializedVersion: 2
         x: 49
-        y: 0
-        width: 14
-        height: 12
+        y: 2
+        width: 12
+        height: 11
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7fb40a6fd8522fa20800000000000000
-      internalID: 3094577185615268855
+      spriteID: 9cf4b173aadcd6fc0800000000000000
+      internalID: -3499915204444336183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cube2_walkdown_anim_5columns_0.1_4
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 1
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 430e2c300c101bc10800000000000000
+      internalID: 2067435628148219956
       vertices: []
       indices: 
       edges: []
