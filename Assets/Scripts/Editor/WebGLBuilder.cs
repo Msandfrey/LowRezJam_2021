@@ -27,7 +27,8 @@ public class WebGLBuilder
     public static void Build()
     {
         string[] scenes = {
-            "Assets/Scenes/Dan.unity"
+            "Assets/Scenes/MainMenu.unity",
+            "Assets/Scenes/Game.unity"
         };
 
         BuildPipeline.BuildPlayer(scenes, buildOutputDir, BuildTarget.WebGL, BuildOptions.None);
