@@ -47,6 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioManager: {fileID: 1936139569965624597}
   sceneLoader: {fileID: 327432872816148926}
+  mainMenuPanel: {fileID: 0}
+  settingsPanel: {fileID: 0}
 --- !u!1001 &5684043626272810748
 PrefabInstance:
   m_ObjectHideFlags: 0
