@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using IndieWizards.Consumables;
+using TMPro;
 
 namespace IndieWizards.Player
 {
@@ -9,6 +10,14 @@ namespace IndieWizards.Player
     {
         [SerializeField] public int playerHealth;
 
+        [Header("Placeholder UI")]
+        [SerializeField] public TextMeshProUGUI playerHealthValue;
+
+        private void Update() {
+            ShowHP();
+        }
+
+        
         public int GetCurrentHealth()
         {
             return playerHealth;
@@ -19,7 +28,6 @@ namespace IndieWizards.Player
             playerHealth = updatedHealth;
             Debug.Log($"Cube health is now {playerHealth}");
         }
-        
 
         private void Death()
         {
@@ -28,6 +36,11 @@ namespace IndieWizards.Player
                playerHealth = 0;
                // game over UI panel
             }
+        }
+
+        public void ShowHP()
+        {
+            playerHealthValue.text = playerHealth.ToString();
         }
     }
 }
