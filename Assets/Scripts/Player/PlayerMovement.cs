@@ -84,7 +84,6 @@ namespace IndieWizards.Player
         {
             transform.position = Vector3.MoveTowards(transform.position, transform.position + direction, Time.deltaTime * speed);
             // animation
-            Debug.Log(direction.x + direction.y);
             if (direction.x != 0)
             {
                 if(direction.x == -1) 
