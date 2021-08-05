@@ -11,7 +11,7 @@ namespace IndieWizards.Player
         [SerializeField] public int playerHealth;
 
         [Header("Placeholder UI")]
-        [SerializeField] public TextMeshProUGUI playerHealthValue;
+        [SerializeField] public TextMeshProUGUI cubeHealthValue;
 
         private void Update() {
             ShowHP();
@@ -40,7 +40,7 @@ namespace IndieWizards.Player
 
         public void ShowHP()
         {
-            playerHealthValue.text = playerHealth.ToString();
+            cubeHealthValue.text = playerHealth.ToString();
         }
     }
 }
