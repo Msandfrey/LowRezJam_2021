@@ -28,7 +28,7 @@ public class WebGLBuilder
     {
         string[] scenes = {
             "Assets/Scenes/MainMenu.unity",
-            "Assets/Scenes/Game.unity"
+            "Assets/Scenes/Thomas.unity"
         };
 
         BuildPipeline.BuildPlayer(scenes, buildOutputDir, BuildTarget.WebGL, BuildOptions.None);

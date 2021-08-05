@@ -7,7 +7,7 @@ namespace IndieWizards.GameManagment
     {
         public void LoadGameScene()
         {
-            SceneManager.LoadScene("Game");
+            SceneManager.LoadScene("Thomas");
         }
 
         public void LoadMainMenuScene()
