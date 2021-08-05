@@ -44,6 +44,8 @@ namespace IndieWizards.Player
             {
                 movementDirection = Direction.None;
                 animator.SetBool("isMoving", false);
+                animator.SetBool("isMovingUp", false);
+                animator.SetBool("isMovingDown", false);
 
             }
         }
@@ -82,7 +84,6 @@ namespace IndieWizards.Player
         {
             transform.position = Vector3.MoveTowards(transform.position, transform.position + direction, Time.deltaTime * speed);
             // animation
-            Debug.Log(direction.x + direction.y);
             if (direction.x != 0)
             {
                 if(direction.x == -1) 
@@ -100,11 +101,11 @@ namespace IndieWizards.Player
             {
                 if(direction.y == -1)
                 {
-                    spriteRenderer.flipY = true;
+                    animator.SetBool("isMovingDown", true);
                 }
                 else if (direction.y == 1)
                 {
-                    spriteRenderer.flipY = false;
+                    animator.SetBool("isMovingUp", true);
                 }
             }
         }

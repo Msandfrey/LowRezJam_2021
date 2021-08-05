@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7910753590450379201}
   - component: {fileID: 7910753590450379200}
   - component: {fileID: 7910753590450379231}
-  - component: {fileID: 7910753590450379202}
+  - component: {fileID: 6792134685725676393}
   m_Layer: 0
   m_Name: green_mushroom
   m_TagString: Untagged
@@ -132,7 +132,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &7910753590450379202
+--- !u!114 &6792134685725676393
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7910753590450379229}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8efe4e94d25c01347b379d8197a76bf1, type: 3}
+  m_Script: {fileID: 11500000, guid: c18dcbd0b66e7234a8d7e5876457eeb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cubeHealth: 10
