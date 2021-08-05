@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2285820730109583830}
   - component: {fileID: 2285820730109583831}
   - component: {fileID: 2285820730109583828}
-  - component: {fileID: 2285820730109583825}
+  - component: {fileID: 7815953594820310161}
   m_Layer: 0
   m_Name: purple_mushroom
   m_TagString: Untagged
@@ -132,7 +132,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &2285820730109583825
+--- !u!114 &7815953594820310161
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,9 +141,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2285820730109583818}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8efe4e94d25c01347b379d8197a76bf1, type: 3}
+  m_Script: {fileID: 11500000, guid: c09aec1336154fa4496abf94ba8e173d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeHealth: 10
-  mushroomHealthAffect: 1
-  durationOfAffect: 5
