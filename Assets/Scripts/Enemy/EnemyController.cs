@@ -27,8 +27,6 @@ namespace IndieWizards.Enemy
         [SerializeField] FieldOfViewCone playerDetectionCone;
         Vector2 aimDirection;
 
-        private Animator animator;
-
 
         // Start is called before the first frame update
         void Start()
@@ -46,14 +44,6 @@ namespace IndieWizards.Enemy
             ChangeDirection(currentDirection);
 
 
-            animator = GetComponent<Animator>();
-
-
-            // if you moving left/right
-            animator.SetBool("isMoving", true);
-
-            // if you want to attack
-            animator.SetTrigger("attack");
         }
 
         // Update is called once per frame
@@ -65,8 +55,19 @@ namespace IndieWizards.Enemy
             playerDetectionCone.SetAimDirection(aimDirection);
         }
 
+        public EnemyState GetCurrentState()
+        {
+            return currentState;
+        }
+
+        public EnemyDirection GetCurrentDirection()
+        {
+            return currentDirection;
+        }
+
         void SwitchToIdle()
         {
+            enemyAnimationController.Idle();
             idleAITree.Run();
         }
 

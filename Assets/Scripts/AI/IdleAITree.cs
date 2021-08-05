@@ -8,11 +8,14 @@ namespace IndieWizards.AI
     {
         bool isIdle = false;
         EnemyController enemyController;
+        EnemyAnimationController enemyAnimationController;
 
         // Use this for initialization
         void Start()
         {
             enemyController = GetComponent<EnemyController>();
+            enemyAnimationController = GetComponent<EnemyAnimationController>();
+            if (enemyAnimationController) { Debug.Log("i got this animation thing down"); }
             isWaiting = true;
         }
 
@@ -31,6 +34,11 @@ namespace IndieWizards.AI
             isWaiting = true;
             isIdle = true;
             StartCoroutine(Wait());
+            //this function is called before the start function loads so it doesn't work the first time its called
+            if (enemyAnimationController)
+            {
+                enemyAnimationController.Idle();
+            }
             return true;
         }
 

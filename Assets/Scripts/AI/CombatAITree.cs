@@ -12,6 +12,9 @@ namespace IndieWizards.AI
         [SerializeField]
         float attackRange = 1.5f;
 
+
+        EnemyController enemyController;
+        EnemyAnimationController enemyAnimationController;
         FindTarget findTarget;
         MeleeAttackAIAction meleeAttackAIAction;
         MoveToLocationAIAction moveToLocationAIAction;
@@ -22,6 +25,8 @@ namespace IndieWizards.AI
             findTarget = GetComponent<FindTarget>();
             meleeAttackAIAction = GetComponent<MeleeAttackAIAction>();
             moveToLocationAIAction = GetComponent<MoveToLocationAIAction>();
+            enemyController = GetComponent<EnemyController>();
+            enemyAnimationController = GetComponent<EnemyAnimationController>();
             moveSpeed /= 100;
         }
 
@@ -37,6 +42,7 @@ namespace IndieWizards.AI
                 if(Mathf.Abs(distance) <= attackRange)
                 {
                     meleeAttackAIAction.Run();
+                    enemyAnimationController.Attack();
                     //2.5---wait
                     StartCoroutine(Wait());
                     isWaiting = true;
@@ -44,6 +50,24 @@ namespace IndieWizards.AI
                 }
                 //3---------move to player
                 moveToLocationAIAction.Run(playerPosition, moveSpeed);
+                EnemyController.EnemyDirection direction = enemyController.GetCurrentDirection();
+                switch (direction)
+                {
+                    case EnemyController.EnemyDirection.Up:
+                        enemyAnimationController.WalkUp();
+                        break;
+                    case EnemyController.EnemyDirection.Down:
+                        enemyAnimationController.WalkDown();
+                        break;
+                    case EnemyController.EnemyDirection.Left:
+                        enemyAnimationController.Walk();
+                        GetComponent<SpriteRenderer>().flipX = false;
+                        break;
+                    case EnemyController.EnemyDirection.Right:
+                        enemyAnimationController.Walk();
+                        GetComponent<SpriteRenderer>().flipX = true;
+                        break;
+                }
             }
         }
 

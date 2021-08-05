@@ -18,6 +18,8 @@ namespace IndieWizards.AI
 
         public bool Run()
         {
+            //either shoot out a 1 unit ray in the direction facing 
+            //or just turn a thing on and off
             return true;
         }
     }
