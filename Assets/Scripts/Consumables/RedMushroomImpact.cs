@@ -7,30 +7,34 @@ namespace IndieWizards.Consumables
 {
     public class RedMushroomImpact : MonoBehaviour
     {
+
+        
         private int cubeHealth;
+        private PlayerHealth playerHealth;
         private Animator animator;
         private SpriteRenderer spriteRenderer;
-        [SerializeField] private GameObject redMushroomAnimation;
-        [SerializeField] public int mushroomHealthAffect;
+        [SerializeField] private GameObject player;
+        // [SerializeField] private GameObject redMushroom;
+        [SerializeField] public int healValue;
         
         private void Start() 
         {
-            // PlayerHealth playerHealth = GetComponent<PlayerHealth>();
-            animator = redMushroomAnimation.GetComponent<Animator>();
-            spriteRenderer = redMushroomAnimation.GetComponent<SpriteRenderer>();
+            playerHealth = FindObjectOfType<PlayerHealth>();
+            // animator = player.GetComponent<Animator>();
+            // spriteRenderer = player.GetComponent<SpriteRenderer>();
         }
 
         public void RedMushroom()
         {
             // get cube health value
-            // cubeHealth = playerHealth.GetHealth();
-            cubeHealth += mushroomHealthAffect;
-            Debug.Log($"Cube Health is now: {cubeHealth}");
+            cubeHealth = playerHealth.GetCurrentHealth();
+            cubeHealth += healValue;
+            playerHealth.GetUpdatedHealth(cubeHealth);
             Destroy(this.gameObject);
-            // animator.Play("Heal");
-            // animator.StopPlayback();
+            // redMushroom.SetActive(true);
             // animator.SetTrigger("heal");
-            // redMushroomAnimation.SetActive(false);
+
+            // redMushroom.SetActive(false);
         }
     }
 }

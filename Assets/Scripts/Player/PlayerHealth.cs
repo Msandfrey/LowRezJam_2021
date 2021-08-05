@@ -9,17 +9,24 @@ namespace IndieWizards.Player
     {
         [SerializeField] public int playerHealth;
 
-        public int GetHealth()
+        public int GetCurrentHealth()
         {
             return playerHealth;
         }
+
+        public void GetUpdatedHealth(int updatedHealth)
+        {
+            playerHealth = updatedHealth;
+            Debug.Log($"Cube health is now {playerHealth}");
+        }
+        
 
         private void Death()
         {
             if (playerHealth <= 0)
             {
                playerHealth = 0;
-               // game over UI  
+               // game over UI panel
             }
         }
     }

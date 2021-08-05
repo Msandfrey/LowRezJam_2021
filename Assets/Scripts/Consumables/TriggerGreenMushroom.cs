@@ -16,6 +16,7 @@ namespace IndieWizards.Consumables
             {
                 GreenMushroomImpact greenMushroomImpact = collider.gameObject.GetComponent<GreenMushroomImpact>();
                 greenMushroomImpact.GreenMushroom();
+                // greenMushroomImpact.AnimatePoison();
             }
         }
     }

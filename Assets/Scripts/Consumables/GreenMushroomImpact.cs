@@ -8,32 +8,31 @@ namespace IndieWizards.Consumables
     public class GreenMushroomImpact : MonoBehaviour
     {
         [SerializeField] private GameObject greenMushroomAnimation;
-        [SerializeField] public int mushroomHealthAffect;
+        [SerializeField] public int poisonValue;
         [SerializeField] public int durationOfAffect;
         private PlayerHealth playerHealth;
         private Animator animator;
         private int cubeHealth;
 
         private void Start() {
-            // playerHealth = GetComponent<PlayerHealth>();
-            animator = greenMushroomAnimation.GetComponent<Animator>();
+            playerHealth = FindObjectOfType<PlayerHealth>();
+            // animator = greenMushroomAnimation.GetComponent<Animator>();
         }
 
         public void GreenMushroom()
         {
-            // cubeHealth = playerHealth.GetHealth();
-            // cubeHealth -= mushroomHealthAffect;
-            // Debug.Log($"Cube health is now {cubeHealth}");
+            cubeHealth = playerHealth.GetCurrentHealth();
+            cubeHealth -= poisonValue;
+            playerHealth.GetUpdatedHealth(cubeHealth);
             Destroy(this.gameObject);
-            // StartCoroutine("AnimatePoison");
+            StartCoroutine("AnimatePoison");
         }
 
         IEnumerator AnimatePoison()
         {
             greenMushroomAnimation.SetActive(true);
-            animator.Play("Poison");
             yield return new WaitForSeconds(durationOfAffect);
-            Debug.Log("Finished coroutine at timestamp: " + Time.time);
+            Debug.Log("Do you get this");
             greenMushroomAnimation.SetActive(false);
         }
     }
