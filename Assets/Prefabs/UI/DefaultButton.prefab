@@ -188,15 +188,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Play
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f375dd2412593419d9b0a9e218007a1d, type: 2}
-  m_sharedMaterial: {fileID: -2232024762872380612, guid: f375dd2412593419d9b0a9e218007a1d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c481bfb5428d64805b25a4cbaae75cda, type: 2}
+  m_sharedMaterial: {fileID: 5004643537920044946, guid: c481bfb5428d64805b25a4cbaae75cda, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294769149
+  m_fontColor: {r: 0.990566, g: 0.97654855, b: 0.98728853, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -213,8 +213,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

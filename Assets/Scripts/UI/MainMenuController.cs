@@ -9,15 +9,32 @@ namespace IndieWizards.UI
         public AudioManager audioManager;
         public SceneLoader sceneLoader;
 
+        public GameObject mainMenuPanel;
+        public GameObject settingsPanel;
+
         private void Start()
         {
             ValidateDependencies();
             audioManager.PlayMainMenuMusic();
+
+            ShowMainMenuPanel();
         }
 
         public void Play()
         {
             sceneLoader.LoadGameScene();
+        }
+
+        public void ShowMainMenuPanel()
+        {
+            mainMenuPanel.SetActive(true);
+            settingsPanel.SetActive(false);
+        }
+
+        public void ShowSettingsPanel()
+        {
+            mainMenuPanel.SetActive(false);
+            settingsPanel.SetActive(true);
         }
 
         private void ValidateDependencies()

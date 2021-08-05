@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace  IndieWizards.DataStorage
@@ -9,32 +10,25 @@ namespace  IndieWizards.DataStorage
         private bool clearSettings = false;
 
         private const string PlayerPrefKeyTotalVolume = "TotalVolume";
-        private const string PlayerPrefKeyMusicVolume = "MusicVolume";
-        private const string PlayerPrefKeySoundEffectsVolume = "SoundEffectsVolume";
+        private const int DefaultVolume = 50;
 
-        private const float DefaultVolume = 0.5f;
+        public int Volume { get; set; }
+        public float VolumeAsPercent { get { return Volume / 100.0f; } }
 
-        public float TotalVolume { get; set; }
-        public float MusicVolume { get; set; }
-        public float SoundEffectsVolume { get; set; }
-
-        private void Start()
+        private void Awake()
         {
             if (clearSettings)
             {
                 PlayerPrefs.DeleteAll();
             }
 
-            MusicVolume = PlayerPrefs.GetFloat(PlayerPrefKeyMusicVolume, DefaultVolume);
-            TotalVolume = PlayerPrefs.GetFloat(PlayerPrefKeyTotalVolume, DefaultVolume);
-            SoundEffectsVolume = PlayerPrefs.GetFloat(PlayerPrefKeySoundEffectsVolume, DefaultVolume);
+            Volume = PlayerPrefs.GetInt(PlayerPrefKeyTotalVolume, DefaultVolume);
         }
 
         public void Save()
         {
-            PlayerPrefs.SetFloat(PlayerPrefKeyMusicVolume, MusicVolume);
-            PlayerPrefs.SetFloat(PlayerPrefKeySoundEffectsVolume, SoundEffectsVolume);
-            PlayerPrefs.SetFloat(PlayerPrefKeyTotalVolume, TotalVolume);
+            PlayerPrefs.SetInt(PlayerPrefKeyTotalVolume, Volume);
+            PlayerPrefs.Save();
         }
     }
 }
