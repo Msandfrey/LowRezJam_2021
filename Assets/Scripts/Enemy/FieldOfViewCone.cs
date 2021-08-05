@@ -13,11 +13,11 @@ namespace IndieWizards.Enemy
         [SerializeField] private bool isLookingForPlayer = false;
         private Mesh mesh;
         private Vector3 origin;
-        private float startingAngle;
-        private float fov;
+        [SerializeField] private float startingAngle;
+        [SerializeField] private float fov;
         [SerializeField] private int rayCount;
         private float angleIncrease;
-        private float viewDistance;
+        [SerializeField] private float viewDistance;
         [SerializeField] EnemyController enemyController;
 
         // Use this for initialization
@@ -25,7 +25,7 @@ namespace IndieWizards.Enemy
         {
             mesh = new Mesh();
             GetComponent<MeshFilter>().mesh = mesh;
-            fov = 90f;
+            //fov = 90f;
             origin = transform.position;
             //get this from somewhere else
 
@@ -36,7 +36,7 @@ namespace IndieWizards.Enemy
          
             //rayCount = 2;
             angleIncrease = fov / rayCount;
-            viewDistance = 5f;
+            //viewDistance = 5f;
             float angle = startingAngle;
 
             Vector3[] vertices = new Vector3[rayCount + 2];
@@ -56,7 +56,7 @@ namespace IndieWizards.Enemy
                 Vector3 direction = new Vector3(Mathf.Cos(angleRad), Mathf.Sin(angleRad));
                 Vector3 vertex;
                 RaycastHit2D raycastHit2D = Physics2D.Raycast(origin, direction, viewDistance, layerMask);
-                //Debug.DrawRay(origin, direction * viewDistance, Color.blue, .2f);
+                Debug.DrawRay(origin, direction * viewDistance, Color.blue, .2f);
                 if(!raycastHit2D)
                 {
                     //nohit
@@ -107,6 +107,7 @@ namespace IndieWizards.Enemy
             if(n<0) { n += 360; }
             startingAngle = Mathf.RoundToInt(n);
             startingAngle -= fov / 2f;
+            startingAngle -= 90 - fov;
         }
     }
 }
