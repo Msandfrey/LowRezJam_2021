@@ -15,6 +15,7 @@ namespace IndieWizards.UI
         private void Start()
         {
             ValidateDependencies();
+
             audioManager.PlayMainMenuMusic();
 
             ShowMainMenuPanel();
