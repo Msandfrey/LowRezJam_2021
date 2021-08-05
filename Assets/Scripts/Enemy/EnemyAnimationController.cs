@@ -23,6 +23,8 @@ namespace IndieWizards.Enemy
         {
             // if you moving left/right
             animator.SetBool("isMoving", true);
+            animator.SetBool("isMovingUp", false);
+            animator.SetBool("isMovingDown", false);
         }
 
         public void Idle()
@@ -38,6 +40,7 @@ namespace IndieWizards.Enemy
         public void WalkUp()
         {
             //moving up
+            animator.SetBool("isMoving", true);
             animator.SetBool("isMovingUp", true);
             animator.SetBool("isMovingDown", false);
         }
@@ -45,6 +48,7 @@ namespace IndieWizards.Enemy
         public void WalkDown()
         {
             //moving up
+            animator.SetBool("isMoving", true);
             animator.SetBool("isMovingDown", true);
             animator.SetBool("isMovingUp", false);
         }

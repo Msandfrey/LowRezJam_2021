@@ -23,6 +23,7 @@ namespace IndieWizards.Enemy
         PatrolAITree patrolAITree;
         Wait wait;
         //cone stuff
+        [SerializeField] VisibleConeDirection visibleConeDirection;
         [SerializeField] FieldOfViewCone fieldOfViewCone;
         [SerializeField] FieldOfViewCone playerDetectionCone;
         Vector2 aimDirection;
@@ -105,6 +106,7 @@ namespace IndieWizards.Enemy
 
         void ChangeDirection(EnemyDirection enemyDirection)
         {
+            Debug.Log("is change dir getting called");
             switch (enemyDirection)//rotate 90 degrees counter-clockwise for some reason
             {
                 case EnemyDirection.Up://up is left
@@ -144,11 +146,13 @@ namespace IndieWizards.Enemy
                     //if moving up
                     currentDirection = EnemyDirection.Up;
                     aimDirection = Vector2.left;
+                    visibleConeDirection.FaceUp();
                 }
                 else
                 {
                     currentDirection = EnemyDirection.Down;
                     aimDirection = Vector2.right;
+                    visibleConeDirection.FaceDown();
                 }
             }
             else
@@ -164,11 +168,13 @@ namespace IndieWizards.Enemy
                     //if moving right
                     currentDirection = EnemyDirection.Right;
                     aimDirection = Vector2.up;
+                    visibleConeDirection.FaceRight();
                 }
                 else
                 {
                     currentDirection = EnemyDirection.Left;
                     aimDirection = Vector2.down;
+                    visibleConeDirection.FaceLeft();
                 }
             }
         }
