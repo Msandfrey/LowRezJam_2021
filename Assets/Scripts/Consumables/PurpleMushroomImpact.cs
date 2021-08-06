@@ -7,18 +7,20 @@ namespace IndieWizards.Consumables
 {
     public class PurpleMushroomImpact : MonoBehaviour
     {
-        [SerializeField] private GameObject cube;
+        [SerializeField] private GameObject purpleMushroom;
+        private Animator animator;
 
-        private void FixedUpdate() 
-        {
-            
+        private void Start() {
+            animator = purpleMushroom.GetComponent<Animator>();
         }
 
-        public void PurpleMushroom()
+        public void AnimateAcid()
         {
-            // generate cone for 5 seconds so cube can attack enemies in sight.
-            // enable game object with collider from cube to detect collider of mushroom
-            Debug.Log("purple got eaten. acid cone up.");
+            animator.SetTrigger("acid");
+        }
+
+        public void DestroyPurpleMushroom()
+        {
             Destroy(this.gameObject);
         }
     }

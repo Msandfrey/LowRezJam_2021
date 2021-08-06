@@ -16,6 +16,16 @@ namespace IndieWizards.Animations
         {
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
         }
+
+        public void ShowCollider()
+        {
+            gameObject.GetComponent<BoxCollider2D>().enabled = true;
+        }
+
+        public void HideCollider()
+        {
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        }
     }
 }
 
