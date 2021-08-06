@@ -18,6 +18,11 @@ namespace IndieWizards.GameManagment
             Time.timeScale = 1.0f;
         }
 
+        private void Start()
+        {
+            audioManager.PlayGameMusic();    
+        }
+
         public void Play()
         {
             sceneLoader.LoadGameScene();    

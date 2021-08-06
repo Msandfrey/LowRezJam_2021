@@ -1,5 +1,6 @@
 using UnityEngine;
 using IndieWizards.DataStorage;
+using System;
 
 namespace IndieWizards.Audio
 {
@@ -31,6 +32,11 @@ namespace IndieWizards.Audio
         private void Start()
         {
             SetVolumeLevels();
+        }
+
+        public void PlayGameMusic()
+        {
+            Debug.LogError("Not implemented");
         }
 
         public void PlayMainMenuMusic()
