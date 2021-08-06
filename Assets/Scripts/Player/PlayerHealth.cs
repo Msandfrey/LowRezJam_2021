@@ -21,7 +21,7 @@ namespace IndieWizards.Player
 
         private void Update() 
         {
-            //ShowHP();
+            ShowHP();
             if (playerHealth <= 0)
             {
                 playerHealth = 0;
