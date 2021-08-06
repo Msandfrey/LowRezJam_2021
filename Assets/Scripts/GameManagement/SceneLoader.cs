@@ -5,14 +5,17 @@ namespace IndieWizards.GameManagment
 {
     public class SceneLoader : MonoBehaviour
     {
+        private const string GameScene = "Game";
+        private const string MainMenuScene = "MainMenuScreen";
+
         public void LoadGameScene()
         {
-            SceneManager.LoadScene("Thomas");
+            SceneManager.LoadScene(GameScene);
         }
 
         public void LoadMainMenuScene()
         {
-            SceneManager.LoadScene("MainMenuScreen");
+            SceneManager.LoadScene(MainMenuScene);
         }
     }
 }
