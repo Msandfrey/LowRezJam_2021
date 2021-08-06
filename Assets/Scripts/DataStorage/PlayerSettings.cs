@@ -26,7 +26,7 @@ namespace  IndieWizards.DataStorage
             set
             {
                 volume = value;
-                onVolumeChanged.Invoke();
+                onVolumeChanged?.Invoke();
             }
         }
 
