@@ -1,23 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using IndieWizards.Consumables;
 using TMPro;
 
 namespace IndieWizards.Player
 {
     public class PlayerHealth : MonoBehaviour
     {
-        [SerializeField] public int playerHealth;
-
         [Header("Placeholder UI")]
         [SerializeField] public TextMeshProUGUI cubeHealthValue;
+        [SerializeField] public int playerHealth;
 
-        private void Update() {
-            ShowHP();
+        [SerializeField] private GameObject player;
+        private Animator animator;
+
+        private void Start() 
+        {
+            animator = player.GetComponent<Animator>();
         }
 
-        
+        private void Update() 
+        {
+            ShowHP();
+            if (playerHealth <= 0)
+            {
+                playerHealth = 0;
+                AnimateDeath();
+            }
+        }
+
         public int GetCurrentHealth()
         {
             return playerHealth;
@@ -29,13 +40,9 @@ namespace IndieWizards.Player
             Debug.Log($"Cube health is now {playerHealth}");
         }
 
-        private void Death()
+        private void AnimateDeath()
         {
-            if (playerHealth <= 0)
-            {
-               playerHealth = 0;
-               // game over UI panel
-            }
+            animator.SetTrigger("death");
         }
 
         public void ShowHP()

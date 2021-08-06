@@ -144,6 +144,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18dcbd0b66e7234a8d7e5876457eeb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeHealth: 10
-  mushroomHealthAffect: 1
+  greenMushroom: {fileID: 0}
+  poisonValue: 0
   durationOfAffect: 5

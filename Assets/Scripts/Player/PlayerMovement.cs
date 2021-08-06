@@ -83,10 +83,10 @@ namespace IndieWizards.Player
         private void Move(Vector3 direction)
         {
             transform.position = Vector3.MoveTowards(transform.position, transform.position + direction, Time.deltaTime * speed);
-            // animation
+
             if (direction.x != 0)
             {
-                if(direction.x == -1) 
+                if (direction.x == -1) 
                 {
                     spriteRenderer.flipX = true;
                 } 
@@ -99,7 +99,7 @@ namespace IndieWizards.Player
 
             if (direction.y != 0)
             {
-                if(direction.y == -1)
+                if (direction.y == -1)
                 {
                     animator.SetBool("isMovingDown", true);
                 }

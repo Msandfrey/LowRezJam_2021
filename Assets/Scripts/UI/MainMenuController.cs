@@ -1,6 +1,6 @@
 using UnityEngine;
 using IndieWizards.Audio;
-using IndieWizards.GameManagment;
+using IndieWizards.GameManagement;
 
 namespace IndieWizards.UI
 {

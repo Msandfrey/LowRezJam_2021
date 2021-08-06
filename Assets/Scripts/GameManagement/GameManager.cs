@@ -1,7 +1,7 @@
 using UnityEngine;
 using IndieWizards.Audio;
 
-namespace IndieWizards.GameManagment
+namespace IndieWizards.GameManagement
 {
     public class GameManager : MonoBehaviour
     {

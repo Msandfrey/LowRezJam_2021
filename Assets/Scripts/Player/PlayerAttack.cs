@@ -7,18 +7,17 @@ namespace IndieWizards.Player
 {
     public class PlayerAttack : MonoBehaviour
     {
-        [SerializeField] public float distanceToKill;
-
-        private void OnCollisionEnter2D(Collision2D collider) 
+        private void OnTriggerEnter2D(Collider2D collider) 
         {
-            TakeDamage takeDamage = collider.gameObject.GetComponent<TakeDamage>();
-
-            // if cube is X pixels away from enemy, and is facing it.
-            float distance =  Vector3.Distance(transform.position, collider.gameObject.transform.position);
-            if (distance <= distanceToKill)
+            if (!collider.gameObject.GetComponent<TakeDamage>())
             {
-                takeDamage.DestroyEnemy();
+                return;
             }
-        } 
+            
+            Debug.Log("I'm about to eat you");
+            TakeDamage takeDamage = collider.gameObject.GetComponent<TakeDamage>();
+            // update player score. 
+            takeDamage.DestroyEnemy();
+        }
     }
 }
