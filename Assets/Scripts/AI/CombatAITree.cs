@@ -12,6 +12,8 @@ namespace IndieWizards.AI
         [SerializeField]
         float attackRange = 1.5f;
 
+        enum CombatStates { Chasing, Attacking, Waiting };
+        CombatStates currentCombatState;
 
         EnemyController enemyController;
         EnemyAnimationController enemyAnimationController;
@@ -41,14 +43,34 @@ namespace IndieWizards.AI
                 float distance = Vector2.Distance(playerPosition, transform.position);
                 if(Mathf.Abs(distance) <= attackRange)
                 {
-                    meleeAttackAIAction.Run();
-                    enemyAnimationController.Attack();
+                    bool doesAttackHit = false;
+                    if (currentCombatState != CombatStates.Attacking)
+                    {
+                        enemyAnimationController.Attack();
+                        doesAttackHit = meleeAttackAIAction.Run();
+                        currentCombatState = CombatStates.Attacking;
+                        StartCoroutine(Wait());
+                        isWaiting = true;
+                        return;
+                    }
+                    //wait for animation of attack to finish before stopping attack
+                    //need check to jump straight into attack
+                    meleeAttackAIAction.EndAttack();
+                    if (doesAttackHit)
+                    {
+
+                    }
                     //2.5---wait
+                    currentCombatState = CombatStates.Waiting;
                     StartCoroutine(Wait());
                     isWaiting = true;
                     return;
                 }
                 //3---------move to player
+                //making sure not attacking here
+                meleeAttackAIAction.EndAttack();
+
+                currentCombatState = CombatStates.Chasing;
                 moveToLocationAIAction.Run(playerPosition, moveSpeed);
                 EnemyController.EnemyDirection direction = enemyController.GetCurrentDirection();
                 switch (direction)
