@@ -1,15 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using IndieWizards.Player;
 
 namespace IndieWizards.Consumables
 {
     public class PurpleMushroomFollowPlayerDirection : MonoBehaviour
     {
-        private void Update() 
-        {
-            // get the direction of the cube
-            // transform.position is the direction of the cube.
+        [SerializeField] private GameObject cube;
+
+
+        private void Update() {
+            FollowCube();
+        }
+
+        private void FollowCube()
+        {            
+            Debug.Log("purple's rotation: " + transform.rotation);
+            Debug.Log(cube.transform.position.x);
         }
     }
 }

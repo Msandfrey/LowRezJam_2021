@@ -76,6 +76,5 @@ namespace IndieWizards.GameManagement
             isPaused = false;
             pauseMenu.SetActive(false);
         }
-
     }
 }

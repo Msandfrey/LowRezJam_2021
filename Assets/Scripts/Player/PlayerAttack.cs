@@ -13,8 +13,7 @@ namespace IndieWizards.Player
             {
                 return;
             }
-            
-            Debug.Log("I'm about to eat you");
+
             TakeDamage takeDamage = collider.gameObject.GetComponent<TakeDamage>();
             // update player score. 
             takeDamage.DestroyEnemy();
