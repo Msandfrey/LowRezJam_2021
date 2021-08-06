@@ -5,6 +5,9 @@ namespace  IndieWizards.DataStorage
 {
     public class PlayerSettings : MonoBehaviour
     {
+        public delegate void VolumeChangedCallback();
+        public VolumeChangedCallback onVolumeChanged;
+
         [SerializeField]
         [Tooltip("For debug purposes only. Set to true to force all player settings to get cleared each time the script loads.")]
         private bool clearSettings = false;
@@ -12,8 +15,28 @@ namespace  IndieWizards.DataStorage
         private const string PlayerPrefKeyTotalVolume = "TotalVolume";
         private const int DefaultVolume = 50;
 
-        public int Volume { get; set; }
-        public float VolumeAsPercent { get { return Volume / 100.0f; } }
+        private int volume;
+
+        public int Volume
+        {
+            get
+            {
+                return volume;
+            }
+            set
+            {
+                volume = value;
+                onVolumeChanged.Invoke();
+            }
+        }
+
+        public float VolumeAsDecimal
+        {
+            get
+            {
+                return Volume / 100.0f;
+            }
+        }
 
         private void Awake()
         {

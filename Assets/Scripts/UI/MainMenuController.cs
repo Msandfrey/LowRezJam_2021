@@ -7,7 +7,7 @@ namespace IndieWizards.UI
     public class MainMenuController : MonoBehaviour
     {
         public AudioManager audioManager;
-        public SceneLoader sceneLoader;
+        public GameManager gameManager;
 
         public GameObject mainMenuPanel;
         public GameObject settingsPanel;
@@ -15,6 +15,7 @@ namespace IndieWizards.UI
         private void Start()
         {
             ValidateDependencies();
+
             audioManager.PlayMainMenuMusic();
 
             ShowMainMenuPanel();
@@ -22,7 +23,7 @@ namespace IndieWizards.UI
 
         public void Play()
         {
-            sceneLoader.LoadGameScene();
+            gameManager.Play();
         }
 
         public void ShowMainMenuPanel()
@@ -43,9 +44,9 @@ namespace IndieWizards.UI
             {
                 Debug.LogError("AudioManager is required but not set");
             }
-            if (sceneLoader == null)
+            if (gameManager == null)
             {
-                Debug.LogError("SceneLoader is required but not set");
+                Debug.LogError("GameManager is required but not set");
             }
         }
     }
