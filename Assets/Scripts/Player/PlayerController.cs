@@ -2,6 +2,7 @@ using UnityEngine;
 using IndieWizards.Character;
 using IndieWizards.Consumables;
 using IndieWizards.GameManagement;
+using IndieWizards.UI;
 using System;
 
 namespace IndieWizards.Player
@@ -13,6 +14,7 @@ namespace IndieWizards.Player
         private Animator animator;
 
         private Health health;
+        private HealthBar healthBar;
         private GameManager gameManager;
         private Consumer consumer;
 
@@ -23,6 +25,8 @@ namespace IndieWizards.Player
 
             health = GetComponent<Health>();
             health.onDeath += HandleDeath;
+
+            healthBar = GetComponent<HealthBar>();
         }
 
         private void Start()
@@ -67,6 +71,7 @@ namespace IndieWizards.Player
         private void ApplyHealthPowerUp(int hitpoints)
         {
             health.RestoreHealth(hitpoints);
+            healthBar.RestoreHealthBar(hitpoints);
         }
 
         private void HandleDeath()

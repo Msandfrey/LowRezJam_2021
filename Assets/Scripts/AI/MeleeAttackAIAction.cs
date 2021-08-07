@@ -2,6 +2,7 @@ using UnityEngine;
 using IndieWizards.Enemy;
 using IndieWizards.Player;
 using IndieWizards.Character;
+using IndieWizards.UI;
 
 namespace IndieWizards.AI
 {
@@ -73,11 +74,12 @@ namespace IndieWizards.AI
             rightCollider.enabled = false;
         }
 
-        private void Attack(Health health)
+        private void Attack(Health health, HealthBar healthBar)
         {
             if (timeSinceLastAttack - Time.deltaTime >= minTimeBetweenAttacks)
             {
                 health.ApplyDamage(attackDamageInHitPoints);
+                healthBar.DecreaseHealthBar(attackDamageInHitPoints);
                 timeSinceLastAttack = Time.deltaTime;
             }
         }
@@ -92,7 +94,8 @@ namespace IndieWizards.AI
                 leftCollider.enabled = false;
                 rightCollider.enabled = false;
 
-                Attack(collision.gameObject.GetComponent<Health>());
+                Attack(collision.gameObject.GetComponent<Health>(),
+                       collision.gameObject.GetComponent<HealthBar>());
             }
         }
 
@@ -101,7 +104,8 @@ namespace IndieWizards.AI
             if (collision.tag.Equals("Player"))
             {
 
-                Attack(collision.gameObject.GetComponent<Health>());
+                Attack(collision.gameObject.GetComponent<Health>(),
+                       collision.gameObject.GetComponent<HealthBar>());
             }
         }
     }
