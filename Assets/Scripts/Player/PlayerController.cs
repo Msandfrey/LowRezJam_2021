@@ -1,25 +1,35 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using IndieWizards.Character;
+using IndieWizards.GameManagement;
 
 namespace IndieWizards.Player
 {
     public class PlayerController : MonoBehaviour
     {
-        PlayerMovement playerMovement;
-        PlayerAttack playerAttack;
-        PlayerHealth playerHealth;
+        [SerializeField]
+        private Animator animator;
 
-        void Start()
+        private Health health;
+        private GameManager gameManager;
+
+        private void Start()
         {
-            playerMovement = GetComponent<PlayerMovement>();
-            playerAttack = GetComponent<PlayerAttack>();
-            playerHealth = GetComponent<PlayerHealth>();
+            gameManager = GameObject.FindObjectOfType<GameManager>();
+
+            health = GetComponent<Health>();
+            health.onDeath += HandleDeath;
         }
 
-        void Update()
+        private void HandleDeath()
         {
-            
+            animator.SetTrigger("death");
+
+            Invoke(nameof(GameLost), 5.0f);
+        }
+
+        private void GameLost()
+        {
+            gameManager.GameOver(false);
         }
     }
 }
