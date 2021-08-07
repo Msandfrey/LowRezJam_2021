@@ -1,7 +1,6 @@
 using UnityEngine;
 using IndieWizards.AI;
 using IndieWizards.Character;
-using System;
 
 namespace IndieWizards.Enemy
 {
@@ -48,7 +47,7 @@ namespace IndieWizards.Enemy
         private void HandleDeath()
         {
             Debug.Log("I've been killed");
-            Destroy(this);
+            Destroy(this.gameObject);
         }
 
         private void Start()

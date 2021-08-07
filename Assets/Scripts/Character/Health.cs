@@ -1,6 +1,5 @@
 using UnityEngine;
 using TMPro;
-using IndieWizards.UI;
 
 namespace IndieWizards.Character
 {
@@ -38,8 +37,9 @@ namespace IndieWizards.Character
 
         public void TakeDamage(int hitPoints)
         {
-            Debug.Log("Taking Damage => " + hitPoints);
             currentHitPoints = Mathf.Max(currentHitPoints - hitPoints, 0);
+
+            Debug.Log("Taking Damage => " + hitPoints + ", Hit Points Remaning => " + currentHitPoints);
 
             if (currentHitPoints == 0 && !onDeathCallbackRaised)
             {
