@@ -20,19 +20,24 @@ namespace IndieWizards.Character
         
         private int currentHitPoints;
 
+        // Used to make sure we only trigger onDeath once
+        private bool onDeathCallbackRaised;
+
         private void Awake()
         {
             currentHitPoints = initialHitPoints;
+            onDeathCallbackRaised = false;
         }
 
         public void ApplyDamage(int hitPoints)
         {
             currentHitPoints = Mathf.Max(currentHitPoints - hitPoints, 0);
 
-            if (currentHitPoints == 0)
+            if (currentHitPoints == 0 && !onDeathCallbackRaised)
             {
                 Debug.Log("HP is at zero. Invoking onDeath callback");
                 onDeath?.Invoke();
+                onDeathCallbackRaised = true;
             }
 
             UpdateHealthText(currentHitPoints);
