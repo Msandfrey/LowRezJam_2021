@@ -1,22 +1,46 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using IndieWizards.Enemy;
+using IndieWizards.Character;
 
 namespace IndieWizards.Player 
 {
     public class PlayerAttack : MonoBehaviour
     {
-        private void OnTriggerEnter2D(Collider2D collider) 
-        {
-            if (!collider.gameObject.GetComponent<TakeDamage>())
-            {
-                return;
-            }
+        [Header("Attack Settings")]
+        [SerializeField]
+        private int damagePerAttack = 1;
+        [SerializeField]
+        private float minTimeBetweenAttacks = 0.5f;
 
-            TakeDamage takeDamage = collider.gameObject.GetComponent<TakeDamage>();
-            // update player score. 
-            takeDamage.DestroyEnemy();
+        private float timeSinceLastAttack = 0.0f;
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.tag.Equals("Enemy"))
+            {
+                Attack(collision.gameObject);
+            }
+        }
+
+        private void OnCollisionStay2D(Collision2D collision)
+        {
+            if (collision.gameObject.tag.Equals("Enemy"))
+            {
+                Attack(collision.gameObject);
+            }
+        }
+
+        private void Attack(GameObject gameObject)
+        {
+            if (timeSinceLastAttack - Time.deltaTime >= minTimeBetweenAttacks)
+            {
+                Health health = gameObject.GetComponent<Health>();
+                if (health != null)
+                {
+                    Debug.Log("Attacking enemy");
+                    health.TakeDamage(damagePerAttack);
+                    timeSinceLastAttack = Time.deltaTime;
+                }
+            }
         }
     }
 }

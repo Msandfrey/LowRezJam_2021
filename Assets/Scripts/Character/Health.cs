@@ -12,9 +12,9 @@ namespace IndieWizards.Character
         [Header("Hit point settings")]
 
         [SerializeField]
-        private int initialHitPoints;
+        private int initialHitPoints = 1;
         [SerializeField]
-        private int maxHitPoints;
+        private int maxHitPoints = 1;
 
         [Header("UI components")]
         [SerializeField]
@@ -36,8 +36,9 @@ namespace IndieWizards.Character
             UpdateHealthText(currentHitPoints);
         }
 
-        public void ApplyDamage(int hitPoints)
+        public void TakeDamage(int hitPoints)
         {
+            Debug.Log("Taking Damage => " + hitPoints);
             currentHitPoints = Mathf.Max(currentHitPoints - hitPoints, 0);
 
             if (currentHitPoints == 0 && !onDeathCallbackRaised)
@@ -59,7 +60,10 @@ namespace IndieWizards.Character
 
         private void UpdateHealthText(int hitPoints)
         {
-            healthText.text = hitPoints.ToString();
+            if (healthText != null)
+            {
+                healthText.text = hitPoints.ToString();
+            }
         }
     }
 }

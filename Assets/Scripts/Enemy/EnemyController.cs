@@ -1,54 +1,64 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using IndieWizards.AI;
+using IndieWizards.Character;
+using System;
 
 namespace IndieWizards.Enemy
 {
+    [RequireComponent(typeof(Health))]
     public class EnemyController : MonoBehaviour
     {
         //i made this but didn't use it at all
         public enum EnemyState { Idle, Patrol, Combat };
         public enum EnemyDirection { Up, Down, Left, Right, NotMoving };
-        EnemyState currentState = EnemyState.Idle;
-        EnemyDirection currentDirection = EnemyDirection.Left;
-        //collision---not used now but maybe later? maybe just in the actual attack place
-        //Rigidbody2D rigidbody;
-        //animation
-        EnemyAnimationController enemyAnimationController;
-        //action script references
-        CombatAITree combatAITree;
-        IdleAITree idleAITree;
-        EnemyTakeDamage enemyTakeDamage;
-        PatrolAITree patrolAITree;
-        Wait wait;
+
         //cone stuff
-        [SerializeField] VisibleConeDirection visibleConeDirection;
-        [SerializeField] FieldOfViewCone fieldOfViewCone;
-        [SerializeField] FieldOfViewCone playerDetectionCone;
-        Vector2 aimDirection;
+        [Header("Line of sight settings")]
+        [SerializeField]
+        private VisibleConeDirection visibleConeDirection;
 
+        [SerializeField]
+        private FieldOfViewCone fieldOfViewCone;
+        
+        [SerializeField]
+        private FieldOfViewCone playerDetectionCone;
 
-        // Start is called before the first frame update
-        void Start()
+        private EnemyState currentState = EnemyState.Idle;
+        private EnemyDirection currentDirection = EnemyDirection.Left;
+
+        private EnemyAnimationController enemyAnimationController;
+
+        private CombatAITree combatAITree;
+        private IdleAITree idleAITree;
+        private PatrolAITree patrolAITree;
+        private Vector2 aimDirection;
+        private Health health;
+
+        private void Awake()
         {
-            //get all components
-            //rigidbody = GetComponent<Rigidbody2D>();
+            health = GetComponent<Health>();
+            health.onDeath += HandleDeath;
+
             combatAITree = GetComponent<CombatAITree>();
             enemyAnimationController = GetComponent<EnemyAnimationController>();
-            enemyTakeDamage = GetComponent<EnemyTakeDamage>();
             idleAITree = GetComponent<IdleAITree>();
             patrolAITree = GetComponent<PatrolAITree>();
-            wait = GetComponent<Wait>();
+        }
+
+        private void HandleDeath()
+        {
+            Debug.Log("I've been killed");
+            Destroy(this);
+        }
+
+        private void Start()
+        {
             //set direction and state
             ChangeStates(currentState);
             ChangeDirection(currentDirection);
-
-
         }
 
-        // Update is called once per frame
-        void Update()
+        private void Update()
         {
             fieldOfViewCone.SetOrigin(transform.position);
             fieldOfViewCone.SetAimDirection(aimDirection);

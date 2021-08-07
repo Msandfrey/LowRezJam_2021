@@ -17,7 +17,7 @@ namespace IndieWizards.Enemy
 
         private void AttackEnemy(Health health, HealthBar healthBar)
         {
-            health.ApplyDamage(enemyDamageInHitPoints);
+            health.TakeDamage(enemyDamageInHitPoints);
             healthBar.DecreaseHealthBar(enemyDamageInHitPoints);
         }
     }

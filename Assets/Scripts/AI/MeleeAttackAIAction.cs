@@ -1,6 +1,5 @@
 using UnityEngine;
 using IndieWizards.Enemy;
-using IndieWizards.Player;
 using IndieWizards.Character;
 using IndieWizards.UI;
 
@@ -27,7 +26,7 @@ namespace IndieWizards.AI
         [Header("Attack Settings")]
         [Tooltip("Number of hitpoint damage done each attack")]
         [SerializeField]
-        private int attackDamageInHitPoints;
+        private int damagePerAttack;
         [SerializeField]
         private float minTimeBetweenAttacks = 1.0f;
 
@@ -78,15 +77,15 @@ namespace IndieWizards.AI
         {
             if (timeSinceLastAttack - Time.deltaTime >= minTimeBetweenAttacks)
             {
-                health.ApplyDamage(attackDamageInHitPoints);
-                healthBar.DecreaseHealthBar(attackDamageInHitPoints);
+                health.TakeDamage(damagePerAttack);
+                healthBar.DecreaseHealthBar(damagePerAttack);
                 timeSinceLastAttack = Time.deltaTime;
             }
         }
 
-        private void OnTriggerEnter2D(Collider2D collision)
+        private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.tag.Equals("Player"))
+            if (collision.gameObject.tag.Equals("Player"))
             {
                 //turn off collider
                 upCollider.enabled = false;
@@ -99,11 +98,10 @@ namespace IndieWizards.AI
             }
         }
 
-        private void OnTriggerStay2D(Collider2D collision)
+        private void OnCollisionStay2D(Collision2D collision)
         {
-            if (collision.tag.Equals("Player"))
+            if (collision.gameObject.tag.Equals("Player"))
             {
-
                 Attack(collision.gameObject.GetComponent<Health>(),
                        collision.gameObject.GetComponent<HealthBar>());
             }

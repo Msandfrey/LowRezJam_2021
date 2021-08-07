@@ -7,7 +7,7 @@ namespace IndieWizards.Consumables
         [SerializeField]
         private ConsumableType consumableType;
 
-        [Tooltip("Amount of power (damage/hitpoints) the consumable provides")]
+        [Tooltip("Amount of power (damage/health hitpoints) the consumable provides")]
         [SerializeField]
         private int amount;
 
