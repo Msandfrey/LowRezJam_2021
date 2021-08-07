@@ -39,11 +39,8 @@ namespace IndieWizards.Character
         {
             currentHitPoints = Mathf.Max(currentHitPoints - hitPoints, 0);
 
-            Debug.Log("Taking Damage => " + hitPoints + ", Hit Points Remaning => " + currentHitPoints);
-
             if (currentHitPoints == 0 && !onDeathCallbackRaised)
             {
-                Debug.Log("HP is at zero. Invoking onDeath callback");
                 onDeath?.Invoke();
                 onDeathCallbackRaised = true;
             }

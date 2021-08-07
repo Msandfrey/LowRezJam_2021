@@ -30,12 +30,16 @@ namespace IndieWizards.AI
         [SerializeField]
         private float minTimeBetweenAttacks = 1.0f;
 
-        private float timeSinceLastAttack = 0.0f;
+        private float timeSinceLastAttack;
 
         private EnemyController enemyController;
 
-        // Start is called before the first frame update
-        void Start()
+        private void Awake()
+        {
+            timeSinceLastAttack = Time.time;            
+        }
+
+        private void Start()
         {
             enemyController = GetComponent<EnemyController>();
         }
@@ -75,11 +79,13 @@ namespace IndieWizards.AI
 
         private void Attack(Health health, HealthBar healthBar)
         {
-            if (timeSinceLastAttack - Time.deltaTime >= minTimeBetweenAttacks)
+            float elapsedTime = Time.time - timeSinceLastAttack;
+
+            if (elapsedTime - Time.deltaTime >= minTimeBetweenAttacks)
             {
                 health.TakeDamage(damagePerAttack);
                 healthBar.DecreaseHealthBar(damagePerAttack);
-                timeSinceLastAttack = Time.deltaTime;
+                timeSinceLastAttack = Time.time;
             }
         }
 
