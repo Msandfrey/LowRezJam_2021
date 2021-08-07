@@ -16,6 +16,7 @@ namespace IndieWizards.Character
         private int maxHitPoints;
 
         [Header("UI components")]
+        [SerializeField]
         private TextMeshProUGUI healthText;
         
         private int currentHitPoints;
@@ -27,6 +28,11 @@ namespace IndieWizards.Character
         {
             currentHitPoints = initialHitPoints;
             onDeathCallbackRaised = false;
+        }
+
+        private void Start()
+        {
+            UpdateHealthText(currentHitPoints);
         }
 
         public void ApplyDamage(int hitPoints)

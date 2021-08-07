@@ -1,9 +1,12 @@
 using UnityEngine;
 using IndieWizards.Character;
+using IndieWizards.Consumables;
 using IndieWizards.GameManagement;
+using System;
 
 namespace IndieWizards.Player
 {
+    [RequireComponent(typeof(Consumer))]
     public class PlayerController : MonoBehaviour
     {
         [SerializeField]
@@ -11,13 +14,59 @@ namespace IndieWizards.Player
 
         private Health health;
         private GameManager gameManager;
+        private Consumer consumer;
+
+        private void Awake()
+        {
+            consumer = GetComponent<Consumer>();
+            consumer.onConsumeItem += HandleConsumeItem;
+
+            health = GetComponent<Health>();
+            health.onDeath += HandleDeath;
+        }
 
         private void Start()
         {
             gameManager = GameObject.FindObjectOfType<GameManager>();
+        }
 
-            health = GetComponent<Health>();
-            health.onDeath += HandleDeath;
+        private void HandleConsumeItem(Consumable consumable)
+        {
+            switch(consumable.ConsummableType)
+            {
+                case ConsumableType.AcidMushroom:
+                    ApplyAcidPowerUp(consumable.Amount);
+                    break;
+
+                case ConsumableType.HealthMushroom:
+                    ApplyHealthPowerUp(consumable.Amount);
+                    break;
+
+                case ConsumableType.PoisonMushroom:
+                    ApplyPoisonPowerUp(consumable.Amount);
+                    break;
+
+                default:
+                    Debug.LogError("Unsupported consumable => " + consumable.ConsummableType);
+                    break;
+            }
+
+            GameObject.Destroy(consumable.gameObject);
+        }
+
+        private void ApplyAcidPowerUp(int damagePerAttack)
+        {
+            Debug.Log("Not implemented");
+        }
+
+        private void ApplyPoisonPowerUp(int damagePerAttack)
+        {
+            Debug.Log("Not implemented");
+        }
+
+        private void ApplyHealthPowerUp(int hitpoints)
+        {
+            health.RestoreHealth(hitpoints);
         }
 
         private void HandleDeath()
@@ -31,5 +80,6 @@ namespace IndieWizards.Player
         {
             gameManager.GameOver(false);
         }
+
     }
 }
