@@ -27,7 +27,7 @@ public class WebGLBuilder
     public static void Build()
     {
         string[] scenes = {
-//            "Assets/Scenes/MainMenu.unity",
+            "Assets/Scenes/MainMenu.unity",
             "Assets/Scenes/Game.unity"
         };
 

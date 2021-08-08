@@ -1,5 +1,4 @@
 using UnityEngine;
-using IndieWizards.Player;
 using IndieWizards.Character;
 
 namespace IndieWizards.Consumables
