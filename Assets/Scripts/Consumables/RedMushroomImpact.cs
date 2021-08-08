@@ -1,29 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using IndieWizards.Player;
+using IndieWizards.Character;
 
 namespace IndieWizards.Consumables
 {
     public class RedMushroomImpact : MonoBehaviour
     {
-        [SerializeField] private GameObject redMushroom;
-        [SerializeField] public int healValue;
-        private int cubeHealth;
-        private PlayerHealth playerHealth;
+        [SerializeField]
+        private GameObject redMushroom;
+        [SerializeField]
+        private int healValue;
+
+        private Health health;
         private Animator animator;
         
         private void Start() 
         {
-            playerHealth = FindObjectOfType<PlayerHealth>();
+            health = FindObjectOfType<Health>();
             animator = redMushroom.GetComponent<Animator>();
         }
 
         public void HealCube()
         {
-            cubeHealth = playerHealth.GetCurrentHealth();
-            cubeHealth += healValue;
-            playerHealth.GetUpdatedHealth(cubeHealth);
+            health.RestoreHealth(healValue);
         }
 
         public void AnimateHeal()

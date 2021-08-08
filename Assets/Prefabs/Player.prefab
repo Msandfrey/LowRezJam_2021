@@ -303,6 +303,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 218277ba2726134498c443af8227a639, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damagePerAttack: 1
+  minTimeBetweenAttacks: 0.5
 --- !u!1 &727647454
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,6 +619,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 218277ba2726134498c443af8227a639, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damagePerAttack: 1
+  minTimeBetweenAttacks: 0.5
 --- !u!114 &5422692274492773028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -755,7 +759,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.6, y: 1.6}
   m_EdgeRadius: 0
 --- !u!114 &7320016679457922048
 MonoBehaviour:
@@ -858,7 +862,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.6, y: 1.6}
   m_EdgeRadius: 0
 --- !u!114 &3470956682640873365
 MonoBehaviour:
@@ -928,7 +932,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.6, y: 1.6}
   m_EdgeRadius: 0
 --- !u!114 &5341734396649886874
 MonoBehaviour:
