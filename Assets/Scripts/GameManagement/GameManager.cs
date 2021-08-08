@@ -24,6 +24,11 @@ namespace IndieWizards.GameManagement
             Time.timeScale = 1.0f;
         }
 
+        private void Start()
+        {
+            audioManager.PlayGameMusic();
+        }
+
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.Escape))

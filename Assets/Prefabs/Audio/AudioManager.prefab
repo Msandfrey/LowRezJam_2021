@@ -48,6 +48,7 @@ MonoBehaviour:
   musicAudioSource: {fileID: 8247860971481959164}
   sfxAudioSource: {fileID: 4483101338267594745}
   titleMusic: {fileID: 8300000, guid: 1cf7353fdade74571a35abb5c9065137, type: 3}
+  gameMusic: {fileID: 8300000, guid: 43a5c09cde391ee44920037a4950c613, type: 3}
   cubeSlurp: {fileID: 8300000, guid: 82e7e9302bbd7450c969d0ca850cc6a7, type: 3}
   acidAttack: {fileID: 8300000, guid: 2d8bd0a3304f64a5384d2f43e4b69458, type: 3}
   acidSprayWithLoop: {fileID: 8300000, guid: bdd1c457dc3664825ac279ba2a27a787, type: 3}
