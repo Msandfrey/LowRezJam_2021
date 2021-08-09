@@ -7,22 +7,13 @@ namespace IndieWizards.AI
     public class FindTarget : MonoBehaviour
     {
         [SerializeField]
-        Transform[] targetCheckpoints;
+        private Transform[] targetCheckpoints;
+        private int currentTarget = 0;
         [SerializeField]
-        Transform playerTransform;
-        int currentTarget = 0;
-
-        // Use this for initialization
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
+        private bool isLoopingPath = false;
+        //dont rely on this. get from level/game manager
+        [SerializeField]
+        private Transform playerTransform;
 
         public Vector2 Run(bool isLookingForPlayer = false)
         {
@@ -35,6 +26,13 @@ namespace IndieWizards.AI
         public void IterateTargetCheckpoint()
         {
             currentTarget++;
+            if (isLoopingPath)
+            {
+                if(currentTarget == targetCheckpoints.Length)
+                {
+                    currentTarget = 0;
+                }
+            }
         }
     }
 }

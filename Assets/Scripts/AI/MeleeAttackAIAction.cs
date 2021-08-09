@@ -7,7 +7,7 @@ namespace IndieWizards.AI
 {
     public class MeleeAttackAIAction : MonoBehaviour
     {
-        [Header("Colliders for ...???")]
+        [Header("Colliders for Detecting Attack")]
         [SerializeField]
         private BoxCollider2D rightCollider;
         [SerializeField]
@@ -16,12 +16,6 @@ namespace IndieWizards.AI
         private BoxCollider2D downCollider;
         [SerializeField]
         private BoxCollider2D upCollider;
-
-        [Header("Settings for ...???")]
-        [SerializeField]
-        private LayerMask layerMask;//set to player layer mask
-        [SerializeField]
-        private float viewDistance;
 
         [Header("Attack Settings")]
         [Tooltip("Number of hitpoint damage done each attack")]
@@ -106,6 +100,12 @@ namespace IndieWizards.AI
         {
             if (collision.gameObject.tag.Equals("Player"))
             {
+                //turn off collider
+                upCollider.enabled = false;
+                downCollider.enabled = false;
+                leftCollider.enabled = false;
+                rightCollider.enabled = false;
+
                 Attack(collision.gameObject.GetComponent<Health>());
             }
         }

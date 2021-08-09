@@ -6,14 +6,14 @@ namespace IndieWizards.AI
 {
     public class PatrolAITree : AITreeBase
     {
-        bool isPatrolling = false;
+        private bool isPatrolling = false;
         //bool isWaiting = false;
         [SerializeField]
-        float moveSpeed = 1f;
-        FindTarget findTarget;
-        MoveToLocationAIAction moveToLocationAIAction;
-        EnemyController enemyController;
-        EnemyAnimationController enemyAnimationController;
+        private float moveSpeed = 1f;
+        private FindTarget findTarget;
+        private MoveToLocationAIAction moveToLocationAIAction;
+        private EnemyController enemyController;
+        private EnemyAnimationController enemyAnimationController;
 
         // Start is called before the first frame update
         void Start()

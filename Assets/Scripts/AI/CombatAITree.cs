@@ -6,20 +6,20 @@ namespace IndieWizards.AI
 {
     public class CombatAITree : AITreeBase
     {
-        bool isInCombat = false;
+        private bool isInCombat = false;
         [SerializeField]
-        float moveSpeed = 1f;
+        private float moveSpeed = 1f;
         [SerializeField]
-        float attackRange = 1.5f;
+        private float attackRange = 1.5f;
 
         enum CombatStates { Chasing, Attacking, Waiting };
-        CombatStates currentCombatState;
+        private CombatStates currentCombatState;
 
-        EnemyController enemyController;
-        EnemyAnimationController enemyAnimationController;
-        FindTarget findTarget;
-        MeleeAttackAIAction meleeAttackAIAction;
-        MoveToLocationAIAction moveToLocationAIAction;
+        private EnemyController enemyController;
+        private EnemyAnimationController enemyAnimationController;
+        private FindTarget findTarget;
+        private MeleeAttackAIAction meleeAttackAIAction;
+        private MoveToLocationAIAction moveToLocationAIAction;
 
         // Use this for initialization
         void Start()
@@ -39,7 +39,9 @@ namespace IndieWizards.AI
             {
                 //1---------find target player
                 Vector2 playerPosition = findTarget.Run(true);
-                //2---------if in range attack
+                if(playerPosition == Vector2.zero) { return; }
+
+                //2---------if in range, attack
                 float distance = Vector2.Distance(playerPosition, transform.position);
                 if(Mathf.Abs(distance) <= attackRange)
                 {
@@ -49,6 +51,7 @@ namespace IndieWizards.AI
                         enemyAnimationController.Attack();
                         doesAttackHit = meleeAttackAIAction.Run();
                         currentCombatState = CombatStates.Attacking;
+                        //wait for animation length
                         StartCoroutine(Wait());
                         isWaiting = true;
                         return;
@@ -66,6 +69,9 @@ namespace IndieWizards.AI
                     isWaiting = true;
                     return;
                 }
+
+                //failsafe until logic gets better
+                if (isWaiting) { return; }
                 //3---------move to player
                 //making sure not attacking here
                 meleeAttackAIAction.EndAttack();

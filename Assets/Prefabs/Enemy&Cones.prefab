@@ -1,5 +1,76 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1684566006002517006
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4280279425227973851}
+  - component: {fileID: 3044167853961579313}
+  - component: {fileID: 7421186804129737033}
+  m_Layer: 0
+  m_Name: ColliderPoximityTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4280279425227973851
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684566006002517006}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2750251709395500993}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3044167853961579313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684566006002517006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e644b332c43dd841b6c9b568faec6db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyController: {fileID: 2750251709395500994}
+--- !u!61 &7421186804129737033
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684566006002517006}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.06625509, y: -0.1495552}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.7, y: 2.1}
+  m_EdgeRadius: 0
 --- !u!1 &2750251709159163708
 GameObject:
   m_ObjectHideFlags: 0
@@ -45,15 +116,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 628aec1197183934ebd1975064291cc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyController: {fileID: 2750251709395500994}
   layerMask:
     serializedVersion: 2
     m_Bits: 8
-  isLookingForPlayer: 1
+  viewDistance: 3.5
   startingAngle: 0
   fov: 50
   rayCount: 7
-  viewDistance: 3.5
-  enemyController: {fileID: 2750251709395500994}
 --- !u!33 &2750251709159163710
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -149,6 +219,7 @@ Transform:
   - {fileID: 1336746085769967695}
   - {fileID: 4116068105137751549}
   - {fileID: 8506141683767202851}
+  - {fileID: 4280279425227973851}
   - {fileID: 471455295605803260}
   m_Father: {fileID: 2750251710183070750}
   m_RootOrder: 0
@@ -217,7 +288,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visibleConeDirection: {fileID: 2750251709869195164}
-  fieldOfViewCone: {fileID: 0}
   playerDetectionCone: {fileID: 2750251709159163585}
 --- !u!114 &2750251709395500999
 MonoBehaviour:
@@ -282,6 +352,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  isLoopingPath: 0
   playerTransform: {fileID: 0}
 --- !u!114 &2750251709395500992
 MonoBehaviour:
@@ -324,10 +395,6 @@ MonoBehaviour:
   leftCollider: {fileID: 4517267920050872270}
   downCollider: {fileID: 6268386030732040473}
   upCollider: {fileID: 168290490398428984}
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 8
-  viewDistance: 0
   damagePerAttack: 1
   minTimeBetweenAttacks: 1
 --- !u!95 &2750251709395501001
@@ -801,7 +868,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4126259413075315690, guid: 6e2a2117c1f3ae744ab90e3284f6e4d3, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4126259413075315690, guid: 6e2a2117c1f3ae744ab90e3284f6e4d3, type: 3}
       propertyPath: m_AnchorMax.x

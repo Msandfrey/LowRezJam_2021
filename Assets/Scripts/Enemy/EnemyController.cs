@@ -7,9 +7,13 @@ namespace IndieWizards.Enemy
     [RequireComponent(typeof(Health))]
     public class EnemyController : MonoBehaviour
     {
-        //i made this but didn't use it at all
+        [SerializeField] Transform playerTransform;
+
         public enum EnemyState { Idle, Patrol, Combat };
         public enum EnemyDirection { Up, Down, Left, Right, NotMoving };
+
+        private EnemyState currentState = EnemyState.Idle;
+        private EnemyDirection currentDirection = EnemyDirection.Left;
 
         //cone stuff
         [Header("Line of sight settings")]
@@ -17,20 +21,16 @@ namespace IndieWizards.Enemy
         private VisibleConeDirection visibleConeDirection;
 
         [SerializeField]
-        private FieldOfViewCone fieldOfViewCone;
-        
-        [SerializeField]
         private FieldOfViewCone playerDetectionCone;
 
-        private EnemyState currentState = EnemyState.Idle;
-        private EnemyDirection currentDirection = EnemyDirection.Left;
+        private Vector2 aimDirection;
 
         private EnemyAnimationController enemyAnimationController;
 
+        //ai tree stuff
         private CombatAITree combatAITree;
         private IdleAITree idleAITree;
         private PatrolAITree patrolAITree;
-        private Vector2 aimDirection;
         private Health health;
 
         private void Awake()
@@ -44,12 +44,6 @@ namespace IndieWizards.Enemy
             patrolAITree = GetComponent<PatrolAITree>();
         }
 
-        private void HandleDeath()
-        {
-            Debug.Log("I've been killed");
-            Destroy(this.gameObject);
-        }
-
         private void Start()
         {
             //set direction and state
@@ -59,10 +53,14 @@ namespace IndieWizards.Enemy
 
         private void Update()
         {
-            fieldOfViewCone.SetOrigin(transform.position);
-            fieldOfViewCone.SetAimDirection(aimDirection);
             playerDetectionCone.SetOrigin(transform.position);
             playerDetectionCone.SetAimDirection(aimDirection);
+        }
+
+        private void HandleDeath()
+        {
+            Debug.Log("I've been killed");
+            Destroy(this.gameObject);
         }
 
         public EnemyState GetCurrentState()
@@ -77,45 +75,73 @@ namespace IndieWizards.Enemy
 
         void SwitchToIdle()
         {
+            currentState = EnemyState.Idle;
             enemyAnimationController.Idle();
             idleAITree.Run();
         }
 
         void SwitchToPatrol()
         {
+            currentState = EnemyState.Patrol;
             patrolAITree.Run();
         }
 
         void SwitchToCombat()
         {
+            currentState = EnemyState.Combat;
             combatAITree.Run();
         }
 
         //deals with cone detection
-        public void OnConeDetection()
+        public void OnPlayerSighted()
         {
             if(currentState == EnemyState.Combat) { return; }
+            idleAITree.Halt();
             patrolAITree.Halt();
             ChangeStates(EnemyState.Combat);
         }
 
-        void OnConeLoseDetection()
+        public void OnPlayerLostVision()
         {
+            if (currentState != EnemyState.Combat) { return; }
             patrolAITree.Halt();
             combatAITree.Halt();
             SwitchToIdle();
         }
 
         //deals with proximity detection
-        void OnProximityDetection()
+        public void OnProximityDetection()
         {
+            if (currentState == EnemyState.Combat) { return; }
+            idleAITree.Halt();
             patrolAITree.Halt();
+            FacePlayer();
+            //may be redundant if player calls this on sight
             SwitchToCombat();
+        }
+
+        private void OnDamage()
+        {
+            //jump to combat if not in combat
+            if(currentState != EnemyState.Combat)
+            {
+                FacePlayer();
+                //may be redundant if player calls this on sight
+                SwitchToCombat();
+            }
+        }
+
+        void FacePlayer()
+        {
+            //turn to face player
+            //calculate angle
+            //Vector2 angleToPlayer = GetAngleFromVector
+            //changedirection
+            ChangeDirection(transform.position - playerTransform.position);
         }
 
         void ChangeDirection(EnemyDirection enemyDirection)
         {
-            Debug.Log("is change dir getting called");
             switch (enemyDirection)//rotate 90 degrees counter-clockwise for some reason
             {
                 case EnemyDirection.Up://up is left

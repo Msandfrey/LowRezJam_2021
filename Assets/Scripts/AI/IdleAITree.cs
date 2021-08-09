@@ -6,9 +6,9 @@ namespace IndieWizards.AI
 {
     public class IdleAITree : AITreeBase
     {
-        bool isIdle = false;
-        EnemyController enemyController;
-        EnemyAnimationController enemyAnimationController;
+        private bool isIdle = false;
+        private EnemyController enemyController;
+        private EnemyAnimationController enemyAnimationController;
 
         // Use this for initialization
         void Start()
