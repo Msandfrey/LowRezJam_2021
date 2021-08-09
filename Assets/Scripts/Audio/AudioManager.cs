@@ -49,6 +49,11 @@ namespace IndieWizards.Audio
             PlayMusic(titleMusic);
         }
 
+        public void PlayCubeSlurp()
+        {
+            sfxAudioSource.PlayOneShot(cubeSlurp);
+        }
+
         private void PlayMusic(AudioClip clip)
         {
             musicAudioSource.Stop();
