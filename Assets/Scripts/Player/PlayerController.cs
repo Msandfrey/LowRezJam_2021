@@ -88,12 +88,13 @@ namespace IndieWizards.Player
 
         private void ApplyAcidPowerUp(int damagePerAttack)
         {
+            // disable enemy's meleeattack damagePerAttack on player to 0 when attacked?
             Debug.Log($"ate <color=purple>purple</color> mushroom");
         }
 
         private void ApplyPoisonPowerUp(int damagePerAttack)
         {
-            // disable enemy's meleeattack damagePerAttack on player to 0?
+            // disable enemy's meleeattack damagePerAttack on player to 0 when attacked?
             Debug.Log($"ate <color=green>green</color> mushroom");   
         }
 

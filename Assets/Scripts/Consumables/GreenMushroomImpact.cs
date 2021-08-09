@@ -7,12 +7,6 @@ namespace IndieWizards.Consumables
         [SerializeField]
         private GameObject greenMushroom;
 
-        // [SerializeField]
-        // private int poisonValue;
-
-        // [SerializeField]
-        // private int durationOfAffect;
-
         private Animator animator;
 
         private void Start() {

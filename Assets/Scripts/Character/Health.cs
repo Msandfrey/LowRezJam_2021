@@ -17,8 +17,6 @@ namespace IndieWizards.Character
         private int maxHitPoints = 1;
 
         [Header("UI components")]
-        [SerializeField]
-        private TextMeshProUGUI healthText;
         [SerializeField] 
         private GameObject spriteMask;
 

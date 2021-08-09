@@ -7032,6 +7032,14 @@ PrefabInstance:
       propertyPath: damagePerAttack
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5687851194762791591, guid: 5416135af37e8a8488fa5bc60d18e986, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5687851194762791591, guid: 5416135af37e8a8488fa5bc60d18e986, type: 3}
+      propertyPath: m_UsedByComposite
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5915337481975225945, guid: 5416135af37e8a8488fa5bc60d18e986, type: 3}
       propertyPath: m_Size.x
       value: 2
@@ -7046,6 +7054,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6928504107730931915, guid: 5416135af37e8a8488fa5bc60d18e986, type: 3}
       propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6928504107730931915, guid: 5416135af37e8a8488fa5bc60d18e986, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.375
+      objectReference: {fileID: 0}
+    - target: {fileID: 6928504107730931915, guid: 5416135af37e8a8488fa5bc60d18e986, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7951000690256493589, guid: 5416135af37e8a8488fa5bc60d18e986, type: 3}
