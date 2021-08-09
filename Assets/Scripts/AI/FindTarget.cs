@@ -12,8 +12,12 @@ namespace IndieWizards.AI
         [SerializeField]
         private bool isLoopingPath = false;
         //dont rely on this. get from level/game manager
-        [SerializeField]
         private Transform playerTransform;
+
+        private void Start()
+        {
+            playerTransform = FindObjectOfType<PlayerController>().transform;
+        }
 
         public Vector2 Run(bool isLookingForPlayer = false)
         {

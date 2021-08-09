@@ -25,6 +25,7 @@ namespace IndieWizards.AI
         private float minTimeBetweenAttacks = 1.0f;
 
         private float timeSinceLastAttack;
+        private bool isAttacking = false;
 
         private EnemyController enemyController;
 
@@ -40,6 +41,7 @@ namespace IndieWizards.AI
 
         public bool Run()
         {
+            isAttacking = true;
             //either shoot out a 1 unit ray in the direction facing
             switch (enemyController.GetCurrentDirection())
             {
@@ -69,6 +71,7 @@ namespace IndieWizards.AI
             downCollider.enabled = false;
             leftCollider.enabled = false;
             rightCollider.enabled = false;
+            isAttacking = false;
         }
 
         private void Attack(Health health)
@@ -82,9 +85,9 @@ namespace IndieWizards.AI
             }
         }
 
-        private void OnCollisionEnter2D(Collision2D collision)
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.gameObject.tag.Equals("Player"))
+            if (collision.gameObject.tag.Equals("Player") && isAttacking)
             {
                 //turn off collider
                 upCollider.enabled = false;
@@ -96,9 +99,9 @@ namespace IndieWizards.AI
             }
         }
 
-        private void OnCollisionStay2D(Collision2D collision)
+        private void OnTriggerStay2D(Collider2D collision)
         {
-            if (collision.gameObject.tag.Equals("Player"))
+            if (collision.gameObject.tag.Equals("Player") && isAttacking)
             {
                 //turn off collider
                 upCollider.enabled = false;

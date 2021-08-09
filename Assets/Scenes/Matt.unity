@@ -2023,10 +2023,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy&Cones
       objectReference: {fileID: 0}
-    - target: {fileID: 7421186804129737033, guid: bb8c8e2dd6f12834d929c872170b6244, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8168523556806598103, guid: bb8c8e2dd6f12834d929c872170b6244, type: 3}
       propertyPath: initialHitPoints
       value: 1

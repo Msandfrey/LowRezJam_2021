@@ -9,6 +9,9 @@ namespace IndieWizards.Character
         public delegate void DeathCallback();
         public DeathCallback onDeath;
 
+        public delegate void DamageCallback();
+        public DamageCallback onDamage;
+
         [Header("Hit point settings")]
 
         [SerializeField]

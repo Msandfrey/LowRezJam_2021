@@ -1,13 +1,14 @@
 using UnityEngine;
 using IndieWizards.AI;
 using IndieWizards.Character;
+using IndieWizards.Player;
 
 namespace IndieWizards.Enemy
 {
     [RequireComponent(typeof(Health))]
     public class EnemyController : MonoBehaviour
     {
-        [SerializeField] Transform playerTransform;
+        Transform playerTransform;
 
         public enum EnemyState { Idle, Patrol, Combat };
         public enum EnemyDirection { Up, Down, Left, Right, NotMoving };
@@ -37,11 +38,14 @@ namespace IndieWizards.Enemy
         {
             health = GetComponent<Health>();
             health.onDeath += HandleDeath;
+            health.onDamage += OnDamage;
 
             combatAITree = GetComponent<CombatAITree>();
             enemyAnimationController = GetComponent<EnemyAnimationController>();
             idleAITree = GetComponent<IdleAITree>();
             patrolAITree = GetComponent<PatrolAITree>();
+
+            playerTransform = FindObjectOfType<PlayerController>().transform;
         }
 
         private void Start()
@@ -60,6 +64,11 @@ namespace IndieWizards.Enemy
         private void HandleDeath()
         {
             Debug.Log("I've been killed");
+            //stop everythuing
+            idleAITree.Halt();
+            patrolAITree.Halt();
+            combatAITree.Halt();
+            //PlayDeathAnimationHere
             Destroy(this.gameObject);
         }
 
@@ -109,9 +118,10 @@ namespace IndieWizards.Enemy
             SwitchToIdle();
         }
 
-        //deals with proximity detection
-        public void OnProximityDetection()
+        private void OnDamage()
         {
+            Debug.Log("yes");
+            //jump to combat if not in combat
             if (currentState == EnemyState.Combat) { return; }
             idleAITree.Halt();
             patrolAITree.Halt();
@@ -120,23 +130,9 @@ namespace IndieWizards.Enemy
             SwitchToCombat();
         }
 
-        private void OnDamage()
-        {
-            //jump to combat if not in combat
-            if(currentState != EnemyState.Combat)
-            {
-                FacePlayer();
-                //may be redundant if player calls this on sight
-                SwitchToCombat();
-            }
-        }
-
         void FacePlayer()
         {
             //turn to face player
-            //calculate angle
-            //Vector2 angleToPlayer = GetAngleFromVector
-            //changedirection
             ChangeDirection(transform.position - playerTransform.position);
         }
 
