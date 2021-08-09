@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using IndieWizards.Audio;
 
@@ -14,6 +15,8 @@ namespace IndieWizards.GameManagement
 
         private bool isPaused;
 
+        private HashSet<GameObject> enemies;
+
         private void Awake()
         {
             gameOverLostPanel.SetActive(false);
@@ -21,7 +24,18 @@ namespace IndieWizards.GameManagement
             pauseMenu.SetActive(false);
             isPaused = false;
 
+            enemies = new HashSet<GameObject>();
+            foreach(GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
+            {
+                enemies.Add(enemy);
+            }
+
             Time.timeScale = 1.0f;
+        }
+
+        private void Start()
+        {
+            audioManager.PlayGameMusic();
         }
 
         private void Update()
@@ -36,6 +50,20 @@ namespace IndieWizards.GameManagement
                 {
                     Pause();
                 }
+            }
+            else
+            {
+                foreach (GameObject enemy in enemies)
+                {
+                    if (enemy != null)
+                    {
+                        return;
+                    }
+                }
+
+                // If we got this far, there are no more enemies left in the game
+                // and we've won
+                GameOver(true);
             }
         }
 

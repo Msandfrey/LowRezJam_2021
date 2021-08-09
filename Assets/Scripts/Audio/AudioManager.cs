@@ -5,11 +5,15 @@ namespace IndieWizards.Audio
 {
     public class AudioManager : MonoBehaviour
     {
+        [Header("Audio Sources")]
         public AudioSource musicAudioSource;
         public AudioSource sfxAudioSource;
 
+        [Header("Music Tracks")]
         public AudioClip titleMusic;
+        public AudioClip gameMusic;
 
+        [Header("Sound Effects")]
         public AudioClip cubeSlurp;
         public AudioClip acidAttack;
         public AudioClip acidSprayWithLoop;
@@ -17,6 +21,11 @@ namespace IndieWizards.Audio
         private PlayerSettings playerSettings;
 
         private void Awake()
+        {
+            DontDestroyOnLoad(this.gameObject);
+        }
+
+        private void Start()
         {
             playerSettings = GameObject.FindObjectOfType<PlayerSettings>();
 
@@ -26,22 +35,29 @@ namespace IndieWizards.Audio
             }
 
             playerSettings.onVolumeChanged += HandleVolumeChanged;
-        }
 
-        private void Start()
-        {
             SetVolumeLevels();
         }
 
         public void PlayGameMusic()
         {
-            Debug.LogError("Not implemented");
+            PlayMusic(gameMusic);
         }
 
         public void PlayMainMenuMusic()
         {
+            PlayMusic(titleMusic);
+        }
+
+        public void PlayCubeSlurp()
+        {
+            sfxAudioSource.PlayOneShot(cubeSlurp);
+        }
+
+        private void PlayMusic(AudioClip clip)
+        {
             musicAudioSource.Stop();
-            musicAudioSource.clip = titleMusic;
+            musicAudioSource.clip = clip;
             musicAudioSource.loop = true;
             musicAudioSource.Play();
         }
