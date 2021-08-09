@@ -282,15 +282,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 628aec1197183934ebd1975064291cc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyController: {fileID: 0}
   layerMask:
     serializedVersion: 2
     m_Bits: 247
-  isLookingForPlayer: 0
+  viewDistance: 0
   startingAngle: 0
   fov: 0
   rayCount: 40
-  viewDistance: 0
-  enemyController: {fileID: 0}
 --- !u!4 &78648542
 Transform:
   m_ObjectHideFlags: 0
