@@ -9,6 +9,9 @@ namespace IndieWizards.Character
         public delegate void DeathCallback();
         public DeathCallback onDeath;
 
+        public delegate void DamageCallback();
+        public DamageCallback onDamage;
+
         [Header("Hit point settings")]
 
         [SerializeField]
@@ -49,6 +52,8 @@ namespace IndieWizards.Character
                 onDeath?.Invoke();
                 onDeathCallbackRaised = true;
             }
+
+            onDamage?.Invoke();
 
             UpdateHealthText(currentHitPoints);
             float hp = HPIntervals();
