@@ -77,14 +77,13 @@ namespace IndieWizards.AI
             rightCollider.enabled = false;
         }
 
-        private void Attack(Health health, HealthBar healthBar)
+        private void Attack(Health health)
         {
             float elapsedTime = Time.time - timeSinceLastAttack;
 
             if (elapsedTime - Time.deltaTime >= minTimeBetweenAttacks)
             {
                 health.TakeDamage(damagePerAttack);
-                healthBar.DecreaseHealthBar(damagePerAttack);
                 timeSinceLastAttack = Time.time;
             }
         }
@@ -99,8 +98,7 @@ namespace IndieWizards.AI
                 leftCollider.enabled = false;
                 rightCollider.enabled = false;
 
-                Attack(collision.gameObject.GetComponent<Health>(),
-                       collision.gameObject.GetComponent<HealthBar>());
+                Attack(collision.gameObject.GetComponent<Health>());
             }
         }
 
@@ -108,8 +106,7 @@ namespace IndieWizards.AI
         {
             if (collision.gameObject.tag.Equals("Player"))
             {
-                Attack(collision.gameObject.GetComponent<Health>(),
-                       collision.gameObject.GetComponent<HealthBar>());
+                Attack(collision.gameObject.GetComponent<Health>());
             }
         }
     }

@@ -19,10 +19,10 @@ namespace IndieWizards.Consumables
             animator = redMushroom.GetComponent<Animator>();
         }
 
-        public void HealCube()
-        {
-            health.RestoreHealth(healValue);
-        }
+        // public void HealCube()
+        // {
+        //     health.RestoreHealth(healValue);
+        // }
 
         public void AnimateHeal()
         {

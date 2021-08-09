@@ -15,7 +15,7 @@ namespace IndieWizards.Consumables
             else 
             {
                 RedMushroomImpact redMushroomImpact = collider.gameObject.GetComponent<RedMushroomImpact>();
-                redMushroomImpact.HealCube();
+                // redMushroomImpact.HealCube();
                 redMushroomImpact.DestroyRedMushroom();
                 redMushroomImpact.AnimateHeal(); 
             }

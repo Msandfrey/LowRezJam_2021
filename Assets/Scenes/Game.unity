@@ -1125,6 +1125,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 342699763}
     m_Modifications:
+    - target: {fileID: 471455294258550061, guid: bb8c8e2dd6f12834d929c872170b6244, type: 3}
+      propertyPath: m_MaskInteraction
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 471455294623748619, guid: bb8c8e2dd6f12834d929c872170b6244, type: 3}
+      propertyPath: m_MaskInteraction
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 471455295605803262, guid: bb8c8e2dd6f12834d929c872170b6244, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
@@ -1225,6 +1233,10 @@ PrefabInstance:
       propertyPath: targetCheckpoints.Array.data[8]
       value: 
       objectReference: {fileID: 311074773}
+    - target: {fileID: 2750251709395500997, guid: bb8c8e2dd6f12834d929c872170b6244, type: 3}
+      propertyPath: damagePerAttack
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2750251710183070750, guid: bb8c8e2dd6f12834d929c872170b6244, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1273,7 +1285,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy&Cones (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5119572223824320774, guid: bb8c8e2dd6f12834d929c872170b6244, type: 3}
+      propertyPath: spriteMask
+      value: 
+      objectReference: {fileID: 2140234362}
+    - target: {fileID: 8168523556806598103, guid: bb8c8e2dd6f12834d929c872170b6244, type: 3}
+      propertyPath: spriteMask
+      value: 
+      objectReference: {fileID: 2140234362}
+    m_RemovedComponents:
+    - {fileID: 5119572223824320774, guid: bb8c8e2dd6f12834d929c872170b6244, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bb8c8e2dd6f12834d929c872170b6244, type: 3}
 --- !u!4 &497645027 stripped
 Transform:
@@ -1517,6 +1538,10 @@ PrefabInstance:
       propertyPath: targetCheckpoints.Array.data[8]
       value: 
       objectReference: {fileID: 311074773}
+    - target: {fileID: 2750251709395500997, guid: bb8c8e2dd6f12834d929c872170b6244, type: 3}
+      propertyPath: damagePerAttack
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2750251710183070750, guid: bb8c8e2dd6f12834d929c872170b6244, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1565,7 +1590,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy&Cones
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5119572223824320774, guid: bb8c8e2dd6f12834d929c872170b6244, type: 3}
+      propertyPath: spriteMask
+      value: 
+      objectReference: {fileID: 1139998686}
+    - target: {fileID: 8168523556806598103, guid: bb8c8e2dd6f12834d929c872170b6244, type: 3}
+      propertyPath: spriteMask
+      value: 
+      objectReference: {fileID: 1139998686}
+    m_RemovedComponents:
+    - {fileID: 5119572223824320774, guid: bb8c8e2dd6f12834d929c872170b6244, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bb8c8e2dd6f12834d929c872170b6244, type: 3}
 --- !u!4 &657069013 stripped
 Transform:
@@ -2131,6 +2165,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c500ae6c72d0ab346b6564a2efc77767, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1139998686 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 471455293813735115, guid: bb8c8e2dd6f12834d929c872170b6244, type: 3}
+  m_PrefabInstance: {fileID: 657069012}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1176918987
 GameObject:
   m_ObjectHideFlags: 0
@@ -2176,6 +2215,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1290934951 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2697753513757727140, guid: 5416135af37e8a8488fa5bc60d18e986, type: 3}
+  m_PrefabInstance: {fileID: 1988368965}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1335502055
 GameObject:
   m_ObjectHideFlags: 0
@@ -6952,6 +6996,26 @@ PrefabInstance:
       propertyPath: healthText
       value: 
       objectReference: {fileID: 619309178}
+    - target: {fileID: 2234364105261123748, guid: 5416135af37e8a8488fa5bc60d18e986, type: 3}
+      propertyPath: spriteMask
+      value: 
+      objectReference: {fileID: 1290934951}
+    - target: {fileID: 2234364105261123748, guid: 5416135af37e8a8488fa5bc60d18e986, type: 3}
+      propertyPath: initialHitPoints
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2697753515419660177, guid: 5416135af37e8a8488fa5bc60d18e986, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4273941602780065635, guid: 5416135af37e8a8488fa5bc60d18e986, type: 3}
+      propertyPath: spriteMask
+      value: 
+      objectReference: {fileID: 1290934951}
+    - target: {fileID: 4289200561205306135, guid: 5416135af37e8a8488fa5bc60d18e986, type: 3}
+      propertyPath: damagePerAttack
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7951000690256493589, guid: 5416135af37e8a8488fa5bc60d18e986, type: 3}
       propertyPath: m_Size.x
       value: 1.5
@@ -6960,7 +7024,8 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 1.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4273941602780065635, guid: 5416135af37e8a8488fa5bc60d18e986, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5416135af37e8a8488fa5bc60d18e986, type: 3}
 --- !u!4 &1988368966 stripped
 Transform:
@@ -7115,6 +7180,11 @@ Transform:
   m_Father: {fileID: 342699763}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2140234362 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 471455293813735115, guid: bb8c8e2dd6f12834d929c872170b6244, type: 3}
+  m_PrefabInstance: {fileID: 497645026}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1026588843957986244
 RectTransform:
   m_ObjectHideFlags: 0

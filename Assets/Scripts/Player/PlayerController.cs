@@ -70,7 +70,6 @@ namespace IndieWizards.Player
         private void ApplyHealthPowerUp(int hitpoints)
         {
             health.RestoreHealth(hitpoints);
-            healthBar.RestoreHealthBar(hitpoints);
         }
 
         private void HandleDeath()

@@ -1,5 +1,6 @@
 using UnityEngine;
 using IndieWizards.Character;
+using IndieWizards.UI;
 
 namespace IndieWizards.Player 
 {
@@ -43,6 +44,7 @@ namespace IndieWizards.Player
             if (elapsedTime >= minTimeBetweenAttacks)
             {
                 Health health = gameObject.GetComponent<Health>();
+
                 if (health != null)
                 {
                     Debug.Log("Attacking enemy");

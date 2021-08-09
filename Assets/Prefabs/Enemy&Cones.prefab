@@ -126,7 +126,6 @@ GameObject:
   - component: {fileID: 2750251709395501002}
   - component: {fileID: 2750251709395501003}
   - component: {fileID: 8168523556806598103}
-  - component: {fileID: 5119572223824320774}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -329,7 +328,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   viewDistance: 0
-  attackDamageInHitPoints: 5
+  damagePerAttack: 1
   minTimeBetweenAttacks: 1
 --- !u!95 &2750251709395501001
 Animator:
@@ -425,18 +424,7 @@ MonoBehaviour:
   initialHitPoints: 2
   maxHitPoints: 2
   healthText: {fileID: 471455295635515111}
---- !u!114 &5119572223824320774
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2750251709395500095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76d0d5f8e6d977e4b87e2c5baa6c9626, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  spriteMask: {fileID: 471455293813735115}
 --- !u!1 &2750251709869195163
 GameObject:
   m_ObjectHideFlags: 0
@@ -892,6 +880,11 @@ PrefabInstance:
 --- !u!224 &471455295605803260 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4126259413075315690, guid: 6e2a2117c1f3ae744ab90e3284f6e4d3, type: 3}
+  m_PrefabInstance: {fileID: 4596373141084226326}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &471455293813735115 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4126259414733061597, guid: 6e2a2117c1f3ae744ab90e3284f6e4d3, type: 3}
   m_PrefabInstance: {fileID: 4596373141084226326}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &471455295635515111 stripped
