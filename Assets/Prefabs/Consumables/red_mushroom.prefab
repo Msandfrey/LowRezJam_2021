@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2167969135779187162}
   - component: {fileID: 2167969135779187157}
   - component: {fileID: 2477538069105272562}
+  - component: {fileID: 6488436401095056681}
   m_Layer: 0
   m_Name: red_mushroom
   m_TagString: Untagged
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1651572758694669904, guid: b8c2eac122c0a844584e093c3d1e2e55, type: 3}
+  m_Sprite: {fileID: -8039313203376599671, guid: d1c63f23560040c48af57a449566a61d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,7 +104,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.75, y: 1}
+    oldSize: {x: 0.875, y: 1.375}
     newSize: {x: 0.75, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -161,3 +162,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   consumableType: 2
   amount: 1
+--- !u!95 &6488436401095056681
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2167969135779187160}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6a8aba42ab164e2479073bf37548af35, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
