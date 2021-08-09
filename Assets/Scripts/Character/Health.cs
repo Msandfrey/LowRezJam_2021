@@ -35,11 +35,6 @@ namespace IndieWizards.Character
             onDeathCallbackRaised = false;
         }
 
-        private void Start()
-        {
-            // UpdateHealthText(currentHitPoints);
-        }
-
         public void TakeDamage(int hitPoints)
         {
             currentHitPoints = Mathf.Max(currentHitPoints - hitPoints, 0);
@@ -50,7 +45,6 @@ namespace IndieWizards.Character
                 onDeathCallbackRaised = true;
             }
 
-            // UpdateHealthText(currentHitPoints);
             float hp = HPIntervals();
             UpdateHealthBar(hp, isHeal=false);
         }
@@ -58,8 +52,6 @@ namespace IndieWizards.Character
         public void RestoreHealth(int hitPoints)
         {
             int updatedCurrentHitPoints = Mathf.Min(currentHitPoints, maxHitPoints);             
-            Debug.Log("This should be a 9: " + currentHitPoints);
-            Debug.Log("The updatedCurrentHitPoints should be a 9: " + updatedCurrentHitPoints);
             if (updatedCurrentHitPoints == maxHitPoints)
             {
                 Debug.Log("HP Full");
@@ -68,7 +60,6 @@ namespace IndieWizards.Character
             {
                 float hp = HPIntervals();
                 UpdateHealthBar(hp, isHeal=true);
-                // UpdateHealthText(updatedCurrentHitPoints + hitPoints);
             }
         }
 

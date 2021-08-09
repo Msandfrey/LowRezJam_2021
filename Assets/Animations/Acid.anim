@@ -21,15 +21,19 @@ AnimationClip:
   - curve:
     - time: 0.083333336
       value: {fileID: 449886322778280028, guid: b8205022d38560644a6fe199d7ac78c6, type: 3}
-    - time: 0.25
+    - time: 0.33333334
       value: {fileID: -5983101684128780760, guid: b8205022d38560644a6fe199d7ac78c6, type: 3}
-    - time: 0.41666666
-      value: {fileID: 735223745771810721, guid: b8205022d38560644a6fe199d7ac78c6, type: 3}
     - time: 0.5833333
       value: {fileID: 735223745771810721, guid: b8205022d38560644a6fe199d7ac78c6, type: 3}
-    - time: 0.75
+    - time: 0.8333333
+      value: {fileID: 735223745771810721, guid: b8205022d38560644a6fe199d7ac78c6, type: 3}
+    - time: 1.0833334
+      value: {fileID: 735223745771810721, guid: b8205022d38560644a6fe199d7ac78c6, type: 3}
+    - time: 1.3333334
+      value: {fileID: 735223745771810721, guid: b8205022d38560644a6fe199d7ac78c6, type: 3}
+    - time: 1.5833334
       value: {fileID: -5983101684128780760, guid: b8205022d38560644a6fe199d7ac78c6, type: 3}
-    - time: 0.9166667
+    - time: 1.8333334
       value: {fileID: 449886322778280028, guid: b8205022d38560644a6fe199d7ac78c6, type: 3}
     attribute: m_Sprite
     path: 
@@ -54,6 +58,8 @@ AnimationClip:
     - {fileID: -5983101684128780760, guid: b8205022d38560644a6fe199d7ac78c6, type: 3}
     - {fileID: 735223745771810721, guid: b8205022d38560644a6fe199d7ac78c6, type: 3}
     - {fileID: 735223745771810721, guid: b8205022d38560644a6fe199d7ac78c6, type: 3}
+    - {fileID: 735223745771810721, guid: b8205022d38560644a6fe199d7ac78c6, type: 3}
+    - {fileID: 735223745771810721, guid: b8205022d38560644a6fe199d7ac78c6, type: 3}
     - {fileID: -5983101684128780760, guid: b8205022d38560644a6fe199d7ac78c6, type: 3}
     - {fileID: 449886322778280028, guid: b8205022d38560644a6fe199d7ac78c6, type: 3}
   m_AnimationClipSettings:
@@ -61,7 +67,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1
+    m_StopTime: 2.0833333
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -95,14 +101,14 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 1
+  - time: 2.0833333
     functionName: HideSpriteRenderer
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 1
+  - time: 2.0833333
     functionName: HideCollider
     data: 
     objectReferenceParameter: {fileID: 0}
