@@ -8,8 +8,6 @@ namespace IndieWizards.Consumables
     {
         private void OnTriggerEnter2D(Collider2D collider) 
         {
-            Debug.Log("DTM --- collided with green mushroom");
-
             if (!collider.gameObject.GetComponent<GreenMushroomImpact>())
             {
                 return;
