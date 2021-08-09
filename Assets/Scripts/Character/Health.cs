@@ -37,7 +37,7 @@ namespace IndieWizards.Character
 
         private void Start()
         {
-            UpdateHealthText(currentHitPoints);
+            // UpdateHealthText(currentHitPoints);
         }
 
         public void TakeDamage(int hitPoints)
@@ -50,14 +50,16 @@ namespace IndieWizards.Character
                 onDeathCallbackRaised = true;
             }
 
-            UpdateHealthText(currentHitPoints);
+            // UpdateHealthText(currentHitPoints);
             float hp = HPIntervals();
             UpdateHealthBar(hp, isHeal=false);
         }
 
         public void RestoreHealth(int hitPoints)
         {
-            int updatedCurrentHitPoints = Mathf.Min((currentHitPoints + hitPoints), maxHitPoints); 
+            int updatedCurrentHitPoints = Mathf.Min(currentHitPoints, maxHitPoints);             
+            Debug.Log("This should be a 9: " + currentHitPoints);
+            Debug.Log("The updatedCurrentHitPoints should be a 9: " + updatedCurrentHitPoints);
             if (updatedCurrentHitPoints == maxHitPoints)
             {
                 Debug.Log("HP Full");
@@ -66,39 +68,18 @@ namespace IndieWizards.Character
             {
                 float hp = HPIntervals();
                 UpdateHealthBar(hp, isHeal=true);
-                UpdateHealthText(updatedCurrentHitPoints);
+                // UpdateHealthText(updatedCurrentHitPoints + hitPoints);
             }
         }
 
-        private void UpdateHealthText(int hitPoints)
-        {
-            if (healthText != null)
-            {
-                healthText.text = hitPoints.ToString();
-            }
-        }
+        // private void UpdateHealthText(int hitPoints)
+        // {
+        //     if (healthText != null)
+        //     {
+        //         healthText.text = hitPoints.ToString();
+        //     }
+        // }
 
-        // REMEMBER TO DELETE // 
-        // Katie needs to organize her thoughts, remind herself why she does things: 
-        /* 
-            Q1.) What's my source of truth w.r.t updating health?
-            A1.) This Health.cs' is my of truth for bookkeeping player and enemy health text + HP bar.
-            I rely on var currentHitPoints, UpdateHealthText(), and UpdateHealthBar() to do it all.
-
-            Q2.) Is this duplicate code? 
-            A2.) No. This is the only method that tracks the damage/restoration of HP.
-
-            Q3.) Are there variables here that I referenced from another script? 
-            A3.) Nope. 
-
-            Q4.) Do I reference any of these methods in other scripts? 
-            A4.) Nope. Except for the public ones (e.g. RestoreHealth(), TakeDamage())
-
-            Q5.) Should this method be written here?
-            A5.) It can live here, but they will be called on RestoreHealth() AND/OR TakeDamage(), 
-            and RestoreHealth() will be called in PlayerController.cs,
-            TakeDamage() called in PlayerAttack.cs and MeleeAttackAIAction.cs.
-        */
         private void UpdateHealthBar(float hitPoints, bool isHeal)
         {
 
