@@ -8,7 +8,7 @@ namespace IndieWizards.Enemy
     [RequireComponent(typeof(Health))]
     public class EnemyController : MonoBehaviour
     {
-        Transform playerTransform;
+        private Transform playerTransform;
 
         public enum EnemyState { Idle, Patrol, Combat };
         public enum EnemyDirection { Up, Down, Left, Right, NotMoving };
@@ -26,8 +26,6 @@ namespace IndieWizards.Enemy
 
         private Vector2 aimDirection;
 
-        private EnemyAnimationController enemyAnimationController;
-
         //ai tree stuff
         private CombatAITree combatAITree;
         private IdleAITree idleAITree;
@@ -41,7 +39,6 @@ namespace IndieWizards.Enemy
             health.onDamage += OnDamage;
 
             combatAITree = GetComponent<CombatAITree>();
-            enemyAnimationController = GetComponent<EnemyAnimationController>();
             idleAITree = GetComponent<IdleAITree>();
             patrolAITree = GetComponent<PatrolAITree>();
 
@@ -85,7 +82,6 @@ namespace IndieWizards.Enemy
         void SwitchToIdle()
         {
             currentState = EnemyState.Idle;
-            enemyAnimationController.Idle();
             idleAITree.Run();
         }
 
@@ -118,7 +114,7 @@ namespace IndieWizards.Enemy
             SwitchToIdle();
         }
 
-        private void OnDamage()
+        private void OnDamage()//when he be take damages
         {
             Debug.Log("yes");
             //jump to combat if not in combat

@@ -15,7 +15,6 @@ namespace IndieWizards.AI
         {
             enemyController = GetComponent<EnemyController>();
             enemyAnimationController = GetComponent<EnemyAnimationController>();
-            if (enemyAnimationController) { Debug.Log("i got this animation thing down"); }
             isWaiting = true;
         }
 

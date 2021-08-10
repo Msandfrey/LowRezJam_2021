@@ -58,7 +58,7 @@ namespace IndieWizards.AI
                     }
                     //wait for animation of attack to finish before stopping attack
                     //need check to jump straight into attack
-                    meleeAttackAIAction.EndAttack();
+                    meleeAttackAIAction.EndAttackCollision();
                     if (doesAttackHit)
                     {
 
@@ -74,7 +74,7 @@ namespace IndieWizards.AI
                 if (isWaiting) { return; }
                 //3---------move to player
                 //making sure not attacking here
-                meleeAttackAIAction.EndAttack();
+                meleeAttackAIAction.EndAttackCollision();
 
                 currentCombatState = CombatStates.Chasing;
                 moveToLocationAIAction.Run(playerPosition, moveSpeed);

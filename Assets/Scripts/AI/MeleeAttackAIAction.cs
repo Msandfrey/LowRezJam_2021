@@ -70,7 +70,7 @@ namespace IndieWizards.AI
             return true;
         }
 
-        public void EndAttack()
+        public void EndAttackCollision()
         {
             //turn off collider
             upCollider.enabled = false;
@@ -97,10 +97,9 @@ namespace IndieWizards.AI
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            Debug.Log("entering");
             if (collision.gameObject.tag.Equals("Player") && isAttacking)
             {
-                EndAttack();
+                EndAttackCollision();
 
                 Attack(collision.gameObject.GetComponent<Health>());
             }
