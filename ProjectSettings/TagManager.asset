@@ -48,3 +48,6 @@ TagManager:
   - name: UI
     uniqueID: 2971856189
     locked: 0
+  - name: mask
+    uniqueID: 1746080985
+    locked: 0
