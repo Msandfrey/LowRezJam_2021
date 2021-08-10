@@ -1536,6 +1536,18 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2750251709395500094, guid: bb8c8e2dd6f12834d929c872170b6244, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2750251709395500094, guid: bb8c8e2dd6f12834d929c872170b6244, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2750251709395500094, guid: bb8c8e2dd6f12834d929c872170b6244, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2750251709395500993, guid: bb8c8e2dd6f12834d929c872170b6244, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

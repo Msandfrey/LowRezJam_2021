@@ -40,7 +40,11 @@ namespace IndieWizards.Character
         {
             currentHitPoints = Mathf.Max(currentHitPoints - hitPoints, 0);
 
-            if (currentHitPoints == 0 && !onDeathCallbackRaised)
+            if (currentHitPoints > 0)
+            {
+                onDamage?.Invoke();
+            }
+            else if (currentHitPoints == 0 && !onDeathCallbackRaised)
             {
                 onDeath?.Invoke();
                 onDeathCallbackRaised = true;

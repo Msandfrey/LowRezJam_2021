@@ -1,13 +1,16 @@
+using System;
 using UnityEngine;
+using IndieWizards.Animations;
 using IndieWizards.Audio;
 using IndieWizards.Character;
 using IndieWizards.Consumables;
 using IndieWizards.GameManagement;
-using IndieWizards.UI;
 
 namespace IndieWizards.Player
 {
     [RequireComponent(typeof(Consumer))]
+    [RequireComponent(typeof(Health))]
+    [RequireComponent(typeof(TakeDamageAnimation))]
     public class PlayerController : MonoBehaviour
     {
         [SerializeField]
@@ -23,6 +26,7 @@ namespace IndieWizards.Player
         private RedMushroomAnimation redMushroom;
         private PurpleMushroomAnimation purpleMushroom;
         private GreenMushroomAnimation greenMushroom;
+        private TakeDamageAnimation takeDamageAnimation;
 
         private void Awake()
         {
@@ -31,6 +35,9 @@ namespace IndieWizards.Player
 
             health = GetComponent<Health>();
             health.onDeath += HandleDeath;
+            health.onDamage += HandleDamage;
+
+            takeDamageAnimation = GetComponent<TakeDamageAnimation>();
 
             redMushroom = GameObject.FindObjectOfType<RedMushroomAnimation>();
             greenMushroom = GameObject.FindObjectOfType<GreenMushroomAnimation>();
@@ -110,6 +117,11 @@ namespace IndieWizards.Player
         {
             redMushroom.AnimateHeal();
             health.RestoreHealth(hitpoints);
+        }
+
+        private void HandleDamage()
+        {
+            takeDamageAnimation.StartTakeDamageAnimation();
         }
 
         private void HandleDeath()
