@@ -29,6 +29,7 @@ namespace IndieWizards.Enemy
         private Vector2 aimDirection;
 
         //ai tree stuff
+        TakeDamageAnimation takeDamageAnimation;
         private CombatAITree combatAITree;
         private IdleAITree idleAITree;
         private PatrolAITree patrolAITree;

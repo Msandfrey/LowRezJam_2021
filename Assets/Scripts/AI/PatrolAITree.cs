@@ -9,7 +9,7 @@ namespace IndieWizards.AI
         private bool isPatrolling = false;
         //bool isWaiting = false;
         [SerializeField]
-        private float moveSpeed = 1f;
+        private float patrolMoveSpeed = 1f;
         private FindTarget findTarget;
         private MoveToLocationAIAction moveToLocationAIAction;
         private EnemyController enemyController;
@@ -18,7 +18,7 @@ namespace IndieWizards.AI
         // Start is called before the first frame update
         void Start()
         {
-            moveSpeed /= 100f;//make the speed small so its not too fast but the number we put in isnt super tiny
+            patrolMoveSpeed /= 100f;//make the speed small so its not too fast but the number we put in isnt super tiny
             findTarget = GetComponent<FindTarget>();
             moveToLocationAIAction = GetComponent<MoveToLocationAIAction>();
             enemyController = GetComponent<EnemyController>();
@@ -35,7 +35,7 @@ namespace IndieWizards.AI
                 if(targetLocation == Vector2.zero) { return; }
 
                 //2------move to target
-                bool isTargetLocationReached = moveToLocationAIAction.Run(targetLocation, moveSpeed);
+                bool isTargetLocationReached = moveToLocationAIAction.Run(targetLocation, patrolMoveSpeed);
                 EnemyController.EnemyDirection direction = enemyController.GetCurrentDirection();
                 switch (direction)
                 {

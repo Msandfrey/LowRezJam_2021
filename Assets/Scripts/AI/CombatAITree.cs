@@ -8,7 +8,7 @@ namespace IndieWizards.AI
     {
         private bool isInCombat = false;
         [SerializeField]
-        private float moveSpeed = 1f;
+        private float combatMoveSpeed = 1f;
         [SerializeField]
         private float attackRange = 1.5f;
 
@@ -29,7 +29,7 @@ namespace IndieWizards.AI
             moveToLocationAIAction = GetComponent<MoveToLocationAIAction>();
             enemyController = GetComponent<EnemyController>();
             enemyAnimationController = GetComponent<EnemyAnimationController>();
-            moveSpeed /= 100;
+            combatMoveSpeed /= 100;
         }
 
         // Update is called once per frame
@@ -77,7 +77,7 @@ namespace IndieWizards.AI
                 meleeAttackAIAction.EndAttackCollision();
 
                 currentCombatState = CombatStates.Chasing;
-                moveToLocationAIAction.Run(playerPosition, moveSpeed);
+                moveToLocationAIAction.Run(playerPosition, combatMoveSpeed);
                 EnemyController.EnemyDirection direction = enemyController.GetCurrentDirection();
                 switch (direction)
                 {
