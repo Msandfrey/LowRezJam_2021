@@ -107,7 +107,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visibleConeDirection: {fileID: 0}
-  fieldOfViewCone: {fileID: 0}
   playerDetectionCone: {fileID: 0}
 --- !u!114 &203178268965180267
 MonoBehaviour:
@@ -122,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waitTime: 1
-  moveSpeed: 1
+  combatMoveSpeed: 3
   attackRange: 1
 --- !u!114 &203178268965180264
 MonoBehaviour:
@@ -136,8 +135,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7adade84798cc40a4afa597ca71e4f1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTime: 1
-  moveSpeed: 1
+  waitTime: 5
+  patrolMoveSpeed: 2
 --- !u!114 &203178268965180260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,7 +171,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  playerTransform: {fileID: 0}
+  isLoopingPath: 1
 --- !u!114 &203178268965180268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,7 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6b668cdfd4092d458fa8a2178be956c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTime: 2
+  waitTime: 5
 --- !u!114 &203178268965180265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,12 +213,9 @@ MonoBehaviour:
   leftCollider: {fileID: 0}
   downCollider: {fileID: 0}
   upCollider: {fileID: 0}
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 0
-  viewDistance: 0
-  attackDamageInHitPoints: 0
+  damagePerAttack: 1
   minTimeBetweenAttacks: 1
+  attackRange: 1
 --- !u!95 &203178268965180261
 Animator:
   serializedVersion: 3
@@ -251,6 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6605b4fc82c7e44abf3ab3483d0ba7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyDamageInHitPoints: 0
 --- !u!61 &203178268965180262
 BoxCollider2D:
   m_ObjectHideFlags: 0
