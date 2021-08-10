@@ -17,10 +17,11 @@ namespace IndieWizards.Player
         private AudioManager audioManager;
 
         private Health health;
-        private HealthBar healthBar;
         private GameManager gameManager;
         private Consumer consumer;
         private PlayerState playerState;
+
+        private BoxCollider2D boxCollider;
 
         private void Awake()
         {
@@ -30,7 +31,6 @@ namespace IndieWizards.Player
             health = GetComponent<Health>();
             health.onDeath += HandleDeath;
 
-            healthBar = GetComponent<HealthBar>();
         }
 
         private void Start()
@@ -88,12 +88,14 @@ namespace IndieWizards.Player
 
         private void ApplyAcidPowerUp(int damagePerAttack)
         {
-            Debug.Log("Not implemented");
+            // disable enemy's meleeattack damagePerAttack on player to 0 when attacked?
+            Debug.Log($"ate <color=purple>purple</color> mushroom");
         }
 
         private void ApplyPoisonPowerUp(int damagePerAttack)
         {
-            Debug.Log("Not implemented");
+            // disable enemy's meleeattack damagePerAttack on player to 0 when attacked?
+            Debug.Log($"ate <color=green>green</color> mushroom");   
         }
 
         private void ApplyHealthPowerUp(int hitpoints)
