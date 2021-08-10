@@ -22,6 +22,7 @@ namespace IndieWizards.AI
         }
         protected IEnumerator Wait()
         {
+            isWaiting = true;
             yield return new WaitForSeconds(waitTime);
             isWaiting = false;
         }
