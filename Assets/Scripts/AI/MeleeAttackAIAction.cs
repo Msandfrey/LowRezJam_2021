@@ -23,6 +23,8 @@ namespace IndieWizards.AI
         private int damagePerAttack;
         [SerializeField]
         private float minTimeBetweenAttacks = 1.0f;
+        [SerializeField]
+        private float attackRange = 1f;
 
         private float timeSinceLastAttack;
         private bool isAttacking = false;
@@ -47,15 +49,19 @@ namespace IndieWizards.AI
             {
                 case EnemyController.EnemyDirection.Up:
                     upCollider.enabled = true;
+                    upCollider.size = new Vector2(leftCollider.size.x, attackRange);
                     break;
                 case EnemyController.EnemyDirection.Down:
                     downCollider.enabled = true;
+                    upCollider.size = new Vector2(leftCollider.size.x, attackRange);
                     break;
                 case EnemyController.EnemyDirection.Left:
                     leftCollider.enabled = true;
+                    leftCollider.size = new Vector2(attackRange, leftCollider.size.y);
                     break;
                 case EnemyController.EnemyDirection.Right:
                     rightCollider.enabled = true;
+                    leftCollider.size = new Vector2(attackRange, leftCollider.size.y);
                     break;
                 default:
                     break;
@@ -71,6 +77,10 @@ namespace IndieWizards.AI
             downCollider.enabled = false;
             leftCollider.enabled = false;
             rightCollider.enabled = false;
+            leftCollider.size = new Vector2(.1f, leftCollider.size.y);
+            rightCollider.size = new Vector2(.1f, leftCollider.size.y);
+            upCollider.size = new Vector2(leftCollider.size.x, .1f);
+            downCollider.size = new Vector2(leftCollider.size.x, .1f);
             isAttacking = false;
         }
 
@@ -87,27 +97,10 @@ namespace IndieWizards.AI
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
+            Debug.Log("entering");
             if (collision.gameObject.tag.Equals("Player") && isAttacking)
             {
-                //turn off collider
-                upCollider.enabled = false;
-                downCollider.enabled = false;
-                leftCollider.enabled = false;
-                rightCollider.enabled = false;
-
-                Attack(collision.gameObject.GetComponent<Health>());
-            }
-        }
-
-        private void OnTriggerStay2D(Collider2D collision)
-        {
-            if (collision.gameObject.tag.Equals("Player") && isAttacking)
-            {
-                //turn off collider
-                upCollider.enabled = false;
-                downCollider.enabled = false;
-                leftCollider.enabled = false;
-                rightCollider.enabled = false;
+                EndAttack();
 
                 Attack(collision.gameObject.GetComponent<Health>());
             }
