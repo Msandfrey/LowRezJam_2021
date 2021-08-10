@@ -64,14 +64,6 @@ namespace IndieWizards.Character
             }
         }
 
-        // private void UpdateHealthText(int hitPoints)
-        // {
-        //     if (healthText != null)
-        //     {
-        //         healthText.text = hitPoints.ToString();
-        //     }
-        // }
-
         private void UpdateHealthBar(float hitPoints, bool isHeal)
         {
 
