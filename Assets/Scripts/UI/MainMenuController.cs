@@ -32,7 +32,7 @@ namespace IndieWizards.UI
 
         public void Play()
         {
-            sceneLoader.LoadGameScene();
+            sceneLoader.LoadStartGameCutScene();
         }
 
         public void ShowMainMenuPanel()

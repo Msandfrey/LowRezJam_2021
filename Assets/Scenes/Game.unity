@@ -1965,7 +1965,11 @@ PrefabInstance:
       objectReference: {fileID: 628057618}
     - target: {fileID: 2768235715614196719, guid: b2728ffdd52aa4840aee37de9c70bd37, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Play
+      value: Replay
+      objectReference: {fileID: 0}
+    - target: {fileID: 2768235715614196719, guid: b2728ffdd52aa4840aee37de9c70bd37, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: IndieWizards.GameManagement.GameManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4405697047624121060, guid: b2728ffdd52aa4840aee37de9c70bd37, type: 3}
       propertyPath: m_Pivot.x
@@ -2659,7 +2663,11 @@ PrefabInstance:
       objectReference: {fileID: 628057618}
     - target: {fileID: 4448365388646266868, guid: aff4310f0e6794bf0a4bda7e4b5a76ba, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Play
+      value: Replay
+      objectReference: {fileID: 0}
+    - target: {fileID: 4448365388646266868, guid: aff4310f0e6794bf0a4bda7e4b5a76ba, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: IndieWizards.GameManagement.GameManager, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aff4310f0e6794bf0a4bda7e4b5a76ba, type: 3}
