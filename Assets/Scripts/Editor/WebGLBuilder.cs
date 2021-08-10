@@ -28,6 +28,7 @@ public class WebGLBuilder
     {
         string[] scenes = {
             "Assets/Scenes/MainMenu.unity",
+            "Assets/Scenes/StartGameCutScene.unity",
             "Assets/Scenes/Game.unity"
         };
 

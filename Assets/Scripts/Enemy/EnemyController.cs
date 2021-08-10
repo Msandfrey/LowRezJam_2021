@@ -1,11 +1,13 @@
 using UnityEngine;
 using IndieWizards.AI;
+using IndieWizards.Animations;
 using IndieWizards.Character;
 using IndieWizards.Player;
 
 namespace IndieWizards.Enemy
 {
     [RequireComponent(typeof(Health))]
+    [RequireComponent(typeof(TakeDamageAnimation))]
     public class EnemyController : MonoBehaviour
     {
         private Transform playerTransform;
@@ -34,6 +36,8 @@ namespace IndieWizards.Enemy
 
         private void Awake()
         {
+            takeDamageAnimation = GetComponent<TakeDamageAnimation>();
+
             health = GetComponent<Health>();
             health.onDeath += HandleDeath;
             health.onDamage += OnDamage;
@@ -116,6 +120,8 @@ namespace IndieWizards.Enemy
 
         private void OnDamage()//when he be take damages
         {
+            takeDamageAnimation.StartTakeDamageAnimation();
+
             Debug.Log("yes");
             //jump to combat if not in combat
             if (currentState == EnemyState.Combat) { return; }

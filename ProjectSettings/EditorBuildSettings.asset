@@ -6,17 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Katie.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/TitleScreen.unity
-    guid: 26a6fa96d8dbb493a9990b82dfce19e7
-  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 80da0d935cb5c4a73b5ac9d9d3378661
   - enabled: 1
+    path: Assets/Scenes/StartGameCutScene.unity
+    guid: 26a6fa96d8dbb493a9990b82dfce19e7
+  - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: ee18d3450d370431793c560d9cd1e419
+  - enabled: 1
+    path: Assets/Scenes/Katie.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/Thomas.unity
     guid: 28ddfd80de0446449979bcd8da20a3fa

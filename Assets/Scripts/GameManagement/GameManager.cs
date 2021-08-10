@@ -72,6 +72,11 @@ namespace IndieWizards.GameManagement
             sceneLoader.LoadGameScene();    
         }
 
+        public void Replay()
+        {
+            sceneLoader.LoadStartGameCutScene();
+        }
+
         public void GameOver(bool won)
         {
             Time.timeScale = 0.0f;

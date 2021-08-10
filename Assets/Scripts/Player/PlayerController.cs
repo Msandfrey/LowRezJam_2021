@@ -1,13 +1,16 @@
+using System;
 using UnityEngine;
+using IndieWizards.Animations;
 using IndieWizards.Audio;
 using IndieWizards.Character;
 using IndieWizards.Consumables;
 using IndieWizards.GameManagement;
-using IndieWizards.UI;
 
 namespace IndieWizards.Player
 {
     [RequireComponent(typeof(Consumer))]
+    [RequireComponent(typeof(Health))]
+    [RequireComponent(typeof(TakeDamageAnimation))]
     public class PlayerController : MonoBehaviour
     {
         [SerializeField]
@@ -20,8 +23,10 @@ namespace IndieWizards.Player
         private GameManager gameManager;
         private Consumer consumer;
         private PlayerState playerState;
-
-        private BoxCollider2D boxCollider;
+        private RedMushroomAnimation redMushroom;
+        private PurpleMushroomAnimation purpleMushroom;
+        private GreenMushroomAnimation greenMushroom;
+        private TakeDamageAnimation takeDamageAnimation;
 
         private void Awake()
         {
@@ -30,7 +35,13 @@ namespace IndieWizards.Player
 
             health = GetComponent<Health>();
             health.onDeath += HandleDeath;
+            health.onDamage += HandleDamage;
 
+            takeDamageAnimation = GetComponent<TakeDamageAnimation>();
+
+            redMushroom = GameObject.FindObjectOfType<RedMushroomAnimation>();
+            greenMushroom = GameObject.FindObjectOfType<GreenMushroomAnimation>();
+            purpleMushroom = GameObject.FindObjectOfType<PurpleMushroomAnimation>();
         }
 
         private void Start()
@@ -88,19 +99,29 @@ namespace IndieWizards.Player
 
         private void ApplyAcidPowerUp(int damagePerAttack)
         {
+            purpleMushroom.AnimateAcid();
             // disable enemy's meleeattack damagePerAttack on player to 0 when attacked?
+            // or is this handled only when the enemy is in attack state?
             Debug.Log($"ate <color=purple>purple</color> mushroom");
         }
 
         private void ApplyPoisonPowerUp(int damagePerAttack)
         {
+            greenMushroom.AnimatePoison();
             // disable enemy's meleeattack damagePerAttack on player to 0 when attacked?
+            // or is this handled only when the enemy is in attack state?
             Debug.Log($"ate <color=green>green</color> mushroom");   
         }
 
         private void ApplyHealthPowerUp(int hitpoints)
         {
+            redMushroom.AnimateHeal();
             health.RestoreHealth(hitpoints);
+        }
+
+        private void HandleDamage()
+        {
+            takeDamageAnimation.StartTakeDamageAnimation();
         }
 
         private void HandleDeath()
