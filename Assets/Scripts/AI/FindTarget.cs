@@ -23,6 +23,7 @@ namespace IndieWizards.AI
         {
             if (isLookingForPlayer) { return playerTransform.position; }
             //get the next targetCheckpoint
+            //if(targetCheckpoints.Length == 1) { return Vector2.zero; }
             if(currentTarget < targetCheckpoints.Length) { return targetCheckpoints[currentTarget].position; }
             return Vector2.zero;
         }
