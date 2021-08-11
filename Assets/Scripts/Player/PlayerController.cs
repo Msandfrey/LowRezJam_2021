@@ -128,11 +128,11 @@ namespace IndieWizards.Player
         {
             animator.SetTrigger("death");
 
-            Invoke(nameof(GameLost), 5.0f);
+            Invoke(nameof(GameLost), 2.0f);
         }
 
         private void GameLost()
-        {
+        {   
             gameManager.GameOver(false);
         }
 
