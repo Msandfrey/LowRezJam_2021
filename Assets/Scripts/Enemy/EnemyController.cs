@@ -1,6 +1,7 @@
 using UnityEngine;
 using IndieWizards.AI;
 using IndieWizards.Animations;
+using IndieWizards.Audio;
 using IndieWizards.Character;
 using IndieWizards.Player;
 
@@ -34,6 +35,7 @@ namespace IndieWizards.Enemy
         private PatrolAITree patrolAITree;
         private MoveToLocationAIAction moveToLocationAIAction;
 
+        private AudioManager audioManager;
         private EnemyAnimationController enemyAnimationController;
         private Health health;
         private TakeDamageAnimation takeDamageAnimation;
@@ -42,6 +44,8 @@ namespace IndieWizards.Enemy
 
         private void Awake()
         {
+            audioManager = FindObjectOfType<AudioManager>();
+
             enemyAnimationController = GetComponent<EnemyAnimationController>();
 
             takeDamageAnimation = GetComponent<TakeDamageAnimation>();
@@ -84,6 +88,7 @@ namespace IndieWizards.Enemy
             Destroy(healthUI);
             GetComponent<BoxCollider2D>().enabled = false;
             //PlayDeathAnimationHere
+            audioManager.PlayEnemyDeathSound();
             enemyAnimationController.Die();
             //Destroy(this.gameObject);
         }
@@ -120,6 +125,7 @@ namespace IndieWizards.Enemy
         public void OnPlayerSighted()
         {
             if(currentState == EnemyState.Combat) { return; }
+            audioManager.PlayEnemyAlertSound();
             idleAITree.Halt();
             patrolAITree.Halt();
             ChangeStates(EnemyState.Combat);
@@ -135,6 +141,7 @@ namespace IndieWizards.Enemy
 
         private void OnDamage()//when he be take damages
         {
+            audioManager.PlayEnemyTakesDamageSound();
             takeDamageAnimation.StartTakeDamageAnimation();
 
             //jump to combat if not in combat
@@ -149,8 +156,8 @@ namespace IndieWizards.Enemy
         void FacePlayer()
         {
             //turn to face player
-            moveToLocationAIAction.Run(playerTransform.position, .5f);
-            //ChangeDirection(transform.position - playerTransform.position);
+            //moveToLocationAIAction.Run(playerTransform.position, .5f);
+            ChangeDirection(playerTransform.position);
         }
 
         void ChangeDirection(EnemyDirection enemyDirection)

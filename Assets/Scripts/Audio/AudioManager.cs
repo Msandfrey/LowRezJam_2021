@@ -17,6 +17,11 @@ namespace IndieWizards.Audio
         public AudioClip cubeSlurp;
         public AudioClip acidAttack;
         public AudioClip acidSprayWithLoop;
+        public AudioClip enemyShout;
+        public AudioClip enemyTakeDamage;
+        public AudioClip enemyAttack;
+        public AudioClip enemyDeath;
+
 
         private PlayerSettings playerSettings;
 
@@ -52,6 +57,26 @@ namespace IndieWizards.Audio
         public void PlayCubeSlurp()
         {
             sfxAudioSource.PlayOneShot(cubeSlurp);
+        }
+
+        public void PlayEnemyAlertSound()
+        {
+            sfxAudioSource.PlayOneShot(enemyShout);
+        }
+
+        public void PlayEnemyDeathSound()
+        {
+            sfxAudioSource.PlayOneShot(enemyDeath);
+        }
+        
+        public void PlayEnemyTakesDamageSound()
+        {
+            sfxAudioSource.PlayOneShot(enemyTakeDamage);
+        }
+
+        public void PlayEnemyAttackSound()
+        {
+            sfxAudioSource.PlayOneShot(enemyAttack);
         }
 
         private void PlayMusic(AudioClip clip)
