@@ -1,0 +1,792 @@
+fileFormatVersion: 2
+guid: 9c04119c42e5be141b8cb323fca885e0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 536053760303642788
+    second: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_0
+  - first:
+      213: -4347686985046956100
+    second: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_1
+  - first:
+      213: 7765143246123823233
+    second: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_2
+  - first:
+      213: -4765399121643945149
+    second: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_3
+  - first:
+      213: -728566444392251960
+    second: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_4
+  - first:
+      213: -4543901973038191048
+    second: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_5
+  - first:
+      213: 1791900124579164423
+    second: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_6
+  - first:
+      213: -6982806060223074462
+    second: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_7
+  - first:
+      213: -8960475079386362997
+    second: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_8
+  - first:
+      213: -7417208800218468685
+    second: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_9
+  - first:
+      213: -4155143450046973355
+    second: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_10
+  - first:
+      213: -3378698951588807042
+    second: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_11
+  - first:
+      213: 5685309973620086086
+    second: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_12
+  - first:
+      213: 9141041782547899438
+    second: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_13
+  - first:
+      213: 1673709696589677782
+    second: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_14
+  - first:
+      213: -1853057001972998416
+    second: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_15
+  - first:
+      213: 5891169268596613791
+    second: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_16
+  - first:
+      213: -2831578021072453606
+    second: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_17
+  - first:
+      213: -1856784627601470230
+    second: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_18
+  - first:
+      213: 7091589620728428531
+    second: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_19
+  - first:
+      213: -7076516472638829122
+    second: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_20
+  - first:
+      213: 2440297114073778296
+    second: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_21
+  - first:
+      213: 5773639379006893824
+    second: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_22
+  - first:
+      213: -3332410060234498943
+    second: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_23
+  - first:
+      213: -6638062113623724357
+    second: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_24
+  - first:
+      213: -7484901967850837694
+    second: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_25
+  - first:
+      213: 1940570203412883465
+    second: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_26
+  - first:
+      213: -4145843964547125490
+    second: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_27
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 8
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16.571428
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a8396b0e02707700800000000000000
+      internalID: 536053760303642788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16.571428
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb7efadd8b9e9a3c0800000000000000
+      internalID: -4347686985046956100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16.571428
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 180fb3f04a453cb60800000000000000
+      internalID: 7765143246123823233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16.571428
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 343447d3fb6edddb0800000000000000
+      internalID: -4765399121643945149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16.571428
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cdfabecdac93e5f0800000000000000
+      internalID: -728566444392251960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 16.571428
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83eacdaea31d0f0c0800000000000000
+      internalID: -4543901973038191048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 16.571428
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 701f48e5bab1ed810800000000000000
+      internalID: 1791900124579164423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 16.571428
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26f65fc72e6181f90800000000000000
+      internalID: -6982806060223074462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_8
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 16.571428
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8b8f62d36ff5a380800000000000000
+      internalID: -8960475079386362997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_9
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 16.571428
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bea31ee4e7c01990800000000000000
+      internalID: -7417208800218468685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_10
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 16.571428
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55ab82d0c07f556c0800000000000000
+      internalID: -4155143450046973355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_11
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 0
+        width: 16.571428
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7e709364337c11d0800000000000000
+      internalID: -3378698951588807042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_12
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 16.571428
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6455c978c4746ee40800000000000000
+      internalID: 5685309973620086086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_13
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 0
+        width: 16.571428
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2465c5e1118bde70800000000000000
+      internalID: 9141041782547899438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_14
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 16.571428
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d4ca52f9163a3710800000000000000
+      internalID: 1673709696589677782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_15
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 16.571428
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fe59d0897e9846e0800000000000000
+      internalID: -1853057001972998416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_16
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 16.571428
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f92266eac33a1c150800000000000000
+      internalID: 5891169268596613791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_17
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 0
+        width: 16.571428
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a104c2ccac634b8d0800000000000000
+      internalID: -2831578021072453606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_18
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 16.571428
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aec886708306b36e0800000000000000
+      internalID: -1856784627601470230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_19
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 0
+        width: 16.571428
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f77d5cef236a6260800000000000000
+      internalID: 7091589620728428531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_20
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 16.571428
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebd8929d2c92bcd90800000000000000
+      internalID: -7076516472638829122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_21
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 16.571428
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87847c6cb4dadd120800000000000000
+      internalID: 2440297114073778296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_22
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 0
+        width: 16.571428
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00fa9e6dc66102050800000000000000
+      internalID: 5773639379006893824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_23
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 0
+        width: 16.571428
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18cd8c1c4b6e0c1d0800000000000000
+      internalID: -3332410060234498943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_24
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 16.571428
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbeaa787dadd0e3a0800000000000000
+      internalID: -6638062113623724357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_25
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 16.571428
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 249e0a32159402890800000000000000
+      internalID: -7484901967850837694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_26
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 0
+        width: 16.571428
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 908e124815a4eea10800000000000000
+      internalID: 1940570203412883465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy4_full spritesheet_idle2_walk4_attackLR3_walkdown4_attackdown3_walkup4_attackup3_death7_2_27
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 0
+        width: 16.571428
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0fa8fe31e00776c0800000000000000
+      internalID: -4145843964547125490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
