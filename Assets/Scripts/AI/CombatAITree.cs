@@ -10,7 +10,7 @@ namespace IndieWizards.AI
         [SerializeField]
         private float combatMoveSpeed = 1f;
         [SerializeField]
-        private float attackRange = 1.5f;
+        private float attackRange = 1f;
 
         enum CombatStates { Chasing, Attacking, Waiting };
         private CombatStates currentCombatState;
@@ -45,57 +45,44 @@ namespace IndieWizards.AI
                 float distance = Vector2.Distance(playerPosition, transform.position);
                 if(Mathf.Abs(distance) <= attackRange)
                 {
-                    bool doesAttackHit = false;
-                    if (currentCombatState != CombatStates.Attacking)
-                    {
-                        enemyAnimationController.Attack();
-                        doesAttackHit = meleeAttackAIAction.Run();
-                        currentCombatState = CombatStates.Attacking;
-                        //wait for animation length
-                        StartCoroutine(Wait());
-                        isWaiting = true;
-                        return;
-                    }
-                    //wait for animation of attack to finish before stopping attack
-                    //need check to jump straight into attack
-                    meleeAttackAIAction.EndAttackCollision();
-                    if (doesAttackHit)
-                    {
-
-                    }
-                    //2.5---wait
-                    currentCombatState = CombatStates.Waiting;
-                    StartCoroutine(Wait());
-                    isWaiting = true;
-                    return;
+                    AttackPlayer(attackRange);
                 }
-
-                //failsafe until logic gets better
-                if (isWaiting) { return; }
-                //3---------move to player
-                //making sure not attacking here
-                meleeAttackAIAction.EndAttackCollision();
-
-                currentCombatState = CombatStates.Chasing;
-                moveToLocationAIAction.Run(playerPosition, combatMoveSpeed);
-                EnemyController.EnemyDirection direction = enemyController.GetCurrentDirection();
-                switch (direction)
+                else if(Mathf.Abs(distance) > attackRange)
                 {
-                    case EnemyController.EnemyDirection.Up:
-                        enemyAnimationController.WalkUp();
-                        break;
-                    case EnemyController.EnemyDirection.Down:
-                        enemyAnimationController.WalkDown();
-                        break;
-                    case EnemyController.EnemyDirection.Left:
-                        enemyAnimationController.Walk();
-                        GetComponent<SpriteRenderer>().flipX = false;
-                        break;
-                    case EnemyController.EnemyDirection.Right:
-                        enemyAnimationController.Walk();
-                        GetComponent<SpriteRenderer>().flipX = true;
-                        break;
+                    //3---------move to player
+                    //make sure damage collider is off
+                    meleeAttackAIAction.EndAttackCollision();
+                    ChasePlayer(playerPosition);
                 }
+            }
+        }
+
+        private void AttackPlayer(float range)
+        {
+            meleeAttackAIAction.Run(range);
+            //StartCoroutine(Wait());
+        }
+
+        private void ChasePlayer(Vector2 playerPosition)
+        {
+            moveToLocationAIAction.Run(playerPosition, combatMoveSpeed);
+            EnemyController.EnemyDirection direction = enemyController.GetCurrentDirection();
+            switch (direction)
+            {
+                case EnemyController.EnemyDirection.Up:
+                    enemyAnimationController.WalkUp();
+                    break;
+                case EnemyController.EnemyDirection.Down:
+                    enemyAnimationController.WalkDown();
+                    break;
+                case EnemyController.EnemyDirection.Left:
+                    enemyAnimationController.Walk();
+                    GetComponent<SpriteRenderer>().flipX = false;
+                    break;
+                case EnemyController.EnemyDirection.Right:
+                    enemyAnimationController.Walk();
+                    GetComponent<SpriteRenderer>().flipX = true;
+                    break;
             }
         }
 

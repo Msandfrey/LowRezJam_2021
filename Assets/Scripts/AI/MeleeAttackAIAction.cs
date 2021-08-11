@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using IndieWizards.Enemy;
 using IndieWizards.Character;
 using IndieWizards.UI;
@@ -24,25 +25,45 @@ namespace IndieWizards.AI
         [SerializeField]
         private float minTimeBetweenAttacks = 1.0f;
         [SerializeField]
-        private float attackRange = 1f;
+        private float delayForCollisionDetection;
 
-        private float timeSinceLastAttack;
+        private float timeSinceLastAttackStart;
+        private float timeSinceLastAttackDamage;
         private bool isAttacking = false;
 
         private EnemyController enemyController;
+        private EnemyAnimationController enemyAnimationController;
+
+        private float attackRanges = 1f;
 
         private void Awake()
         {
-            timeSinceLastAttack = Time.time;            
+            timeSinceLastAttackStart = Time.time;
+            timeSinceLastAttackDamage = Time.time;            
         }
 
         private void Start()
         {
             enemyController = GetComponent<EnemyController>();
+            enemyAnimationController = GetComponent<EnemyAnimationController>();
         }
 
-        public bool Run()
+        public bool Run(float attackRange)
         {
+            float elapsedTime = Time.time - timeSinceLastAttackStart;
+
+            if (elapsedTime - Time.deltaTime >= minTimeBetweenAttacks)
+            {
+                StartCoroutine(BeginAttackCollision(attackRange));
+                timeSinceLastAttackStart = Time.time;
+            }
+            return true;
+        }
+
+        private IEnumerator BeginAttackCollision(float attackRange)
+        {
+            enemyAnimationController.Attack();
+            yield return new WaitForSeconds(delayForCollisionDetection);
             isAttacking = true;
             //either shoot out a 1 unit ray in the direction facing
             switch (enemyController.GetCurrentDirection())
@@ -66,8 +87,6 @@ namespace IndieWizards.AI
                 default:
                     break;
             }
-            //or just turn a thing on and off
-            return true;
         }
 
         public void EndAttackCollision()
@@ -84,14 +103,14 @@ namespace IndieWizards.AI
             isAttacking = false;
         }
 
-        private void Attack(Health health)
+        private void AttackDealsDamage(Health health)
         {
-            float elapsedTime = Time.time - timeSinceLastAttack;
+            float elapsedTime = Time.time - timeSinceLastAttackDamage;
 
             if (elapsedTime - Time.deltaTime >= minTimeBetweenAttacks)
             {
                 health.TakeDamage(damagePerAttack);
-                timeSinceLastAttack = Time.time;
+                //timeSinceLastAttackDamage = Time.time;
             }
         }
 
@@ -101,7 +120,7 @@ namespace IndieWizards.AI
             {
                 EndAttackCollision();
 
-                Attack(collision.gameObject.GetComponent<Health>());
+                AttackDealsDamage(collision.gameObject.GetComponent<Health>());
             }
         }
     }
