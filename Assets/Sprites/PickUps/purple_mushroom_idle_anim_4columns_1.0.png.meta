@@ -118,12 +118,12 @@ TextureImporter:
       name: purple_mushroom_idle_anim_4columns_1.0_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 0
-        width: 6
+        width: 8
         height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -139,12 +139,12 @@ TextureImporter:
       name: purple_mushroom_idle_anim_4columns_1.0_1
       rect:
         serializedVersion: 2
-        x: 9
+        x: 8
         y: 0
-        width: 6
+        width: 8
         height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -160,12 +160,12 @@ TextureImporter:
       name: purple_mushroom_idle_anim_4columns_1.0_2
       rect:
         serializedVersion: 2
-        x: 17
+        x: 16
         y: 0
-        width: 6
+        width: 8
         height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -181,12 +181,12 @@ TextureImporter:
       name: purple_mushroom_idle_anim_4columns_1.0_3
       rect:
         serializedVersion: 2
-        x: 25
+        x: 24
         y: 0
-        width: 6
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 8
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
