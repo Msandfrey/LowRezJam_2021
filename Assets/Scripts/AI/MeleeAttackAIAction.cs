@@ -27,7 +27,8 @@ namespace IndieWizards.AI
         [SerializeField]
         private float delayForCollisionDetection;
 
-        private float timeSinceLastAttack;
+        private float timeSinceLastAttackStart;
+        private float timeSinceLastAttackDamage;
         private bool isAttacking = false;
 
         private EnemyController enemyController;
@@ -37,7 +38,8 @@ namespace IndieWizards.AI
 
         private void Awake()
         {
-            timeSinceLastAttack = Time.time;            
+            timeSinceLastAttackStart = Time.time;
+            timeSinceLastAttackDamage = Time.time;            
         }
 
         private void Start()
@@ -48,7 +50,13 @@ namespace IndieWizards.AI
 
         public bool Run(float attackRange)
         {
-            StartCoroutine(BeginAttackCollision(attackRange));
+            float elapsedTime = Time.time - timeSinceLastAttackStart;
+
+            if (elapsedTime - Time.deltaTime >= minTimeBetweenAttacks)
+            {
+                StartCoroutine(BeginAttackCollision(attackRange));
+                timeSinceLastAttackStart = Time.time;
+            }
             return true;
         }
 
@@ -97,12 +105,12 @@ namespace IndieWizards.AI
 
         private void AttackDealsDamage(Health health)
         {
-            float elapsedTime = Time.time - timeSinceLastAttack;
+            float elapsedTime = Time.time - timeSinceLastAttackDamage;
 
             if (elapsedTime - Time.deltaTime >= minTimeBetweenAttacks)
             {
                 health.TakeDamage(damagePerAttack);
-                timeSinceLastAttack = Time.time;
+                //timeSinceLastAttackDamage = Time.time;
             }
         }
 
