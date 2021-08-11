@@ -19,6 +19,11 @@ namespace IndieWizards.Enemy
         
         }
 
+        public void Die()
+        {
+            animator.SetTrigger("death");
+        }
+
         public void Walk()
         {
             // if you moving left/right

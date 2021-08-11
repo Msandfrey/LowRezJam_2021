@@ -95,6 +95,7 @@ namespace IndieWizards.AI
         protected override bool HaltTree()
         {
             isInCombat = false;
+            meleeAttackAIAction.EndAttackCollision();
             return true;
         }
     }

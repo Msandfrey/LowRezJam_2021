@@ -29,15 +29,21 @@ namespace IndieWizards.Enemy
         private Vector2 aimDirection;
 
         //ai tree stuff
-        TakeDamageAnimation takeDamageAnimation;
         private CombatAITree combatAITree;
         private IdleAITree idleAITree;
         private PatrolAITree patrolAITree;
         private MoveToLocationAIAction moveToLocationAIAction;
+
+        private EnemyAnimationController enemyAnimationController;
         private Health health;
+        private TakeDamageAnimation takeDamageAnimation;
+
+        [SerializeField] private GameObject healthUI;
 
         private void Awake()
         {
+            enemyAnimationController = GetComponent<EnemyAnimationController>();
+
             takeDamageAnimation = GetComponent<TakeDamageAnimation>();
 
             health = GetComponent<Health>();
@@ -70,12 +76,16 @@ namespace IndieWizards.Enemy
         {
             Debug.Log("I've been killed");
             //stop everythuing
+            Destroy(visibleConeDirection.gameObject);
+            Destroy(playerDetectionCone.gameObject);
             idleAITree.Halt();
             patrolAITree.Halt();
             combatAITree.Halt();
+            Destroy(healthUI);
+            GetComponent<BoxCollider2D>().enabled = false;
             //PlayDeathAnimationHere
-            Destroy(playerDetectionCone.gameObject);
-            Destroy(this.gameObject);
+            enemyAnimationController.Die();
+            //Destroy(this.gameObject);
         }
 
         public EnemyState GetCurrentState()

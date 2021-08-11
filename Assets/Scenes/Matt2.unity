@@ -1353,6 +1353,10 @@ PrefabInstance:
       propertyPath: damagePerAttack
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2750251709395501001, guid: bb8c8e2dd6f12834d929c872170b6244, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 29b0e414ace35764a93a7ce7d543ee08, type: 2}
     - target: {fileID: 2750251710183070750, guid: bb8c8e2dd6f12834d929c872170b6244, type: 3}
       propertyPath: m_RootOrder
       value: 1

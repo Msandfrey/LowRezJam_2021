@@ -218,6 +218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visibleConeDirection: {fileID: 2750251709869195164}
   playerDetectionCone: {fileID: 2750251709159163585}
+  healthUI: {fileID: 7987895324321070552}
 --- !u!114 &2750251709395500999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -885,6 +886,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e2a2117c1f3ae744ab90e3284f6e4d3, type: 3}
+--- !u!1 &7987895324321070552 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4126259413075315686, guid: 6e2a2117c1f3ae744ab90e3284f6e4d3, type: 3}
+  m_PrefabInstance: {fileID: 6312322002491176510}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &7987895324321070548 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4126259413075315690, guid: 6e2a2117c1f3ae744ab90e3284f6e4d3, type: 3}
