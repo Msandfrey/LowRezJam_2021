@@ -29,6 +29,12 @@ TextureImporter:
   - first:
       213: 922087960364842674
     second: cube_death_spritesheet_11columns_0_8
+  - first:
+      213: 8023159621179782816
+    second: cube_death_spritesheet_11columns_0_9
+  - first:
+      213: -5975735895274608001
+    second: cube_death_spritesheet_11columns_0_10
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -133,10 +139,10 @@ TextureImporter:
       name: cube_death_spritesheet_11columns_0_0
       rect:
         serializedVersion: 2
-        x: 6
+        x: 0
         y: 0
-        width: 12
-        height: 12
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,10 +160,10 @@ TextureImporter:
       name: cube_death_spritesheet_11columns_0_1
       rect:
         serializedVersion: 2
-        x: 29
+        x: 24
         y: 0
-        width: 14
-        height: 13
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,10 +181,10 @@ TextureImporter:
       name: cube_death_spritesheet_11columns_0_2
       rect:
         serializedVersion: 2
-        x: 52
+        x: 48
         y: 0
-        width: 16
-        height: 14
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,10 +202,10 @@ TextureImporter:
       name: cube_death_spritesheet_11columns_0_3
       rect:
         serializedVersion: 2
-        x: 74
+        x: 72
         y: 0
-        width: 20
-        height: 16
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -217,10 +223,10 @@ TextureImporter:
       name: cube_death_spritesheet_11columns_0_4
       rect:
         serializedVersion: 2
-        x: 97
+        x: 96
         y: 0
-        width: 22
-        height: 17
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -238,10 +244,10 @@ TextureImporter:
       name: cube_death_spritesheet_11columns_0_5
       rect:
         serializedVersion: 2
-        x: 121
+        x: 120
         y: 0
-        width: 22
-        height: 17
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -259,10 +265,10 @@ TextureImporter:
       name: cube_death_spritesheet_11columns_0_6
       rect:
         serializedVersion: 2
-        x: 145
+        x: 144
         y: 0
-        width: 23
-        height: 15
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -280,10 +286,10 @@ TextureImporter:
       name: cube_death_spritesheet_11columns_0_7
       rect:
         serializedVersion: 2
-        x: 169
+        x: 168
         y: 0
-        width: 26
-        height: 12
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -301,10 +307,10 @@ TextureImporter:
       name: cube_death_spritesheet_11columns_0_8
       rect:
         serializedVersion: 2
-        x: 196
+        x: 192
         y: 0
-        width: 62
-        height: 9
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -314,6 +320,48 @@ TextureImporter:
       bones: []
       spriteID: 2bef5315d1aebcc00800000000000000
       internalID: 922087960364842674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cube_death_spritesheet_11columns_0_9
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 0
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a6bdacba2df75f60800000000000000
+      internalID: 8023159621179782816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cube_death_spritesheet_11columns_0_10
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7a2b923ddbe11da0800000000000000
+      internalID: -5975735895274608001
       vertices: []
       indices: 
       edges: []

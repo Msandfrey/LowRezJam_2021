@@ -87,7 +87,7 @@ namespace IndieWizards.GameManagement
             }
             else
             {
-                gameOverLostPanel.SetActive(false);
+                gameOverLostPanel.SetActive(true);
             }
         }
 
