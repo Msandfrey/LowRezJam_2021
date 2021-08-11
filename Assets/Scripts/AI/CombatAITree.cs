@@ -60,7 +60,7 @@ namespace IndieWizards.AI
         private void AttackPlayer(float range)
         {
             meleeAttackAIAction.Run(range);
-            //StartCoroutine(Wait());
+            StartCoroutine(Wait());
         }
 
         private void ChasePlayer(Vector2 playerPosition)

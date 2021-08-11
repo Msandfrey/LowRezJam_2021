@@ -29,12 +29,9 @@ namespace IndieWizards.AI
 
         private float timeSinceLastAttackStart;
         private float timeSinceLastAttackDamage;
-        private bool isAttacking = false;
 
         private EnemyController enemyController;
         private EnemyAnimationController enemyAnimationController;
-
-        private float attackRanges = 1f;
 
         private void Awake()
         {
@@ -54,7 +51,28 @@ namespace IndieWizards.AI
 
             if (elapsedTime - Time.deltaTime >= minTimeBetweenAttacks)
             {
-                StartCoroutine(BeginAttackCollision(attackRange));
+                switch (enemyController.GetCurrentDirection())
+                {
+                    case EnemyController.EnemyDirection.Up:
+                        upCollider.enabled = true;
+                        break;
+                    case EnemyController.EnemyDirection.Down:
+                        downCollider.enabled = true;
+                        break;
+                    case EnemyController.EnemyDirection.Left:
+                        leftCollider.enabled = true;
+                        rightCollider.enabled = false;
+                        break;
+                    case EnemyController.EnemyDirection.Right:
+                        leftCollider.enabled = false;
+                        rightCollider.enabled = true;
+                        break;
+                    default:
+                        break;
+                }
+                enemyAnimationController.Attack();
+                //StartCoroutine(BeginAttackCollision(attackRange));
+                //StartCoroutine(EndAttackCollision());
                 timeSinceLastAttackStart = Time.time;
             }
             return true;
@@ -62,9 +80,7 @@ namespace IndieWizards.AI
 
         private IEnumerator BeginAttackCollision(float attackRange)
         {
-            enemyAnimationController.Attack();
             yield return new WaitForSeconds(delayForCollisionDetection);
-            isAttacking = true;
             //either shoot out a 1 unit ray in the direction facing
             switch (enemyController.GetCurrentDirection())
             {
@@ -96,30 +112,26 @@ namespace IndieWizards.AI
             downCollider.enabled = false;
             leftCollider.enabled = false;
             rightCollider.enabled = false;
-            leftCollider.size = new Vector2(.1f, leftCollider.size.y);
-            rightCollider.size = new Vector2(.1f, leftCollider.size.y);
-            upCollider.size = new Vector2(leftCollider.size.x, .1f);
-            downCollider.size = new Vector2(leftCollider.size.x, .1f);
-            isAttacking = false;
         }
 
         private void AttackDealsDamage(Health health)
         {
-            float elapsedTime = Time.time - timeSinceLastAttackDamage;
+            float elapsedTime = Time.time - timeSinceLastAttackStart;
 
             if (elapsedTime - Time.deltaTime >= minTimeBetweenAttacks)
             {
-                health.TakeDamage(damagePerAttack);
                 //timeSinceLastAttackDamage = Time.time;
             }
+                health.TakeDamage(damagePerAttack);
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.gameObject.tag.Equals("Player") && isAttacking)
+            if (collision.gameObject.tag.Equals("Player"))
             {
+                Debug.Log("collide with player");
                 EndAttackCollision();
-
+                
                 AttackDealsDamage(collision.gameObject.GetComponent<Health>());
             }
         }
