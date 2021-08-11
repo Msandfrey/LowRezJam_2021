@@ -33,6 +33,7 @@ namespace IndieWizards.Enemy
         private CombatAITree combatAITree;
         private IdleAITree idleAITree;
         private PatrolAITree patrolAITree;
+        private MoveToLocationAIAction moveToLocationAIAction;
         private Health health;
 
         private void Awake()
@@ -46,6 +47,8 @@ namespace IndieWizards.Enemy
             combatAITree = GetComponent<CombatAITree>();
             idleAITree = GetComponent<IdleAITree>();
             patrolAITree = GetComponent<PatrolAITree>();
+
+            moveToLocationAIAction = GetComponent<MoveToLocationAIAction>();
 
             playerTransform = FindObjectOfType<PlayerController>().transform;
         }
@@ -71,6 +74,7 @@ namespace IndieWizards.Enemy
             patrolAITree.Halt();
             combatAITree.Halt();
             //PlayDeathAnimationHere
+            Destroy(playerDetectionCone.gameObject);
             Destroy(this.gameObject);
         }
 
@@ -123,7 +127,6 @@ namespace IndieWizards.Enemy
         {
             takeDamageAnimation.StartTakeDamageAnimation();
 
-            Debug.Log("yes");
             //jump to combat if not in combat
             if (currentState == EnemyState.Combat) { return; }
             idleAITree.Halt();
@@ -136,7 +139,8 @@ namespace IndieWizards.Enemy
         void FacePlayer()
         {
             //turn to face player
-            ChangeDirection(transform.position - playerTransform.position);
+            moveToLocationAIAction.Run(playerTransform.position, .5f);
+            //ChangeDirection(transform.position - playerTransform.position);
         }
 
         void ChangeDirection(EnemyDirection enemyDirection)
