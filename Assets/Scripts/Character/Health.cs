@@ -25,7 +25,6 @@ namespace IndieWizards.Character
 
         private bool isHeal;
         private int currentHitPoints;
-        private int updatedCurrentHitPoints;
 
         // Used to make sure we only trigger onDeath once
         private bool onDeathCallbackRaised;
@@ -56,23 +55,16 @@ namespace IndieWizards.Character
 
         public void RestoreHealth(int hitPoints)
         {
-            int updatedCurrentHitPoints = Mathf.Min(currentHitPoints, maxHitPoints);             
-            if (updatedCurrentHitPoints == maxHitPoints)
-            {
-                Debug.Log("HP Full");
-            }
-            else
-            {
-                float hp = HPIntervals();
-                UpdateHealthBar(hp, isHeal=true);
-            }
+            currentHitPoints = Mathf.Min(currentHitPoints + hitPoints, maxHitPoints);
+            float hp = HPIntervals();
+            UpdateHealthBar(hp, isHeal=true);
         }
 
         private void UpdateHealthBar(float hitPoints, bool isHeal)
         {
 
             float spriteMaskX = spriteMask.GetComponent<RectTransform>().anchoredPosition.x; // used for take damage only. why?
-            spriteMask.GetComponent<RectTransform>().anchoredPosition = new Vector3(isHeal? currentHitPoints * hitPoints + hitPoints : spriteMaskX - hitPoints, 0, 0);
+            spriteMask.GetComponent<RectTransform>().anchoredPosition = new Vector3(isHeal? currentHitPoints * hitPoints : spriteMaskX - hitPoints, 0, 0);
         }
 
         private float HPIntervals()
