@@ -38,6 +38,7 @@ namespace IndieWizards.Enemy
         private AudioManager audioManager;
         private EnemyAnimationController enemyAnimationController;
         private Health health;
+        private MeleeAttackAIAction meleeAttackAIAction;
         private TakeDamageAnimation takeDamageAnimation;
 
         [SerializeField] private GameObject healthUI;
@@ -47,6 +48,8 @@ namespace IndieWizards.Enemy
             audioManager = FindObjectOfType<AudioManager>();
 
             enemyAnimationController = GetComponent<EnemyAnimationController>();
+
+            meleeAttackAIAction = GetComponent<MeleeAttackAIAction>();
 
             takeDamageAnimation = GetComponent<TakeDamageAnimation>();
 
@@ -147,6 +150,7 @@ namespace IndieWizards.Enemy
 
             //jump to combat if not in combat
             if (currentState == EnemyState.Combat) { return; }
+            meleeAttackAIAction.SetTimeForOnDamageDelay();
             idleAITree.Halt();
             patrolAITree.Halt();
             FacePlayer();
@@ -158,7 +162,7 @@ namespace IndieWizards.Enemy
         {
             //turn to face player
             //moveToLocationAIAction.Run(playerTransform.position, .5f);
-            ChangeDirection(playerTransform.position);//neeed turn better
+            ChangeDirection(transform.position - playerTransform.position);//neeed turn better
         }
 
         void ChangeDirection(EnemyDirection enemyDirection)

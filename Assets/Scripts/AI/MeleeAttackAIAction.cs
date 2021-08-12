@@ -28,8 +28,7 @@ namespace IndieWizards.AI
         [SerializeField]
         private float delayForCollisionDetection;
 
-        private float timeSinceLastAttackStart;
-        private float timeSinceLastAttackDamage;
+        private float timeSinceLastAttack;
 
         private EnemyController enemyController;
         private EnemyAnimationController enemyAnimationController;
@@ -38,25 +37,30 @@ namespace IndieWizards.AI
 
         private void Awake()
         {
-            timeSinceLastAttackStart = Time.time;
-            timeSinceLastAttackDamage = Time.time;            
+            timeSinceLastAttack = Time.time;        
         }
 
         private void Start()
         {
             audioManager = FindObjectOfType<AudioManager>();
-            enemyController = GetComponent<EnemyController>();
             enemyAnimationController = GetComponent<EnemyAnimationController>();
+            enemyController = GetComponent<EnemyController>();
+        }
+
+        public void SetTimeForOnDamageDelay()
+        {   //set time since last attack to now so 
+            //the dude waits to attack when he turns around
+            timeSinceLastAttack = Time.time;
         }
 
         public bool Run()
         {
-            float elapsedTime = Time.time - timeSinceLastAttackStart;
+            float elapsedTime = Time.time - timeSinceLastAttack;
 
             if (elapsedTime - Time.deltaTime >= minTimeBetweenAttacks)
             {
                 switch (enemyController.GetCurrentDirection())
-                {
+                {//need to turn on collider for direction attacking
                     case EnemyController.EnemyDirection.Up:
                         upCollider.enabled = true;
                         break;
@@ -76,16 +80,14 @@ namespace IndieWizards.AI
                 }
                 enemyAnimationController.Attack();
                 audioManager.PlayEnemyAttackSound();
-                //StartCoroutine(BeginAttackCollision(attackRange));
-                //StartCoroutine(EndAttackCollision());
-                timeSinceLastAttackStart = Time.time;
+                timeSinceLastAttack = Time.time;
             }
             return true;
         }
 
         public void EndAttackCollision()
         {
-            //turn off collider
+            //turn off colliders so no more attack
             upCollider.enabled = false;
             downCollider.enabled = false;
             leftCollider.enabled = false;
@@ -94,22 +96,14 @@ namespace IndieWizards.AI
 
         private void AttackDealsDamage(Health health)
         {
-            float elapsedTime = Time.time - timeSinceLastAttackStart;
-
-            if (elapsedTime - Time.deltaTime >= minTimeBetweenAttacks)
-            {
-                //timeSinceLastAttackDamage = Time.time;
-            }
-                health.TakeDamage(damagePerAttack);
+            health.TakeDamage(damagePerAttack);
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.gameObject.tag.Equals("Player"))
             {
-                Debug.Log("collide with player");
                 EndAttackCollision();
-                
                 AttackDealsDamage(collision.gameObject.GetComponent<Health>());
             }
         }

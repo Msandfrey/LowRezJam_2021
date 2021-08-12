@@ -12,9 +12,6 @@ namespace IndieWizards.AI
         [SerializeField]
         private float attackRange = 1f;
 
-        enum CombatStates { Chasing, Attacking, Waiting };
-        private CombatStates currentCombatState;
-
         private EnemyController enemyController;
         private EnemyAnimationController enemyAnimationController;
         private FindTarget findTarget;
