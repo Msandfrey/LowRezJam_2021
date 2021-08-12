@@ -80,6 +80,7 @@ namespace IndieWizards.GameManagement
 
         public void Play()
         {
+            audioManager.musicAudioSource.Stop();
             sceneLoader.LoadGameScene();    
         }
 
