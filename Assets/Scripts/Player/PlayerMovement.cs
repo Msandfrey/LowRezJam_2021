@@ -36,7 +36,7 @@ namespace IndieWizards.Player
             {
                 movementDirection = Direction.Down;
             }
-            else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow) || true)
+            else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow) )
             {
                 movementDirection = Direction.Right;
             }
