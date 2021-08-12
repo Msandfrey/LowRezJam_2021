@@ -36,10 +36,11 @@ namespace IndieWizards.AI
             {
                 //1---------find target player
                 Vector2 playerPosition = findTarget.Run(true);
-                if(playerPosition == Vector2.zero) { return; }
+                if (playerPosition == Vector2.zero) { return; }
 
                 //2---------if in range, attack
                 float distance = Vector2.Distance(playerPosition, transform.position);
+                //if up or down add a little distance to range
                 if(Mathf.Abs(distance) <= attackRange)
                 {
                     AttackPlayer();
