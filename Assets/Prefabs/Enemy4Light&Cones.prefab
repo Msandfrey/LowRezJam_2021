@@ -191,7 +191,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1720781897
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 733542126013313284, guid: 200fe007ed00e6b46a37f089e8eff568, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -232,7 +232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waitTime: 1
-  combatMoveSpeed: 3
+  combatMoveSpeed: 5
   attackRange: 1.75
 --- !u!114 &2750251709395500996
 MonoBehaviour:
@@ -418,8 +418,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fe4279850204478980d72276bcf2a72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialHitPoints: 2
-  maxHitPoints: 2
+  initialHitPoints: 5
+  maxHitPoints: 5
   spriteMask: {fileID: 7987895323564968931}
 --- !u!114 &6334477232704544207
 MonoBehaviour:
