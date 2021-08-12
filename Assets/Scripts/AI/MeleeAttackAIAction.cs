@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using IndieWizards.Audio;
 using IndieWizards.Enemy;
 using IndieWizards.Character;
 using IndieWizards.UI;
@@ -33,6 +34,8 @@ namespace IndieWizards.AI
         private EnemyController enemyController;
         private EnemyAnimationController enemyAnimationController;
 
+        private AudioManager audioManager;
+
         private void Awake()
         {
             timeSinceLastAttackStart = Time.time;
@@ -41,11 +44,12 @@ namespace IndieWizards.AI
 
         private void Start()
         {
+            audioManager = FindObjectOfType<AudioManager>();
             enemyController = GetComponent<EnemyController>();
             enemyAnimationController = GetComponent<EnemyAnimationController>();
         }
 
-        public bool Run(float attackRange)
+        public bool Run()
         {
             float elapsedTime = Time.time - timeSinceLastAttackStart;
 
@@ -71,38 +75,12 @@ namespace IndieWizards.AI
                         break;
                 }
                 enemyAnimationController.Attack();
+                audioManager.PlayEnemyAttackSound();
                 //StartCoroutine(BeginAttackCollision(attackRange));
                 //StartCoroutine(EndAttackCollision());
                 timeSinceLastAttackStart = Time.time;
             }
             return true;
-        }
-
-        private IEnumerator BeginAttackCollision(float attackRange)
-        {
-            yield return new WaitForSeconds(delayForCollisionDetection);
-            //either shoot out a 1 unit ray in the direction facing
-            switch (enemyController.GetCurrentDirection())
-            {
-                case EnemyController.EnemyDirection.Up:
-                    upCollider.enabled = true;
-                    upCollider.size = new Vector2(leftCollider.size.x, attackRange);
-                    break;
-                case EnemyController.EnemyDirection.Down:
-                    downCollider.enabled = true;
-                    upCollider.size = new Vector2(leftCollider.size.x, attackRange);
-                    break;
-                case EnemyController.EnemyDirection.Left:
-                    leftCollider.enabled = true;
-                    leftCollider.size = new Vector2(attackRange, leftCollider.size.y);
-                    break;
-                case EnemyController.EnemyDirection.Right:
-                    rightCollider.enabled = true;
-                    leftCollider.size = new Vector2(attackRange, leftCollider.size.y);
-                    break;
-                default:
-                    break;
-            }
         }
 
         public void EndAttackCollision()

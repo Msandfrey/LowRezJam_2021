@@ -12289,6 +12289,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1376385152}
     m_Modifications:
+    - target: {fileID: 168290490398428984, guid: fbb2839d26b659e4993bcd107515695f, type: 3}
+      propertyPath: m_Size.y
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 2750251709395500995, guid: fbb2839d26b659e4993bcd107515695f, type: 3}
       propertyPath: isLoopingPath
       value: 1
@@ -12381,6 +12385,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreenKnight&Cones
       objectReference: {fileID: 0}
+    - target: {fileID: 4517267920050872270, guid: fbb2839d26b659e4993bcd107515695f, type: 3}
+      propertyPath: m_Size.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517267920050872270, guid: fbb2839d26b659e4993bcd107515695f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4971917753075326198, guid: fbb2839d26b659e4993bcd107515695f, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -12388,6 +12400,18 @@ PrefabInstance:
     - target: {fileID: 5761337744152637978, guid: fbb2839d26b659e4993bcd107515695f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6268386030732040473, guid: fbb2839d26b659e4993bcd107515695f, type: 3}
+      propertyPath: m_Size.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8802067418061551647, guid: fbb2839d26b659e4993bcd107515695f, type: 3}
+      propertyPath: m_Size.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8802067418061551647, guid: fbb2839d26b659e4993bcd107515695f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbb2839d26b659e4993bcd107515695f, type: 3}
@@ -14018,6 +14042,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1376385152}
     m_Modifications:
+    - target: {fileID: 168290490398428984, guid: 5f811b87be542594e835b386d9257db2, type: 3}
+      propertyPath: m_Size.y
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1711049184939921724, guid: 5f811b87be542594e835b386d9257db2, type: 3}
       propertyPath: targetCheckpoints.Array.data[1]
       value: 
@@ -14114,6 +14142,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy4Light&Cones
       objectReference: {fileID: 0}
+    - target: {fileID: 4517267920050872270, guid: 5f811b87be542594e835b386d9257db2, type: 3}
+      propertyPath: m_Size.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6268386030732040473, guid: 5f811b87be542594e835b386d9257db2, type: 3}
+      propertyPath: m_Size.y
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 6317744540410376970, guid: 5f811b87be542594e835b386d9257db2, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -14121,6 +14157,10 @@ PrefabInstance:
     - target: {fileID: 6327809832204683450, guid: 5f811b87be542594e835b386d9257db2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8802067418061551647, guid: 5f811b87be542594e835b386d9257db2, type: 3}
+      propertyPath: m_Size.x
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f811b87be542594e835b386d9257db2, type: 3}
@@ -14136,6 +14176,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1376385152}
     m_Modifications:
+    - target: {fileID: 168290490398428984, guid: 54c816baf5a2ecc4f91738b991e2f4bf, type: 3}
+      propertyPath: m_Size.y
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 2750251709395500995, guid: 54c816baf5a2ecc4f91738b991e2f4bf, type: 3}
       propertyPath: isLoopingPath
       value: 1
@@ -14236,9 +14280,21 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -3.25
       objectReference: {fileID: 0}
+    - target: {fileID: 4517267920050872270, guid: 54c816baf5a2ecc4f91738b991e2f4bf, type: 3}
+      propertyPath: m_Size.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6268386030732040473, guid: 54c816baf5a2ecc4f91738b991e2f4bf, type: 3}
+      propertyPath: m_Size.y
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 6944646342998597192, guid: 54c816baf5a2ecc4f91738b991e2f4bf, type: 3}
       propertyPath: targetCheckpoints.Array.data[1]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8802067418061551647, guid: 54c816baf5a2ecc4f91738b991e2f4bf, type: 3}
+      propertyPath: m_Size.x
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54c816baf5a2ecc4f91738b991e2f4bf, type: 3}
@@ -15008,9 +15064,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy3&Cones
       objectReference: {fileID: 0}
+    - target: {fileID: 4517267920050872270, guid: a663211fbbd67544cb84d24a1876919f, type: 3}
+      propertyPath: m_Size.x
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5239614251953280628, guid: a663211fbbd67544cb84d24a1876919f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6268386030732040473, guid: a663211fbbd67544cb84d24a1876919f, type: 3}
+      propertyPath: m_Size.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8802067418061551647, guid: a663211fbbd67544cb84d24a1876919f, type: 3}
+      propertyPath: m_Size.x
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8950848281408031880, guid: a663211fbbd67544cb84d24a1876919f, type: 3}
       propertyPath: m_RootOrder

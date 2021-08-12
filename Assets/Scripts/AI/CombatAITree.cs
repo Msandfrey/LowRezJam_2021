@@ -45,7 +45,7 @@ namespace IndieWizards.AI
                 float distance = Vector2.Distance(playerPosition, transform.position);
                 if(Mathf.Abs(distance) <= attackRange)
                 {
-                    AttackPlayer(attackRange);
+                    AttackPlayer();
                 }
                 else if(Mathf.Abs(distance) > attackRange)
                 {
@@ -57,9 +57,9 @@ namespace IndieWizards.AI
             }
         }
 
-        private void AttackPlayer(float range)
+        private void AttackPlayer()
         {
-            meleeAttackAIAction.Run(range);
+            meleeAttackAIAction.Run();
             StartCoroutine(Wait());
         }
 
