@@ -89,6 +89,7 @@ namespace IndieWizards.Enemy
             GetComponent<BoxCollider2D>().enabled = false;
             //PlayDeathAnimationHere
             audioManager.PlayEnemyDeathSound();
+            takeDamageAnimation.StartKillAnimation();
             enemyAnimationController.Die();
             //Destroy(this.gameObject);
         }

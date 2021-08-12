@@ -34,6 +34,15 @@ namespace IndieWizards.Animations
             }
         }
 
+        public void StartKillAnimation()
+        {
+            if (spriteRenderer != null)
+            {
+                originalColor = spriteRenderer.color;
+                spriteRenderer.color = spriteColorWhenDamaged;
+            }
+        }
+
         private void StopTakeDamageAnimation()
         {
             if (spriteRenderer != null)
