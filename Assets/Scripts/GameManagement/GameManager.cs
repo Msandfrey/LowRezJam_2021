@@ -49,9 +49,6 @@ namespace IndieWizards.GameManagement
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                GameOver(true);
-                return;
-
                 if (isPaused)
                 {
                     Resume();
