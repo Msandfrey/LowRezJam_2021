@@ -42,6 +42,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Enemy
+    uniqueID: 2574185399
+    locked: 0
   - name: Cube
     uniqueID: 196769661
     locked: 0
