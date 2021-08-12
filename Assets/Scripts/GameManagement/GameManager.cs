@@ -88,6 +88,7 @@ namespace IndieWizards.GameManagement
 
         public void Replay()
         {
+            audioManager.musicAudioSource.Stop();
             sceneLoader.LoadStartGameCutScene();
         }
 
