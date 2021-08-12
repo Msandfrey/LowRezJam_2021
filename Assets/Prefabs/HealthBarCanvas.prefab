@@ -85,7 +85,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &4126259413075315687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 5354899836428747908}
   - component: {fileID: 4126259414476673309}
   m_Layer: 0
-  m_Name: GreyBar
+  m_Name: RedBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -190,7 +190,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1707384790895038948, guid: a7fe10b4a6d86ca409eaa60d96d65d0e, type: 3}
+  m_Sprite: {fileID: -7124087473529350490, guid: 9ad389f0e66d1124db240f57f5b12107, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
