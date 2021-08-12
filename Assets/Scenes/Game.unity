@@ -84798,7 +84798,7 @@ PrefabInstance:
       objectReference: {fileID: 369682690}
     - target: {fileID: 2234364105261123748, guid: 5416135af37e8a8488fa5bc60d18e986, type: 3}
       propertyPath: initialHitPoints
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2518008058481412094, guid: 5416135af37e8a8488fa5bc60d18e986, type: 3}
       propertyPath: m_Icon
