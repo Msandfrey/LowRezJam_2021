@@ -207,17 +207,20 @@ namespace IndieWizards.Enemy
                     //if moving up
                     currentDirection = EnemyDirection.Up;
                     aimDirection = Vector2.left;
+                    enemyAnimationController.SetUp();
                     visibleConeDirection.FaceUp();
                 }
                 else
                 {
                     currentDirection = EnemyDirection.Down;
                     aimDirection = Vector2.right;
+                    enemyAnimationController.SetDown();
                     visibleConeDirection.FaceDown();
                 }
             }
             else
             {
+                enemyAnimationController.SetSideways();
                 //if moving left/right
                 if(x == 0)
                 {
