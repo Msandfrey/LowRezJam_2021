@@ -32,7 +32,7 @@ namespace IndieWizards.GameManagement
             isPaused = false;
 
             enemies = new HashSet<GameObject>();
-            foreach(GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
+            foreach(GameObject enemy in GameObject.FindGameObjectsWithTag("EnemyBoss"))
             {
                 enemies.Add(enemy);
             }

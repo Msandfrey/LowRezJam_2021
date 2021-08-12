@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - EnemyBoss
   layers:
   - Default
   - TransparentFX
@@ -53,4 +54,7 @@ TagManager:
     locked: 0
   - name: mask
     uniqueID: 1746080985
+    locked: 0
+  - name: EnemyBoss
+    uniqueID: 2536489623
     locked: 0
