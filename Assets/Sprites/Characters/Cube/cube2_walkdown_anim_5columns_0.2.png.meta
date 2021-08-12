@@ -1,19 +1,22 @@
 fileFormatVersion: 2
-guid: 20509512dfd2ed64ca43bbbc5799471a
+guid: 660753921ce3c0b43a79bde80a444c06
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -948099817452421019
-    second: published_cube2_anim_walk_right_4columns_0.2.0_0
+      213: 3220830659192654760
+    second: cube2_walkdown_anim_5columns_0.2_0
   - first:
-      213: -6321838359422825514
-    second: published_cube2_anim_walk_right_4columns_0.2.0_1
+      213: -2720927993869669790
+    second: cube2_walkdown_anim_5columns_0.2_1
   - first:
-      213: -5757077036369744860
-    second: published_cube2_anim_walk_right_4columns_0.2.0_2
+      213: -7273078700421187268
+    second: cube2_walkdown_anim_5columns_0.2_2
   - first:
-      213: -6131376182743713744
-    second: published_cube2_anim_walk_right_4columns_0.2.0_3
+      213: -8843247709526100241
+    second: cube2_walkdown_anim_5columns_0.2_3
+  - first:
+      213: -4667531143270080742
+    second: cube2_walkdown_anim_5columns_0.2_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -115,11 +118,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: published_cube2_anim_walk_right_4columns_0.2.0_0
+      name: cube2_walkdown_anim_5columns_0.2_0
       rect:
         serializedVersion: 2
         x: 1
-        y: 0
+        y: 3
         width: 12
         height: 12
       alignment: 0
@@ -129,19 +132,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 560c2214d3ca7d2f0800000000000000
-      internalID: -948099817452421019
+      spriteID: 8ab8dda7b60b2bc20800000000000000
+      internalID: 3220830659192654760
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: published_cube2_anim_walk_right_4columns_0.2.0_1
+      name: cube2_walkdown_anim_5columns_0.2_1
       rect:
         serializedVersion: 2
         x: 17
-        y: 0
-        width: 13
+        y: 3
+        width: 12
         height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -150,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6db0a23b1815448a0800000000000000
-      internalID: -6321838359422825514
+      spriteID: 26a6bf9d7625d3ad0800000000000000
+      internalID: -2720927993869669790
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: published_cube2_anim_walk_right_4columns_0.2.0_2
+      name: cube2_walkdown_anim_5columns_0.2_2
       rect:
         serializedVersion: 2
         x: 33
-        y: 0
-        width: 14
-        height: 12
+        y: 3
+        width: 12
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42c6f9e00f0ca10b0800000000000000
-      internalID: -5757077036369744860
+      spriteID: c397fe5d475d01b90800000000000000
+      internalID: -7273078700421187268
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: published_cube2_anim_walk_right_4columns_0.2.0_3
+      name: cube2_walkdown_anim_5columns_0.2_3
       rect:
         serializedVersion: 2
         x: 49
-        y: 0
-        width: 14
-        height: 12
+        y: 3
+        width: 12
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,8 +195,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0383543e8d9f8eaa0800000000000000
-      internalID: -6131376182743713744
+      spriteID: fe6f8eccf09764580800000000000000
+      internalID: -8843247709526100241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cube2_walkdown_anim_5columns_0.2_4
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 3
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1f5053a729993fb0800000000000000
+      internalID: -4667531143270080742
       vertices: []
       indices: 
       edges: []
