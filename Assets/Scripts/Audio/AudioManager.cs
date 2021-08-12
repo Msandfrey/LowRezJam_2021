@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using IndieWizards.DataStorage;
 
@@ -18,10 +19,10 @@ namespace IndieWizards.Audio
         public AudioClip acidAttack;
         public AudioClip acidSprayWithLoop;
         public AudioClip healing;
-        public AudioClip poison; // is there audio for this yet?
-        public AudioClip cubeSlurp; // cube consume mushroom?
+        public AudioClip poison;
+        public AudioClip cubeSlurp;
         public AudioClip cubeTakeDamage; 
-        public AudioClip cubeAttack; // cube attack enemy.
+        public AudioClip cubeAttack;
         public AudioClip cubeDeath;
         public AudioClip enemyShout;
         public AudioClip enemyTakeDamage;
@@ -79,9 +80,20 @@ namespace IndieWizards.Audio
             sfxAudioSource.PlayOneShot(healing);
         }
 
-        public void PlayPoisonSound()
+        public void PlayPoisonSound(AudioClip clip)
         {
-            sfxAudioSource.PlayOneShot(poison);
+            sfxAudioSource.Stop();
+            sfxAudioSource.clip = clip;
+            sfxAudioSource.loop = true;
+            sfxAudioSource.volume = 10f * 10f;
+            sfxAudioSource.Play();
+            StartCoroutine(WaitForMe());
+        }
+
+        private IEnumerator WaitForMe()
+        {
+            yield return new WaitForSeconds(5);
+            sfxAudioSource.Stop();
         }
 
         public void PlayCubeSlurp()

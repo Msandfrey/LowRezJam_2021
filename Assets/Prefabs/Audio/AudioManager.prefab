@@ -53,7 +53,7 @@ MonoBehaviour:
   acidAttack: {fileID: 8300000, guid: 2d8bd0a3304f64a5384d2f43e4b69458, type: 3}
   acidSprayWithLoop: {fileID: 8300000, guid: bdd1c457dc3664825ac279ba2a27a787, type: 3}
   healing: {fileID: 8300000, guid: c69c5b40d0167d445926b404462beabc, type: 3}
-  poison: {fileID: 8300000, guid: 570f6605e181d6943b72c348f6f25013, type: 3}
+  poison: {fileID: 8300000, guid: ef8c2d348418aba45bf8bb50ab5b6feb, type: 3}
   cubeSlurp: {fileID: 8300000, guid: 82e7e9302bbd7450c969d0ca850cc6a7, type: 3}
   cubeTakeDamage: {fileID: 8300000, guid: dd00440eb3692104ea3b6632e9345ece, type: 3}
   cubeAttack: {fileID: 8300000, guid: 570f6605e181d6943b72c348f6f25013, type: 3}

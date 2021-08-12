@@ -100,19 +100,19 @@ namespace IndieWizards.Player
         private void ApplyAcidPowerUp(int damagePerAttack)
         {
             purpleMushroom.AnimateAcid();
-            audioManager.PlayAcidSprayLoop();
+            Invoke(nameof(PlayAcidSprayLoop), 0.5f);
         }
 
         private void ApplyPoisonPowerUp(int damagePerAttack)
         {
             greenMushroom.AnimatePoison();
-            audioManager.PlayPoisonSound();
+            Invoke(nameof(PlayPoisonSound), 0.5f);
         }
 
         private void ApplyHealthPowerUp(int hitpoints)
         {
             redMushroom.AnimateHeal();
-            audioManager.PlayHealingSound();
+            Invoke(nameof(PlayHealingSound), 0.4f);
             health.RestoreHealth(hitpoints);
         }
 
@@ -126,6 +126,21 @@ namespace IndieWizards.Player
             animator.SetTrigger("death");
             audioManager.PlayCubeDeath();
             Invoke(nameof(GameLost), 2.0f);
+        }
+
+        private void PlayAcidSprayLoop()
+        {
+            audioManager.PlayAcidSprayLoop();
+        }
+
+        private void PlayPoisonSound()
+        {
+            audioManager.PlayPoisonSound(audioManager.poison);
+        }
+
+        private void PlayHealingSound()
+        {
+            audioManager.PlayHealingSound();
         }
 
         private void GameLost()
