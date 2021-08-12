@@ -1,17 +1,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 using IndieWizards.Audio;
+using IndieWizards.UI;
 
 namespace IndieWizards.GameManagement
 {
     public class GameManager : MonoBehaviour
     {
-        public SceneLoader sceneLoader;
-        public AudioManager audioManager;
+        [Header("Game Management")]
+        [SerializeField]
+        private SceneLoader sceneLoader;
+        [SerializeField]
+        private AudioManager audioManager;
+        [SerializeField]
+        private GameWonController gameWonController;
 
-        public GameObject gameOverWonPanel;
-        public GameObject gameOverLostPanel;
-        public GameObject pauseMenu;
+        [Header("UI Management")]
+        [SerializeField]
+        private GameObject gameOverLostPanel;
+        [SerializeField]
+        private GameObject pauseMenu;
 
         private bool isPaused;
 
@@ -20,7 +28,6 @@ namespace IndieWizards.GameManagement
         private void Awake()
         {
             gameOverLostPanel.SetActive(false);
-            gameOverWonPanel.SetActive(false);
             pauseMenu.SetActive(false);
             isPaused = false;
 
@@ -42,6 +49,9 @@ namespace IndieWizards.GameManagement
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
+                GameOver(true);
+                return;
+
                 if (isPaused)
                 {
                     Resume();
@@ -50,6 +60,10 @@ namespace IndieWizards.GameManagement
                 {
                     Pause();
                 }
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha0))
+            {
+                GameOver(true);
             }
             else
             {
@@ -79,14 +93,13 @@ namespace IndieWizards.GameManagement
 
         public void GameOver(bool won)
         {
-            Time.timeScale = 0.0f;
-
             if (won)
             {
-                gameOverWonPanel.SetActive(true);
+                gameWonController.GameWon();
             }
             else
             {
+                Time.timeScale = 0.0f;
                 gameOverLostPanel.SetActive(true);
             }
         }
