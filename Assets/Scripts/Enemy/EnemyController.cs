@@ -162,7 +162,8 @@ namespace IndieWizards.Enemy
         {
             //turn to face player
             //moveToLocationAIAction.Run(playerTransform.position, .5f);
-            ChangeDirection(transform.position - playerTransform.position);//neeed turn better
+            ChangeDirection(playerTransform.position - transform.position);//neeed turn better
+            Debug.Log(currentDirection);
         }
 
         void ChangeDirection(EnemyDirection enemyDirection)
