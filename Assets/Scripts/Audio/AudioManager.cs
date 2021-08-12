@@ -12,16 +12,21 @@ namespace IndieWizards.Audio
         [Header("Music Tracks")]
         public AudioClip titleMusic;
         public AudioClip gameMusic;
+        public AudioClip cutSceneMusic;
 
         [Header("Sound Effects")]
-        public AudioClip cubeSlurp;
         public AudioClip acidAttack;
         public AudioClip acidSprayWithLoop;
+        public AudioClip healing;
+        public AudioClip poison; // is there audio for this yet?
+        public AudioClip cubeSlurp; // cube consume mushroom?
+        public AudioClip cubeTakeDamage; 
+        public AudioClip cubeAttack; // cube attack enemy.
+        public AudioClip cubeDeath;
         public AudioClip enemyShout;
         public AudioClip enemyTakeDamage;
         public AudioClip enemyAttack;
         public AudioClip enemyDeath;
-
 
         private PlayerSettings playerSettings;
 
@@ -54,9 +59,49 @@ namespace IndieWizards.Audio
             PlayMusic(titleMusic);
         }
 
+        public void PlayCutSceneMusic()
+        {
+            PlayMusic(cutSceneMusic);
+        }
+
+        public void PlayAcidAttack()
+        {
+            sfxAudioSource.PlayOneShot(acidAttack);
+        }
+
+        public void PlayAcidSprayLoop()
+        {
+            sfxAudioSource.PlayOneShot(acidSprayWithLoop);
+        }
+
+        public void PlayHealingSound()
+        {
+            sfxAudioSource.PlayOneShot(healing);
+        }
+
+        public void PlayPoisonSound()
+        {
+            sfxAudioSource.PlayOneShot(poison);
+        }
+
         public void PlayCubeSlurp()
         {
             sfxAudioSource.PlayOneShot(cubeSlurp);
+        }
+
+        public void PlayCubeTakeDamage()
+        {
+            sfxAudioSource.PlayOneShot(cubeTakeDamage);
+        }
+
+        public void PlayCubeAttack()
+        {
+            sfxAudioSource.PlayOneShot(cubeAttack);
+        }
+
+        public void PlayCubeDeath()
+        {
+            sfxAudioSource.PlayOneShot(cubeDeath);
         }
 
         public void PlayEnemyAlertSound()
@@ -78,6 +123,7 @@ namespace IndieWizards.Audio
         {
             sfxAudioSource.PlayOneShot(enemyAttack);
         }
+
 
         private void PlayMusic(AudioClip clip)
         {

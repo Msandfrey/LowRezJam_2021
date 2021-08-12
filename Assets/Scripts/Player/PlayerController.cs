@@ -75,18 +75,18 @@ namespace IndieWizards.Player
             switch(consumable.ConsummableType)
             {
                 case ConsumableType.AcidMushroom:
-                    ApplyAcidPowerUp(consumable.Amount);
                     audioManager.PlayCubeSlurp();
+                    ApplyAcidPowerUp(consumable.Amount);
                     break;
 
                 case ConsumableType.HealthMushroom:
-                    ApplyHealthPowerUp(consumable.Amount);
                     audioManager.PlayCubeSlurp();
+                    ApplyHealthPowerUp(consumable.Amount);
                     break;
 
                 case ConsumableType.PoisonMushroom:
-                    ApplyPoisonPowerUp(consumable.Amount);
                     audioManager.PlayCubeSlurp();
+                    ApplyPoisonPowerUp(consumable.Amount);
                     break;
 
                 default:
@@ -100,22 +100,19 @@ namespace IndieWizards.Player
         private void ApplyAcidPowerUp(int damagePerAttack)
         {
             purpleMushroom.AnimateAcid();
-            // disable enemy's meleeattack damagePerAttack on player to 0 when attacked?
-            // or is this handled only when the enemy is in attack state?
-            Debug.Log($"ate <color=purple>purple</color> mushroom");
+            audioManager.PlayAcidSprayLoop();
         }
 
         private void ApplyPoisonPowerUp(int damagePerAttack)
         {
             greenMushroom.AnimatePoison();
-            // disable enemy's meleeattack damagePerAttack on player to 0 when attacked?
-            // or is this handled only when the enemy is in attack state?
-            Debug.Log($"ate <color=green>green</color> mushroom");   
+            audioManager.PlayPoisonSound();
         }
 
         private void ApplyHealthPowerUp(int hitpoints)
         {
             redMushroom.AnimateHeal();
+            audioManager.PlayHealingSound();
             health.RestoreHealth(hitpoints);
         }
 
@@ -127,7 +124,7 @@ namespace IndieWizards.Player
         private void HandleDeath()
         {
             animator.SetTrigger("death");
-
+            audioManager.PlayCubeDeath();
             Invoke(nameof(GameLost), 2.0f);
         }
 

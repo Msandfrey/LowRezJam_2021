@@ -49,9 +49,19 @@ MonoBehaviour:
   sfxAudioSource: {fileID: 4483101338267594745}
   titleMusic: {fileID: 8300000, guid: 1cf7353fdade74571a35abb5c9065137, type: 3}
   gameMusic: {fileID: 8300000, guid: 43a5c09cde391ee44920037a4950c613, type: 3}
-  cubeSlurp: {fileID: 8300000, guid: 82e7e9302bbd7450c969d0ca850cc6a7, type: 3}
+  cutSceneMusic: {fileID: 8300000, guid: ea9d13bc99c53f5498e704bd06e8a3d2, type: 3}
   acidAttack: {fileID: 8300000, guid: 2d8bd0a3304f64a5384d2f43e4b69458, type: 3}
   acidSprayWithLoop: {fileID: 8300000, guid: bdd1c457dc3664825ac279ba2a27a787, type: 3}
+  healing: {fileID: 8300000, guid: c69c5b40d0167d445926b404462beabc, type: 3}
+  poison: {fileID: 8300000, guid: 570f6605e181d6943b72c348f6f25013, type: 3}
+  cubeSlurp: {fileID: 8300000, guid: 82e7e9302bbd7450c969d0ca850cc6a7, type: 3}
+  cubeTakeDamage: {fileID: 8300000, guid: dd00440eb3692104ea3b6632e9345ece, type: 3}
+  cubeAttack: {fileID: 8300000, guid: 570f6605e181d6943b72c348f6f25013, type: 3}
+  cubeDeath: {fileID: 8300000, guid: 008394b559b9d8648baad35c2ad70ecc, type: 3}
+  enemyShout: {fileID: 8300000, guid: f834a229fc0d8be4094e42fcda22d1ac, type: 3}
+  enemyTakeDamage: {fileID: 8300000, guid: d310e4486dbdf5541a1aace7256047a0, type: 3}
+  enemyAttack: {fileID: 8300000, guid: 84f048da61c4562439df9fc0f0c59f23, type: 3}
+  enemyDeath: {fileID: 8300000, guid: ac2768395d5546547a7414de61ea4d6f, type: 3}
 --- !u!82 &8247860971481959164
 AudioSource:
   m_ObjectHideFlags: 0

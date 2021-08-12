@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using IndieWizards.Audio;
 
 namespace IndieWizards.GameManagement
 {
@@ -10,6 +11,7 @@ namespace IndieWizards.GameManagement
     {
         private SceneLoader sceneLoader;
         private Animator animator;
+        [SerializeField] private AudioManager audioManager;
 
         private void Awake()
         {
@@ -20,6 +22,7 @@ namespace IndieWizards.GameManagement
         private void Start()
         {
             animator.enabled = true;
+            audioManager.PlayCutSceneMusic();
         }
 
         public void CutSceneCompleted()

@@ -1,4 +1,5 @@
 using UnityEngine;
+using IndieWizards.Audio;
 using IndieWizards.Character;
 using IndieWizards.UI;
 
@@ -13,6 +14,11 @@ namespace IndieWizards.Player
         private float minTimeBetweenAttacks = 0.5f;
 
         private float timeSinceLastAttack;
+        private AudioManager audioManager;
+
+        private void Start() {
+            audioManager = FindObjectOfType<AudioManager>();
+        }
 
         private void Awake()
         {
@@ -49,6 +55,7 @@ namespace IndieWizards.Player
                 {
                     Debug.Log("Attacking enemy");
                     health.TakeDamage(damagePerAttack);
+                    audioManager.PlayCubeAttack();
                     timeSinceLastAttack = Time.time;
                 }
             }
