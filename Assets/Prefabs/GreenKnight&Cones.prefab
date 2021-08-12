@@ -232,7 +232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waitTime: 1
-  combatMoveSpeed: 3
+  combatMoveSpeed: 5
   attackRange: 1.75
 --- !u!114 &2750251709395500996
 MonoBehaviour:
@@ -324,7 +324,7 @@ MonoBehaviour:
   leftCollider: {fileID: 4517267920050872270}
   downCollider: {fileID: 6268386030732040473}
   upCollider: {fileID: 168290490398428984}
-  damagePerAttack: 1
+  damagePerAttack: 2
   minTimeBetweenAttacks: 1
   delayForCollisionDetection: 0.7
 --- !u!95 &2750251709395501001
@@ -418,8 +418,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fe4279850204478980d72276bcf2a72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialHitPoints: 2
-  maxHitPoints: 2
+  initialHitPoints: 50
+  maxHitPoints: 50
   spriteMask: {fileID: 7987895323564968931}
 --- !u!114 &6334477232704544207
 MonoBehaviour:

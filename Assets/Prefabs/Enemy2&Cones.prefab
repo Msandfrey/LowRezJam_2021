@@ -232,7 +232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waitTime: 1
-  combatMoveSpeed: 3
+  combatMoveSpeed: 5
   attackRange: 1.75
 --- !u!114 &2750251709395500996
 MonoBehaviour:
