@@ -10,15 +10,15 @@ namespace IndieWizards.Player
         [Tooltip("The movement speed of the player")]
         [SerializeField]
         private float speed = 5.0f;
-    
+
         private Animator animator;
         private SpriteRenderer spriteRenderer;
 
-        private void Awake() 
+        private void Awake()
         {
             animator = GetComponent<Animator>();
             spriteRenderer = GetComponent<SpriteRenderer>();
-        
+
             movementDirection = Direction.None;
         }
 
@@ -36,7 +36,7 @@ namespace IndieWizards.Player
             {
                 movementDirection = Direction.Down;
             }
-            else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+            else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow) || true)
             {
                 movementDirection = Direction.Right;
             }

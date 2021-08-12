@@ -1404,6 +1404,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6070653553598303209, guid: dd426db68c6034009a35567237a4bda6, type: 3}
+      propertyPath: enemyDeath
+      value: 
+      objectReference: {fileID: 8300000, guid: e5d6c2892aef88640b54b60d2bfc2f3f, type: 3}
+    - target: {fileID: 6070653553598303209, guid: dd426db68c6034009a35567237a4bda6, type: 3}
+      propertyPath: enemyShout
+      value: 
+      objectReference: {fileID: 8300000, guid: 1f9e87cee44e7c64d9da5dbfba7c27a6, type: 3}
+    - target: {fileID: 6070653553598303209, guid: dd426db68c6034009a35567237a4bda6, type: 3}
+      propertyPath: enemyAttack
+      value: 
+      objectReference: {fileID: 8300000, guid: d310e4486dbdf5541a1aace7256047a0, type: 3}
+    - target: {fileID: 6070653553598303209, guid: dd426db68c6034009a35567237a4bda6, type: 3}
+      propertyPath: enemyTakeDamage
+      value: 
+      objectReference: {fileID: 8300000, guid: 84f048da61c4562439df9fc0f0c59f23, type: 3}
     - target: {fileID: 6070653553598303215, guid: dd426db68c6034009a35567237a4bda6, type: 3}
       propertyPath: m_Name
       value: AudioManager
