@@ -21,6 +21,10 @@ namespace IndieWizards.GameManagement
         [SerializeField]
         private GameObject pauseMenu;
 
+        [Header("Debug Settings")]
+        [SerializeField]
+        private Transform debugBossFightSpawnPoint;
+
         private bool isPaused;
 
         private HashSet<GameObject> enemies;
@@ -61,6 +65,11 @@ namespace IndieWizards.GameManagement
             else if (Input.GetKeyDown(KeyCode.Alpha0))
             {
                 GameOver(true);
+            }
+            else if (Input.GetKeyDown(KeyCode.B))
+            {
+                GameObject player = GameObject.FindGameObjectWithTag("Player");
+                player.transform.position = debugBossFightSpawnPoint.position;
             }
             else
             {
