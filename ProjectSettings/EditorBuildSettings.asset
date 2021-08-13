@@ -14,9 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: ee18d3450d370431793c560d9cd1e419
-  - enabled: 1
-    path: Assets/Scenes/Katie.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Thomas.unity
     guid: 28ddfd80de0446449979bcd8da20a3fa
