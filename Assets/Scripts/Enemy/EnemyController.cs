@@ -11,6 +11,9 @@ namespace IndieWizards.Enemy
     [RequireComponent(typeof(TakeDamageAnimation))]
     public class EnemyController : MonoBehaviour
     {
+        public delegate void OnDeathCallback();
+        public OnDeathCallback onDeath;
+
         private Transform playerTransform;
 
         public enum EnemyState { Idle, Patrol, Combat };
@@ -95,6 +98,8 @@ namespace IndieWizards.Enemy
             takeDamageAnimation.StartKillAnimation();
             enemyAnimationController.Die();
             //Destroy(this.gameObject);
+
+            onDeath?.Invoke();
         }
 
         public EnemyState GetCurrentState()

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using IndieWizards.Audio;
+using IndieWizards.Enemy;
 using IndieWizards.UI;
 
 namespace IndieWizards.GameManagement
@@ -27,19 +28,15 @@ namespace IndieWizards.GameManagement
 
         private bool isPaused;
 
-        private HashSet<GameObject> enemies;
-
         private void Awake()
         {
             gameOverLostPanel.SetActive(false);
             pauseMenu.SetActive(false);
             isPaused = false;
 
-            enemies = new HashSet<GameObject>();
-            foreach(GameObject enemy in GameObject.FindGameObjectsWithTag("EnemyBoss"))
-            {
-                enemies.Add(enemy);
-            }
+            GameObject bossEnemy = GameObject.FindGameObjectWithTag("EnemyBoss");
+            EnemyController enemyController = bossEnemy.GetComponent<EnemyController>();
+            enemyController.onDeath += HandleBossDeath;
 
             Time.timeScale = 1.0f;
         }
@@ -70,20 +67,6 @@ namespace IndieWizards.GameManagement
             {
                 GameObject player = GameObject.FindGameObjectWithTag("Player");
                 player.transform.position = debugBossFightSpawnPoint.position;
-            }
-            else
-            {
-                foreach (GameObject enemy in enemies)
-                {
-                    if (enemy != null)
-                    {
-                        return;
-                    }
-                }
-
-                // If we got this far, there are no more enemies left in the game
-                // and we've won
-                GameOver(true);
             }
         }
 
@@ -124,6 +107,16 @@ namespace IndieWizards.GameManagement
             Time.timeScale = 1.0f;
             isPaused = false;
             pauseMenu.SetActive(false);
+        }
+
+        private void HandleBossDeath()
+        {
+            Invoke(nameof(WonGame), 2.0f);
+        }
+
+        private void WonGame()
+        {
+            GameOver(true);
         }
     }
 }
