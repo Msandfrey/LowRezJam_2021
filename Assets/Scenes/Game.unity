@@ -80443,6 +80443,50 @@ PrefabInstance:
       propertyPath: audioManager
       value: 
       objectReference: {fileID: 382012284}
+    - target: {fileID: 1432094106868996332, guid: 5416135af37e8a8488fa5bc60d18e986, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1432094106868996332, guid: 5416135af37e8a8488fa5bc60d18e986, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1432094106868996332, guid: 5416135af37e8a8488fa5bc60d18e986, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1432094106868996332, guid: 5416135af37e8a8488fa5bc60d18e986, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].x
+      value: -1.0047836
+      objectReference: {fileID: 0}
+    - target: {fileID: 1432094106868996332, guid: 5416135af37e8a8488fa5bc60d18e986, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].y
+      value: 0.19871521
+      objectReference: {fileID: 0}
+    - target: {fileID: 1432094106868996332, guid: 5416135af37e8a8488fa5bc60d18e986, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].x
+      value: -1.0067673
+      objectReference: {fileID: 0}
+    - target: {fileID: 1432094106868996332, guid: 5416135af37e8a8488fa5bc60d18e986, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].y
+      value: -0.38398743
+      objectReference: {fileID: 0}
+    - target: {fileID: 1432094106868996332, guid: 5416135af37e8a8488fa5bc60d18e986, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].x
+      value: 0.41433716
+      objectReference: {fileID: 0}
+    - target: {fileID: 1432094106868996332, guid: 5416135af37e8a8488fa5bc60d18e986, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].y
+      value: -0.9403877
+      objectReference: {fileID: 0}
+    - target: {fileID: 1432094106868996332, guid: 5416135af37e8a8488fa5bc60d18e986, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].x
+      value: 1.4946594
+      objectReference: {fileID: 0}
+    - target: {fileID: 1432094106868996332, guid: 5416135af37e8a8488fa5bc60d18e986, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].y
+      value: -1.2544594
+      objectReference: {fileID: 0}
     - target: {fileID: 2234364105261123748, guid: 5416135af37e8a8488fa5bc60d18e986, type: 3}
       propertyPath: healthText
       value: 
@@ -80500,12 +80544,20 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6928504107730931915, guid: 5416135af37e8a8488fa5bc60d18e986, type: 3}
+      propertyPath: m_Size.y
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6928504107730931915, guid: 5416135af37e8a8488fa5bc60d18e986, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6928504107730931915, guid: 5416135af37e8a8488fa5bc60d18e986, type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6928504107730931915, guid: 5416135af37e8a8488fa5bc60d18e986, type: 3}
+      propertyPath: m_EdgeRadius
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6928504107730931915, guid: 5416135af37e8a8488fa5bc60d18e986, type: 3}
       propertyPath: m_UsedByComposite

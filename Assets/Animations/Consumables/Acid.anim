@@ -143,7 +143,7 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0
-    functionName: ShowCollider
+    functionName: ShowPolyCollider
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -157,7 +157,7 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 2
-    functionName: HideCollider
+    functionName: HidePolyCollider
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
