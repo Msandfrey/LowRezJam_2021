@@ -85,7 +85,6 @@ namespace IndieWizards.Audio
             sfxAudioSource.Stop();
             sfxAudioSource.clip = clip;
             sfxAudioSource.loop = true;
-            sfxAudioSource.volume = 10f * 10f;
             sfxAudioSource.Play();
             StartCoroutine(WaitForMe());
         }
