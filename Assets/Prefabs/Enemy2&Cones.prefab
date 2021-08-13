@@ -231,7 +231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e19610acbd8453b479fc6e2072eefa27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTime: 1
+  waitTime: 1.5
   combatMoveSpeed: 5
   attackRange: 1.75
 --- !u!114 &2750251709395500996

@@ -29,7 +29,7 @@ namespace IndieWizards.Player
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.gameObject.tag.Equals("Enemy"))
+            if (collision.gameObject.tag.Contains("Enemy"))
             {
                 Attack(collision.gameObject);
             }
@@ -37,7 +37,7 @@ namespace IndieWizards.Player
 
         private void OnCollisionStay2D(Collision2D collision)
         {
-            if (collision.gameObject.tag.Equals("Enemy"))
+            if (collision.gameObject.tag.Contains("Enemy"))
             {
                 Attack(collision.gameObject);
             }

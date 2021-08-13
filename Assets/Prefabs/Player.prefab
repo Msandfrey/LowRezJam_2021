@@ -730,8 +730,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fe4279850204478980d72276bcf2a72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialHitPoints: 10
-  maxHitPoints: 10
+  initialHitPoints: 20
+  maxHitPoints: 20
   spriteMask: {fileID: 5162087181766487287}
 --- !u!114 &5170904191212356160
 MonoBehaviour:
