@@ -41,7 +41,11 @@ namespace IndieWizards.AI
                 //2---------if in range, attack
                 float distance = Vector2.Distance(playerPosition, transform.position);
                 //if up or down add a little distance to range
-                if(Mathf.Abs(distance) <= attackRange)
+                if(Mathf.Abs(distance) <= attackRange + attackRange * 0.2f && enemyController.GetCurrentDirection() == EnemyController.EnemyDirection.Up || enemyController.GetCurrentDirection() == EnemyController.EnemyDirection.Down)
+                {
+                    AttackPlayer();                 
+                }
+                else if(Mathf.Abs(distance) <= attackRange)
                 {
                     AttackPlayer();
                 }
