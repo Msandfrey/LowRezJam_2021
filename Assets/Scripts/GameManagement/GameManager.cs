@@ -79,7 +79,7 @@ namespace IndieWizards.GameManagement
         public void Replay()
         {
             audioManager.musicAudioSource.Stop();
-            sceneLoader.LoadStartGameCutScene();
+            sceneLoader.LoadGameScene();
         }
 
         public void GameOver(bool won)
