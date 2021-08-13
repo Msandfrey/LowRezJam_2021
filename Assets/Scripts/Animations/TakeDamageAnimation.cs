@@ -16,7 +16,7 @@ namespace IndieWizards.Animations
         private void Awake()
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
-
+            originalColor = spriteRenderer.color;
             if (spriteRenderer == null)
             {
                 Debug.LogError("SpriteRenderer not found. TakeDamangeAnimation will not be used.");
@@ -27,9 +27,7 @@ namespace IndieWizards.Animations
         {
             if (spriteRenderer != null)
             {
-                originalColor = spriteRenderer.color;
                 spriteRenderer.color = spriteColorWhenDamaged;
-
                 Invoke(nameof(StopTakeDamageAnimation), damageEffectDuration);
             }
         }
@@ -38,7 +36,6 @@ namespace IndieWizards.Animations
         {
             if (spriteRenderer != null)
             {
-                originalColor = spriteRenderer.color;
                 spriteRenderer.color = spriteColorWhenDamaged;
             }
         }
