@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   consumableType: 2
-  amount: 2
+  amount: 4
 --- !u!95 &6488436401095056681
 Animator:
   serializedVersion: 3
