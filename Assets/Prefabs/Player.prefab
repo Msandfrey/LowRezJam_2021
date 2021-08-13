@@ -171,7 +171,7 @@ GameObject:
   m_Component:
   - component: {fileID: 287270199}
   - component: {fileID: 287270201}
-  - component: {fileID: 6928504107730931915}
+  - component: {fileID: 1432094106868996332}
   - component: {fileID: 287270200}
   - component: {fileID: 672415475133022572}
   - component: {fileID: 9131873050017657844}
@@ -248,8 +248,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &6928504107730931915
-BoxCollider2D:
+--- !u!60 &1432094106868996332
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -271,9 +271,13 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.14, y: 1}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.2948532, y: 0.5536766}
+      - {x: -0.3306427, y: -0.2318573}
+      - {x: 0.61717224, y: -0.82206726}
+      - {x: 1.5115585, y: -1.3051682}
+      - {x: 1.5294418, y: 1.2693825}
 --- !u!95 &287270200
 Animator:
   serializedVersion: 3

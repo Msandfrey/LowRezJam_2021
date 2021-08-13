@@ -26,6 +26,16 @@ namespace IndieWizards.Animations
         {
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }
+
+        public void ShowPolyCollider()
+        {
+            gameObject.GetComponent<PolygonCollider2D>().enabled = true;
+        }
+
+        public void HidePolyCollider()
+        {
+            gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+        }
     }
 }
 

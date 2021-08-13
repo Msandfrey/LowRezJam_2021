@@ -38,9 +38,10 @@ namespace IndieWizards.Character
         public void TakeDamage(int hitPoints)
         {
             currentHitPoints = Mathf.Max(currentHitPoints - hitPoints, 0);
-
+            Debug.Log("I got hit by " + hitPoints + " and now I have " + currentHitPoints + " left");
             if (currentHitPoints > 0)
             {
+                Debug.Log("I am here invoking on damage");
                 onDamage?.Invoke();
             }
             else if (currentHitPoints == 0 && !onDeathCallbackRaised)
@@ -64,7 +65,10 @@ namespace IndieWizards.Character
         {
 
             float spriteMaskX = spriteMask.GetComponent<RectTransform>().anchoredPosition.x; // used for take damage only. why?
-            spriteMask.GetComponent<RectTransform>().anchoredPosition = new Vector3(isHeal? currentHitPoints * hitPoints : spriteMaskX - hitPoints, 0, 0);
+            // Debug.Log("calling from update health bar: " + currentHitPoints);
+            // Debug.Log("this is sprite Mask X: " + spriteMaskX);
+            spriteMask.GetComponent<RectTransform>().anchoredPosition = new Vector3(currentHitPoints * hitPoints , 0, 0);
+            // spriteMask.GetComponent<RectTransform>().anchoredPosition = new Vector3(isHeal? currentHitPoints * hitPoints : spriteMaskX - hitPoints, 0, 0);
         }
 
         private float HPIntervals()
